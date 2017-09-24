@@ -15,9 +15,7 @@ public class Search {
     
     Search(String searchTerms, String filterCompanyName, int filterDistance, String filterZipCode){
         this.searchTerms = searchTerms;
-        if(!filterCompanyName.equals("") || filterDistance != 0 || !filterZipCode.equals("")){
-             filter = new Filter(filterCompanyName, filterDistance, filterZipCode);
-        }
+        filter = new Filter(filterCompanyName, filterDistance, filterZipCode);
     }
     
     public String getSearchTerms(){
