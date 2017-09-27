@@ -37,4 +37,8 @@ public class Search {
     public String getZipCodeFilter(){
         return filter.getZipCode();
     }
+    public void findKeyWord(){
+        System.out.println();
+                
+    }
 }
