@@ -9,8 +9,8 @@
  * @author Nate Cox
  */
 public class Search {
-    String searchTerms;
-    Filter filter;
+    private String searchTerms;
+    private Filter filter;
     
     
     Search(String searchTerms, String filterCompanyName, int filterDistance, String filterZipCode){
