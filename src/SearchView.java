@@ -1,5 +1,6 @@
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +13,8 @@ import javax.swing.JPanel;
  * @author Nate Cox
  */
 public class SearchView extends JPanel{
+    
+    JTextField searchBar = new JTextField();
     
     
     
