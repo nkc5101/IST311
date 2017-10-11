@@ -19,5 +19,11 @@ public class NavView extends JPanel{
     JButton searchButton = new JButton();
     JButton logoutButton = new JButton();
     
+    NavView(){
+        this.homeButton=homeButton;
+        this.logoutButton=logoutButton;
+        this.profileButton=profileButton;
+        this.searchButton=searchButton;
+    }
     
 }

@@ -18,7 +18,14 @@ public class LoginView extends JPanel{
     JTextField usernameField = new JTextField();
     JTextField passwordField = new JTextField();
     JButton submitButton = new JButton();
-    
+    JButton exit = new JButton();
+    public LoginView()
+    {
+        this.passwordField=passwordField;
+        this.submitButton=submitButton;
+        this.usernameField=usernameField;
+        this.exit=exit;
+    }
     
     
 }

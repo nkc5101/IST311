@@ -8,82 +8,82 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 public class UserProfile extends Profile implements Editable {
-    
+
     private String name;
     private String careerChoice;
     private Image profilePicture;
     private ArrayList skills = new ArrayList();
     private String location;
     private ArrayList files = new ArrayList();
-    
-    UserProfile(String username, String password, String phoneNumber, String address, String name, String careerChoice){
+
+    UserProfile(String username, String password, String phoneNumber, String address, String name, String careerChoice) {
         super(username, password, phoneNumber, address);
         this.name = name;
         this.careerChoice = careerChoice;
+
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    
-    public String getCareerChoice(){
+
+    public String getCareerChoice() {
         return careerChoice;
     }
 
-    public void setCareerChoice(String careerChoice){
+    public void setCareerChoice(String careerChoice) {
         this.careerChoice = careerChoice;
     }
-    
-    public Image getImage(){
+
+    public Image getImage() {
         return profilePicture;
     }
-    
-    public void setImage(Image profilePicture){
+
+    public void setImage(Image profilePicture) {
         this.profilePicture = profilePicture;
     }
-    
-    public ArrayList getSkills(){
+
+    public ArrayList getSkills() {
         return skills;
     }
-    
-    public void setSkills(ArrayList skills){
+
+    public void setSkills(ArrayList skills) {
         this.skills = skills;
     }
-    
-    public void addSkill(String skill){
+
+    public void addSkill(String skill) {
         skills.add(skill);
     }
-    
-    public String getLocation(){
+
+    public String getLocation() {
         return location;
     }
-    
-    public void setLocation(String location){
+
+    public void setLocation(String location) {
         this.location = location;
     }
-    
-    public ArrayList getFiles(){
+
+    public ArrayList getFiles() {
         return files;
     }
-    
-    public void setFiles(ArrayList files){
+
+    public void setFiles(ArrayList files) {
         this.files = files;
     }
-    
-    public void addFile(File file){
+
+    public void addFile(File file) {
         files.add(file);
     }
-    
+
     @Override
     public void Edit() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -98,7 +98,5 @@ public class UserProfile extends Profile implements Editable {
     public File Upload() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }
