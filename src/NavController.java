@@ -11,10 +11,18 @@ import javax.swing.JFrame;
  *
  * @author Nate Cox
  */
-public class NavController extends JFrame{
+public class NavController {
     SearchView search = new SearchView();
     LoginView login = new LoginView();
-    NavView navigation = new NavView();
+    NavView navigation;
+    
+    NavController(NavView navigation){
+        this.navigation = navigation;
+        navigation.getContentPane().add(login);
+        navigation.pack();
+        navigation.setVisible(true);
+        
+    }
     
     
 }
