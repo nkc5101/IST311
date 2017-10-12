@@ -1,4 +1,5 @@
 
+import java.awt.Component;
 import javax.swing.JFrame;
 
 /*
@@ -18,9 +19,9 @@ public class NavController {
     
     NavController(NavView navigation){
         this.navigation = navigation;
-        navigation.getContentPane().add(login);
-        navigation.pack();
-        navigation.setVisible(true);
+        this.navigation.setContentPane(login);
+        this.navigation.pack();
+        this.navigation.setVisible(true);
         
     }
     
