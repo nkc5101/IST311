@@ -1,6 +1,3 @@
-
-import javax.swing.JTextField;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,14 +8,13 @@ import javax.swing.JTextField;
  *
  * @author cmr5890
  */
-public class SearchView extends javax.swing.JPanel {
+public class NavPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SearchView
+     * Creates new form NavPanel
      */
-    public SearchView() {
+    public NavPanel() {
         initComponents();
-        JTextField searchBar = new JTextField();
     }
 
     /**
