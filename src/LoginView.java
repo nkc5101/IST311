@@ -20,7 +20,7 @@ public class LoginView extends javax.swing.JPanel {
      */
     
     private String username;
-    private char[] password;
+    private String password;
     
     public LoginView() {
         initComponents();
@@ -113,47 +113,41 @@ public class LoginView extends javax.swing.JPanel {
         if(evt.getSource() == jButton1)
         {
             username = jTextField1.getText();
-            password = jPasswordField1.getPassword();
+            password = String.valueOf(jPasswordField1.getPassword());
             
             UserProfile[] userList = new UserProfile[5];
-            userList[0] = new UserProfile("pigbrain", "dug", null, null, null, null);
-            //userList[0].setUsername("pigbrain");
-            //userList[0].setPassword("dug");
+            userList[0] = new UserProfile("pigbrain", "pug", null, null, null, null);
+            userList[1] = new UserProfile("dogbrain", "dug", null, null, null, null);
+            userList[2] = new UserProfile("birdbrain", "bug", null, null, null, null);
+            userList[3] = new UserProfile("fishbrain", "fug", null, null, null, null);
+            userList[4] = new UserProfile("horsebrain", "hug", null, null, null, null);
             
             
             for (int i = 0; i < userList.length; i++) 
             {
-                //System.out.println(userList[0].getUsername());
-                //System.out.println(userList[0].getPassword());
+                
                 if (userList[i].getUsername().equals(username)) 
                 {
-                    if (userList[i].getPassword().toCharArray().equals(password)) 
+                    if (!(userList[i].getPassword().equals(password)))
                     {
-                        //Move to Navigation Panel
-                        System.out.println("YOu win");
+                        //State that password is wrong
+                        //System.out.println("Password is wrong");
+                        
                         break;
                     }else
                     {
-                        //State that password is wrong
-                        System.out.println("Password is wrong");
+                        //Move to Navigation Panel
+                        //System.out.println("You win");
                         break;
                     }
                 }else
                 {
                     //Maybe state that the username does not exist
-                    System.out.println("Username is wrong");
-                    break;
+                    //System.out.println("Username is wrong");
+                    
                 }
             }
-            /*String pig = "pig";
-            char[] pass;
-            System.out.println("Hi");
-            pass = pig.toCharArray();
-            System.out.println(username);
-            if(Arrays.equals(password, pass))
-            {
-            System.out.println("Pass word is correct");
-            }*/
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
