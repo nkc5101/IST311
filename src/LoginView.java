@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -17,6 +18,10 @@ public class LoginView extends javax.swing.JPanel {
     /**
      * Creates new form LoginView
      */
+    
+    private String username;
+    private char[] password;
+    
     public LoginView() {
         initComponents();
         
@@ -101,11 +106,55 @@ public class LoginView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:  
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        if(evt.getSource() == jButton1)
+        {
+            username = jTextField1.getText();
+            password = jPasswordField1.getPassword();
+            
+            UserProfile[] userList = new UserProfile[5];
+            userList[0] = new UserProfile("pigbrain", "dug", null, null, null, null);
+            //userList[0].setUsername("pigbrain");
+            //userList[0].setPassword("dug");
+            
+            
+            for (int i = 0; i < userList.length; i++) 
+            {
+                //System.out.println(userList[0].getUsername());
+                //System.out.println(userList[0].getPassword());
+                if (userList[i].getUsername().equals(username)) 
+                {
+                    if (userList[i].getPassword().toCharArray().equals(password)) 
+                    {
+                        //Move to Navigation Panel
+                        System.out.println("YOu win");
+                        break;
+                    }else
+                    {
+                        //State that password is wrong
+                        System.out.println("Password is wrong");
+                        break;
+                    }
+                }else
+                {
+                    //Maybe state that the username does not exist
+                    System.out.println("Username is wrong");
+                    break;
+                }
+            }
+            /*String pig = "pig";
+            char[] pass;
+            System.out.println("Hi");
+            pass = pig.toCharArray();
+            System.out.println(username);
+            if(Arrays.equals(password, pass))
+            {
+            System.out.println("Pass word is correct");
+            }*/
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
