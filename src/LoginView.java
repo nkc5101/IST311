@@ -1,6 +1,7 @@
 
 import java.util.Arrays;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
@@ -131,20 +132,20 @@ public class LoginView extends javax.swing.JPanel {
                     if (!(userList[i].getPassword().equals(password)))
                     {
                         //State that password is wrong
-                        //System.out.println("Password is wrong");
+                        JOptionPane.showMessageDialog(null,"Password is wrong");
                         
                         break;
                     }else
                     {
                         //Move to Navigation Panel
-                        //System.out.println("You win");
-                        break;
+                        JOptionPane.showMessageDialog(null,"You win");
+                       
                     }
                 }else
                 {
                     //Maybe state that the username does not exist
-                    //System.out.println("Username is wrong");
-                    
+                    JOptionPane.showMessageDialog(null, "Username is wrong");
+                    break;
                 }
             }
             
