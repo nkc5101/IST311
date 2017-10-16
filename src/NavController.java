@@ -19,6 +19,7 @@ public class NavController {
     SearchView search = new SearchView();
     LoginView login = new LoginView();
     NavView navigation;
+    UserProfile testUser = new UserProfile("username", "pasword", null, null, null, null);
     
     
     NavController(NavView navigation){
@@ -34,7 +35,11 @@ public class NavController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           
+           if(login.getUsername().equals(testUser.getUsername())){
+               if(login.getPassword().equals(testUser.getPassword())){
+                   navigation.setHomePage();
+               }
+           }
         }
         
     }

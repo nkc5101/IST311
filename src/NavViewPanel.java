@@ -16,6 +16,8 @@ public class NavViewPanel extends javax.swing.JPanel {
     public NavViewPanel() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

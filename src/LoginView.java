@@ -27,6 +27,14 @@ public class LoginView extends javax.swing.JPanel {
         initComponents();
         
     }
+    
+    public String getUsername(){
+        return jTextField1.getText();
+    }
+    
+    public String getPassword(){
+        return String.valueOf(jPasswordField1.getPassword());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,11 +73,6 @@ public class LoginView extends javax.swing.JPanel {
         });
 
         jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Username:");
 
@@ -109,49 +112,6 @@ public class LoginView extends javax.swing.JPanel {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:  
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(evt.getSource() == jButton1)
-        {
-            username = jTextField1.getText();
-            password = String.valueOf(jPasswordField1.getPassword());
-            
-            UserProfile[] userList = new UserProfile[5];
-            userList[0] = new UserProfile("pigbrain", "pug", null, null, null, null);
-            userList[1] = new UserProfile("dogbrain", "dug", null, null, null, null);
-            userList[2] = new UserProfile("birdbrain", "bug", null, null, null, null);
-            userList[3] = new UserProfile("fishbrain", "fug", null, null, null, null);
-            userList[4] = new UserProfile("horsebrain", "hug", null, null, null, null);
-            
-            
-            for (int i = 0; i < userList.length; i++) 
-            {
-                
-                if (userList[i].getUsername().equals(username)) 
-                {
-                    if (!(userList[i].getPassword().equals(password)))
-                    {
-                        //State that password is wrong
-                        JOptionPane.showMessageDialog(null,"Password is wrong");
-                        
-                        break;
-                    }else
-                    {
-                        //Move to Navigation Panel
-                        JOptionPane.showMessageDialog(null,"You win");
-                        
-                       
-                    }
-                }else
-                {
-                    //Maybe state that the username does not exist
-                    JOptionPane.showMessageDialog(null, "Username is wrong");
-                    break;
-                }
-            }
-            
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
