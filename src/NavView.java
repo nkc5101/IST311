@@ -1,5 +1,7 @@
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import javafx.scene.layout.Border;
 
 
 
@@ -17,18 +19,23 @@ public class NavView extends javax.swing.JFrame {
 
     NavViewPanel navPanel = new NavViewPanel();
     LoginView loginPanel = new LoginView();
+    SearchView searchPanel = new SearchView();
     
     
     public NavView() {
         initComponents();
+        setLayout(new BorderLayout());
+        add(loginPanel, BorderLayout.CENTER);
         
         
         
     }
     
+   
+    
     public void setHomePage(){
         remove(loginPanel);
-        add(navPanel);
+        add(searchPanel, BorderLayout.CENTER);
     }
     
     public void addLoginButtonListener(ActionListener al){

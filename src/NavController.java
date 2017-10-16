@@ -19,12 +19,13 @@ public class NavController {
     SearchView search = new SearchView();
     LoginView login = new LoginView();
     NavView navigation;
-    UserProfile testUser = new UserProfile("username", "pasword", null, null, null, null);
+    UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
     
     
     NavController(NavView navigation){
         this.navigation = navigation;
-        this.navigation.setContentPane(login);
+        //this.navigation.setContentPane(login);
+        this.navigation.addLoginButtonListener(new LoginButtonListener());
         this.navigation.pack();
         this.navigation.setVisible(true);
         
@@ -37,7 +38,7 @@ public class NavController {
         public void actionPerformed(ActionEvent e) {
            if(login.getUsername().equals(testUser.getUsername())){
                if(login.getPassword().equals(testUser.getPassword())){
-                   navigation.setHomePage();
+                  navigation.setHomePage();
                }
            }
         }
