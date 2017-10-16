@@ -1,4 +1,7 @@
 
+import java.awt.event.ActionListener;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +18,7 @@ public class NavView extends javax.swing.JFrame {
     NavViewPanel navPanel = new NavViewPanel();
     LoginView loginPanel = new LoginView();
     
+    
     public NavView() {
         initComponents();
         
@@ -25,6 +29,10 @@ public class NavView extends javax.swing.JFrame {
     public void setHomePage(){
         remove(loginPanel);
         add(navPanel);
+    }
+    
+    public void addLoginButtonListener(ActionListener al){
+        loginPanel.jButton1.addActionListener(al);
     }
 
     /**

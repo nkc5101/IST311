@@ -1,5 +1,7 @@
 
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import java.util.Arrays;
 
@@ -28,7 +30,14 @@ public class NavController {
     }
     
     
-    
+    public class LoginButtonListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           
+        }
+        
+    }
     
     
 }
