@@ -1,6 +1,7 @@
 
 import java.awt.Component;
 import javax.swing.JFrame;
+import java.util.Arrays;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +18,7 @@ public class NavController {
     LoginView login = new LoginView();
     NavView navigation;
     
+    
     NavController(NavView navigation){
         this.navigation = navigation;
         this.navigation.setContentPane(login);
@@ -24,6 +26,9 @@ public class NavController {
         this.navigation.setVisible(true);
         
     }
+    
+    
+    
     
     
 }

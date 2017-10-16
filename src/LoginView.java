@@ -139,6 +139,7 @@ public class LoginView extends javax.swing.JPanel {
                     {
                         //Move to Navigation Panel
                         JOptionPane.showMessageDialog(null,"You win");
+                        
                        
                     }
                 }else

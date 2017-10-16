@@ -1,5 +1,4 @@
 
-import javax.swing.JButton;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,23 +12,19 @@ import javax.swing.JButton;
  */
 public class NavView extends javax.swing.JFrame {
 
-    JButton homeButton = new JButton();
-    JButton profileButton = new JButton();
-    JButton searchButton = new JButton();
-    JButton logoutButton = new JButton();
-    /**
-     * Creates new form NavView
-     */
+    NavViewPanel navPanel = new NavViewPanel();
+    LoginView loginPanel = new LoginView();
+    
     public NavView() {
         initComponents();
-            
-        this.homeButton=homeButton;
-        this.logoutButton=logoutButton;
-        this.profileButton=profileButton;
-        this.searchButton=searchButton;
-    
-    
         
+        
+        
+    }
+    
+    public void setHomePage(){
+        remove(loginPanel);
+        add(navPanel);
     }
 
     /**
