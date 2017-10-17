@@ -44,6 +44,14 @@ public class NavView extends javax.swing.JFrame {
         repaint();
     }
     
+    public void setNavigationView(){
+        
+        add(navPanel, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
+    }
+    
     public void addLoginButtonListener(ActionListener al){
         loginPanel.jButton1.addActionListener(al);
     }
