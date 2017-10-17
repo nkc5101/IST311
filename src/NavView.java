@@ -39,6 +39,9 @@ public class NavView extends javax.swing.JFrame {
     public void setHomePage(){
         remove(loginPanel);
         add(searchPanel, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
     }
     
     public void addLoginButtonListener(ActionListener al){
