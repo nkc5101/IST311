@@ -1,4 +1,6 @@
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -14,7 +16,7 @@ import javax.swing.JTextField;
  *
  * @author cmr5890
  */
-public class LoginView extends javax.swing.JPanel {
+public class LoginView extends javax.swing.JPanel{
 
     /**
      * Creates new form LoginView
@@ -25,15 +27,20 @@ public class LoginView extends javax.swing.JPanel {
     
     public LoginView() {
         initComponents();
-        
+                
     }
     
     public String getUsername(){
-        return jTextField1.getText();
+        username = jTextField1.getText();
+        System.out.println(username);
+        return username;
+    
     }
     
     public String getPassword(){
-        return String.valueOf(jPasswordField1.getPassword());
+        password = String.valueOf(jPasswordField1.getPassword());
+        System.out.println(password);
+        return password;
     }
 
     /**
@@ -127,4 +134,5 @@ public class LoginView extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
 }

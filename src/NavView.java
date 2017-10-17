@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javafx.scene.layout.Border;
 
@@ -20,6 +21,8 @@ public class NavView extends javax.swing.JFrame {
     NavViewPanel navPanel = new NavViewPanel();
     LoginView loginPanel = new LoginView();
     SearchView searchPanel = new SearchView();
+   
+        
     
     
     public NavView() {
@@ -40,6 +43,24 @@ public class NavView extends javax.swing.JFrame {
     
     public void addLoginButtonListener(ActionListener al){
         loginPanel.jButton1.addActionListener(al);
+    }
+    
+    public String getUsername(){
+        if(loginPanel.isVisible()){
+            return loginPanel.getUsername();
+        } else {
+            return null;
+        }
+        
+    }
+    
+     public String getPassword(){
+        if(loginPanel.isVisible()){
+            return loginPanel.getPassword();
+        } else {
+            return null;
+        }
+        
     }
 
     /**

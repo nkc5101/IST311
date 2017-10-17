@@ -36,8 +36,8 @@ public class NavController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           if(login.getUsername().equals(testUser.getUsername())){
-               if(login.getPassword().equals(testUser.getPassword())){
+           if(navigation.getUsername().equals(testUser.getUsername())){
+               if(navigation.getPassword().equals(testUser.getPassword())){
                   navigation.setHomePage();
                }
            }
