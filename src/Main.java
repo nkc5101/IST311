@@ -15,9 +15,11 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        NavView view = new NavView();
-        NavController controller = new NavController(view);
+        NavController.launch(NavController.class);
         
+       
     }
+    
+
     
 }

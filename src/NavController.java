@@ -4,6 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import java.util.Arrays;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,35 +20,28 @@ import java.util.Arrays;
  *
  * @author Nate Cox
  */
-public class NavController {
-    SearchView search = new SearchView();
-    LoginView login = new LoginView();
-    NavView navigation;
+public class NavController extends Application {
+    SearchViewController search = new SearchViewController();
+    LoginViewController login = new LoginViewController();
+    NavViewController navigation;
+    
     UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+     Parent root;
+     Scene scene;
     
     
-    NavController(NavView navigation){
-        this.navigation = navigation;
-        //this.navigation.setContentPane(login);
-        this.navigation.addLoginButtonListener(new LoginButtonListener());
-        this.navigation.pack();
-        this.navigation.setVisible(true);
-        
-    }
     
-    
-    public class LoginButtonListener implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-           if(navigation.getUsername().equals(testUser.getUsername())){
-               if(navigation.getPassword().equals(testUser.getPassword())){
-                  navigation.setHomePage();
-               }
-           }
-        }
+    @Override
+    public void start(Stage stage) throws Exception {
+       root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
+       scene = new Scene(root, 600, 600);
+       stage.setTitle("Job search");
+       stage.setScene(scene);
+       stage.show();
+       
         
     }
-    
-    
+      
+  
 }
