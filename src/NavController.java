@@ -2,6 +2,7 @@
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.JFrame;
 import java.util.Arrays;
 import javafx.application.Application;
@@ -25,23 +26,37 @@ public class NavController extends Application {
     LoginViewController login = new LoginViewController();
     NavViewController navigation;
     
+    
     UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
      Parent root;
      Scene scene;
-    
+     Stage stage;
     
     
 
     @Override
     public void start(Stage stage) throws Exception {
+       this.stage = stage;
        root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
        scene = new Scene(root, 600, 600);
-       stage.setTitle("Job search");
-       stage.setScene(scene);
-       stage.show();
-       
+       this.stage.setTitle("Job Search");
+       this.stage.setScene(scene);
+       this.stage.show();
+       //switchToSearch();
         
     }
       
+    public void switchToSearch() throws IOException
+    {
+        if(login.getSwitchPanels())
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavView.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            System.out.println("Here we are");
+            scene = new Scene(root, 600, 600);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
   
 }
