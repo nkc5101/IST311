@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class UserProfile extends Profile implements Editable {
 
     private String name;
-    private String careerChoice;
+    //private String careerChoice;
     private Image profilePicture;
     private ArrayList skills = new ArrayList();
     private String location;
@@ -24,7 +24,7 @@ public class UserProfile extends Profile implements Editable {
     UserProfile(String username, String password, String phoneNumber, String address, String name, String careerChoice) {
         super(username, password, phoneNumber, address);
         this.name = name;
-        this.careerChoice = careerChoice;
+        //this.careerChoice = careerChoice;
 
     }
 
@@ -36,13 +36,13 @@ public class UserProfile extends Profile implements Editable {
         this.name = name;
     }
 
-    public String getCareerChoice() {
+    /*public String getCareerChoice() {
         return careerChoice;
     }
 
     public void setCareerChoice(String careerChoice) {
         this.careerChoice = careerChoice;
-    }
+    }*/
 
     public Image getImage() {
         return profilePicture;
