@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,15 @@ public class LoginViewController implements Initializable {
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
     @FXML private Label invalidResponse;
+    @FXML private TextField newUsernameField;
+    @FXML private PasswordField newPasswordField;
+    @FXML private PasswordField reEnterPasswordField;
+    @FXML private TextField emailField;
+    @FXML private TextField nameField;
+    @FXML private TextField phoneNumberField;
+    private UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+    ArrayList<Profile> testUsers = new ArrayList<Profile>();
+    
     
     
     /**
@@ -53,7 +63,11 @@ public class LoginViewController implements Initializable {
 
     }
     
-    @FXML public void handleProfileCreation(ActionEvent event) throws IOException{
+    @FXML public void handleProfileCreation(ActionEvent event){
+        
+        
+        
+        
         
     }
     
@@ -69,7 +83,7 @@ public class LoginViewController implements Initializable {
     private boolean authenticated(){
         String username = usernameField.getText();
         String password = passwordField.getText();
-        UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+        testUsers.add(testUser);
         String testUsername = testUser.getUsername();
         String testPassword = testUser.getPassword();
         boolean authenticated;

@@ -12,13 +12,13 @@
 <Label text="Username"
     GridPane.columnIndex="0" GridPane.rowIndex="1"/>
  
-<TextField 
+<TextField fx:id="newUsernameField"
     GridPane.columnIndex="1" GridPane.rowIndex="1"/>
  
 <Label text="Password:"
     GridPane.columnIndex="0" GridPane.rowIndex="2"/>
  
-<PasswordField fx:id="passwordField" 
+<PasswordField fx:id="newPasswordField" 
     GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
 <Label text="Re-enter Username:"
@@ -30,19 +30,19 @@
 <Label text="Email:"
        GridPane.columnIndex="0" GridPane.rowIndex="4"/>
 
-<TextField 
+<TextField fx:id="emailField"
     GridPane.columnIndex="1" GridPane.rowIndex="4"/> 
 
 <Label text="Name:"
        GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 
-<TextField 
+<TextField fx:id="nameField"
     GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
 <Label text="Phone Number:"
        GridPane.columnIndex="0" GridPane.rowIndex="7"/>
 
-<TextField 
+<TextField fx:id="phoneNumberField"
     GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
 
