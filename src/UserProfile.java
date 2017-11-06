@@ -20,11 +20,14 @@ public class UserProfile extends Profile implements Editable {
     private ArrayList skills = new ArrayList();
     private String location;
     private ArrayList files = new ArrayList();
+    private String email;
+    private String careerChoice;
 
-    UserProfile(String username, String password, String phoneNumber, String address, String name, String careerChoice) {
+    UserProfile(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice) {
         super(username, password, phoneNumber, address);
         this.name = name;
-        //this.careerChoice = careerChoice;
+        this.careerChoice = careerChoice;
+        this.email = email;
 
     }
 
@@ -36,13 +39,23 @@ public class UserProfile extends Profile implements Editable {
         this.name = name;
     }
 
-    /*public String getCareerChoice() {
+    public String getCareerChoice() {
         return careerChoice;
     }
 
     public void setCareerChoice(String careerChoice) {
         this.careerChoice = careerChoice;
-    }*/
+    }
+    
+    public void setEmail(String email){
+        this.email = email;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    
 
     public Image getImage() {
         return profilePicture;

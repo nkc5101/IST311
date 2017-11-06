@@ -28,7 +28,9 @@ public class LoginViewController implements Initializable {
     @FXML private TextField emailField;
     @FXML private TextField nameField;
     @FXML private TextField phoneNumberField;
-    private UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+    @FXML private TextField addressField;
+    @FXML private TextField careerChoiceField;
+    private UserProfile testUser = new UserProfile("username", "password", null, null, null, null, null);
     ArrayList<Profile> testUsers = new ArrayList<Profile>();
     
     
@@ -63,11 +65,25 @@ public class LoginViewController implements Initializable {
 
     }
     
-    @FXML public void handleProfileCreation(ActionEvent event){
+    @FXML public void handleProfileCreation(ActionEvent event) throws IOException{
         
+        String newUsername = newUsernameField.getText();
+        String newPassword = newPasswordField.getText();
+        String reEnteredPassword = reEnterPasswordField.getText();
+        String email = emailField.getText();
+        String name = nameField.getText();
+        String phoneNumber = phoneNumberField.getText();
+        String address = addressField.getText();
+        String careerChoice = careerChoiceField.getText();
         
-        
-        
+        if(newPassword.equals(reEnteredPassword)){
+            UserProfile test = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+            testUsers.add(test);
+            System.out.println(test.getUsername());
+            System.out.println(test.getPassword());
+            
+            returnToLogin(event);
+        }
         
     }
     
@@ -84,21 +100,33 @@ public class LoginViewController implements Initializable {
         String username = usernameField.getText();
         String password = passwordField.getText();
         testUsers.add(testUser);
-        String testUsername = testUser.getUsername();
-        String testPassword = testUser.getPassword();
-        boolean authenticated;
+        boolean authenticated = false;
         
-        System.out.println(username);
-        System.out.println(password);
         
-        if(testUsername.equals(username) && testPassword.equals(password)){
+        for(int i=0; i<testUsers.size(); i++){
+            String testUsername = testUsers.get(i).getUsername();
+            String testPassword = testUsers.get(i).getPassword();
+            System.out.println(testUsername);
+            System.out.println(testPassword);
+            if(testUsername.equals(username) && testPassword.equals(password)){
             authenticated = true;
-        } else{
-            authenticated = false;
+            
+            } 
+        }
+        if(!authenticated){
             passwordField.clear();
             invalidResponse.setText("Incorrect Username or Password");
         }
+        
         return authenticated;
+    }
+    
+    private void returnToLogin(ActionEvent event) throws IOException{
+        Parent loginParent = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
+        Scene loginScene = new Scene(loginParent, 600, 600);
+        Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        loginStage.setScene(loginScene);
+        loginStage.show();
     }
 
 }

@@ -21,7 +21,7 @@
 <PasswordField fx:id="newPasswordField" 
     GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-<Label text="Re-enter Username:"
+<Label text="Re-enter Password:"
        GridPane.columnIndex="0" GridPane.rowIndex="3"/>
 
 <PasswordField fx:id="reEnterPasswordField"
@@ -45,9 +45,21 @@
 <TextField fx:id="phoneNumberField"
     GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
+<Label text="Career Choice:"
+       GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+
+<TextField fx:id="careerChoiceField"
+    GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+<Label text="Address:"
+       GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+
+<TextField fx:id="addressField"
+    GridPane.columnIndex="1" GridPane.rowIndex="9"/>  
+
 
 <HBox spacing="10" alignment="bottom_right" 
-        GridPane.columnIndex="1" GridPane.rowIndex="8">
+        GridPane.columnIndex="1" GridPane.rowIndex="10">
         <Button text="Create Profile"     
         onAction="#handleProfileCreation"/>
         
