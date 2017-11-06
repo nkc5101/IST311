@@ -32,9 +32,8 @@ public class LoginViewController implements Initializable {
     
         switchPanels = true;
         if(authenticated()){
-            System.out.println("Boom");
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-        Scene search_view_scene = new Scene(search_view_parent);
+        Scene search_view_scene = new Scene(search_view_parent, 600, 600);
         Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         login_stage.setScene(search_view_scene);
         login_stage.show();
@@ -44,11 +43,18 @@ public class LoginViewController implements Initializable {
     
     
     
-    @FXML public void handleCreateProfileButtonAction(ActionEvent event){
+    @FXML public void handleCreateProfileButtonAction(ActionEvent event) throws IOException{
         
-        switchPanels = true;
-        System.out.println("bang");
+        Parent createProfileParent = FXMLLoader.load(getClass().getResource("CreateProfile.fxml"));
+        Scene createProfileScene = new Scene(createProfileParent, 600, 600);
+        Stage createProfileStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        createProfileStage.setScene(createProfileScene);
+        createProfileStage.show();
 
+    }
+    
+    @FXML public void handleProfileCreation(ActionEvent event) throws IOException{
+        
     }
     
     public boolean getSwitchPanels()
@@ -66,7 +72,7 @@ public class LoginViewController implements Initializable {
         UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
         String testUsername = testUser.getUsername();
         String testPassword = testUser.getPassword();
-        boolean authenticated = false;
+        boolean authenticated;
         
         System.out.println(username);
         System.out.println(password);
