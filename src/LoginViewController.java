@@ -20,6 +20,7 @@ public class LoginViewController implements Initializable {
     @FXML private Label invalidLabel;
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
+    @FXML private Label invalidResponse;
     
     
     /**
@@ -61,11 +62,14 @@ public class LoginViewController implements Initializable {
     
     private boolean authenticated(){
         String username = usernameField.getText();
-        String password = passwordField.toString();
+        String password = passwordField.getText();
         UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
         String testUsername = testUser.getUsername();
         String testPassword = testUser.getPassword();
         boolean authenticated = false;
+        
+        System.out.println(username);
+        System.out.println(password);
         
         if(testUsername.equals(username)){
             if(testPassword.equals(password)){
@@ -74,6 +78,7 @@ public class LoginViewController implements Initializable {
             
         } else{
             authenticated = false;
+            invalidResponse.setText("Incorrect Username or Password");
         }
         return authenticated;
     }
