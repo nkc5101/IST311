@@ -25,12 +25,11 @@ public class LoginViewController implements Initializable {
       
         switchPanels = true;
         System.out.println("Boom");
-                        System.out.println("You clicked me!");
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
         Scene search_view_scene = new Scene(search_view_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(search_view_scene);
-        app_stage.show();
+        Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        login_stage.setScene(search_view_scene);
+        login_stage.show();
     }
     
     
