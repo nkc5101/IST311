@@ -4,22 +4,27 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
  
 public class LoginViewController implements Initializable {
-    @FXML private Text actiontarget;
+    
     public boolean switchPanels = false;
     
     
-    @FXML protected void handleSubmitButtonAction(ActionEvent event) throws IOException {
-        //actiontarget.setText("Sign in button pressed");
-        
+    /**
+     *
+     * @param event
+     */
+    @FXML protected void handleSubmitButtonAction(ActionEvent event){
+      
         switchPanels = true;
-        System.out.println("boom");
-        
+        System.out.println("Boom");
     }
     
-    @FXML protected void handleCreateProfileButtonAction(ActionEvent event) throws IOException {
+    
+    
+    @FXML public void handleCreateProfileButtonAction(ActionEvent event) {
         
         switchPanels = true;
         System.out.println("bang");
