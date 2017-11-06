@@ -8,13 +8,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
  
 public class LoginViewController implements Initializable {
     
     public boolean switchPanels = false;
+    @FXML private Label invalidLabel;
+    @FXML private TextField usernameField;
+    @FXML private PasswordField passwordField;
     
     
     /**
@@ -25,12 +30,15 @@ public class LoginViewController implements Initializable {
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
     
         switchPanels = true;
-        System.out.println("Boom");
+        if(authenticated()){
+            System.out.println("Boom");
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
         Scene search_view_scene = new Scene(search_view_parent);
         Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         login_stage.setScene(search_view_scene);
         login_stage.show();
+        }
+        
     }
     
     
@@ -49,6 +57,25 @@ public class LoginViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+    
+    private boolean authenticated(){
+        String username = usernameField.getText();
+        String password = passwordField.toString();
+        UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+        String testUsername = testUser.getUsername();
+        String testPassword = testUser.getPassword();
+        boolean authenticated = false;
+        
+        if(testUsername.equals(username)){
+            if(testPassword.equals(password)){
+                authenticated = true;
+            }
+            
+        } else{
+            authenticated = false;
+        }
+        return authenticated;
     }
 
 }

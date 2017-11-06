@@ -26,7 +26,7 @@ public class NavController extends Application {
     NavViewController navigation;
     
     
-    UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
+    public UserProfile testUser = new UserProfile("username", "password", null, null, null, null);
      Parent root;
      Scene scene;
      Stage stage;
