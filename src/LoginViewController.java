@@ -71,13 +71,11 @@ public class LoginViewController implements Initializable {
         System.out.println(username);
         System.out.println(password);
         
-        if(testUsername.equals(username)){
-            if(testPassword.equals(password)){
-                authenticated = true;
-            }
-            
+        if(testUsername.equals(username) && testPassword.equals(password)){
+            authenticated = true;
         } else{
             authenticated = false;
+            passwordField.clear();
             invalidResponse.setText("Incorrect Username or Password");
         }
         return authenticated;
