@@ -31,7 +31,8 @@ public class LoginViewController implements Initializable {
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
     private UserProfile testUser = new UserProfile("username", "password", null, null, null, null, null);
-    ArrayList<Profile> testUsers = new ArrayList<Profile>();
+    private ArrayList<UserProfile> testUsers = new ArrayList<UserProfile>();
+    private UserProfile test;
     
     
     
@@ -75,12 +76,13 @@ public class LoginViewController implements Initializable {
         String phoneNumber = phoneNumberField.getText();
         String address = addressField.getText();
         String careerChoice = careerChoiceField.getText();
-        
+                
         if(newPassword.equals(reEnteredPassword)){
-            UserProfile test = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+            test = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
             testUsers.add(test);
             System.out.println(test.getUsername());
             System.out.println(test.getPassword());
+            System.out.println(testUsers.size());
             
             returnToLogin(event);
         }
@@ -108,6 +110,7 @@ public class LoginViewController implements Initializable {
             String testPassword = testUsers.get(i).getPassword();
             System.out.println(testUsername);
             System.out.println(testPassword);
+            System.out.println(testUsers.size());
             if(testUsername.equals(username) && testPassword.equals(password)){
             authenticated = true;
             
