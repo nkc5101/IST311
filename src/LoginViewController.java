@@ -20,9 +20,10 @@ public class LoginViewController implements Initializable {
     /**
      *
      * @param event
+     * @throws java.io.IOException
      */
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
-      
+    
         switchPanels = true;
         System.out.println("Boom");
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
