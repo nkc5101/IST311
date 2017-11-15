@@ -11,7 +11,7 @@
   <children>
     <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" />
     <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" />
-    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" />
+    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" onAction="#handleProfileButtonAction" />
     <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" text="Test Personality" />
     <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" text="Logoff" />
     <TextField layoutX="77.0" layoutY="45.0" prefWidth="200.0" />

@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,9 +31,9 @@ public class LoginViewController implements Initializable {
     @FXML private TextField phoneNumberField;
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
-    private UserProfile testUser = new UserProfile("username", "password", null, null, null, null, null);
-    private ArrayList<UserProfile> testUsers = new ArrayList<UserProfile>();
-    private UserProfile test;
+    private UserList listOfUsers = new UserList();
+    private ObservableList<UserProfile> theListOfUsers;
+   
     
     
     
@@ -42,14 +43,18 @@ public class LoginViewController implements Initializable {
      * @throws java.io.IOException
      */
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
-    
-        switchPanels = true;
-        if(authenticated()){
+        
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        if(listOfUsers.Authenticate(username, password)){
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
         Scene search_view_scene = new Scene(search_view_parent, 600, 600);
         Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         login_stage.setScene(search_view_scene);
         login_stage.show();
+        } else{
+           passwordField.clear();
+           invalidResponse.setText("Incorrect Username or Password");
         }
         
     }
@@ -76,14 +81,11 @@ public class LoginViewController implements Initializable {
         String phoneNumber = phoneNumberField.getText();
         String address = addressField.getText();
         String careerChoice = careerChoiceField.getText();
+        
                 
         if(newPassword.equals(reEnteredPassword)){
-            test = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
-            testUsers.add(test);
-            System.out.println(test.getUsername());
-            System.out.println(test.getPassword());
-            System.out.println(testUsers.size());
-            
+            listOfUsers.addUserData(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+            System.out.println(listOfUsers.size());
             returnToLogin(event);
         }
         
@@ -98,31 +100,7 @@ public class LoginViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
     
-    private boolean authenticated(){
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        testUsers.add(testUser);
-        boolean authenticated = false;
-        
-        
-        for(int i=0; i<testUsers.size(); i++){
-            String testUsername = testUsers.get(i).getUsername();
-            String testPassword = testUsers.get(i).getPassword();
-            System.out.println(testUsername);
-            System.out.println(testPassword);
-            System.out.println(testUsers.size());
-            if(testUsername.equals(username) && testPassword.equals(password)){
-            authenticated = true;
-            
-            } 
-        }
-        if(!authenticated){
-            passwordField.clear();
-            invalidResponse.setText("Incorrect Username or Password");
-        }
-        
-        return authenticated;
-    }
+   
     
     private void returnToLogin(ActionEvent event) throws IOException{
         Parent loginParent = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
