@@ -20,6 +20,8 @@ public class UserList {
     public UserList(){
         listOfUsers = FXCollections.observableArrayList();
         listOfUsers = getTestUsers();
+        UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer");
+        listOfUsers.add(test);
     }
     
     public ObservableList<UserProfile> getUserData(){
@@ -27,8 +29,7 @@ public class UserList {
     }
     
     public ObservableList<UserProfile> getTestUsers(){
-        UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer");
-        listOfUsers.add(test);
+        
         return listOfUsers;
     }
     
@@ -42,14 +43,15 @@ public class UserList {
         return listOfUsers.size();
     }
     
-    public boolean Authenticate(String username, String password){
+    public boolean Authenticate(String username, String password, ObservableList<UserProfile> listOfUsers){
         boolean authenticated = false;
-        for(int i = 0; i<listOfUsers.size(); i++){
-            String testUsername = listOfUsers.get(i).getUsername();
-            String testPassword = listOfUsers.get(i).getPassword();
+        this.listOfUsers = listOfUsers;
+        for(int i = 0; i<this.listOfUsers.size(); i++){
+            String testUsername = this.listOfUsers.get(i).getUsername();
+            String testPassword = this.listOfUsers.get(i).getPassword();
             System.out.println(testUsername);
             System.out.println(testPassword);
-            System.out.println(listOfUsers.size());
+            System.out.println(size());
              if(username.equals(testUsername) && password.equals(testPassword)){
             authenticated = true;
             

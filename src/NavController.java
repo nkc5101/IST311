@@ -45,17 +45,4 @@ public class NavController extends Application {
         
     }
       
-    public void switchToSearch() throws IOException
-    {
-        if(login.getSwitchPanels())
-        {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavView.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            System.out.println("Here we are");
-            scene = new Scene(root, 600, 600);
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
-  
 }

@@ -32,21 +32,18 @@ public class LoginViewController implements Initializable {
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
     private UserList listOfUsers = new UserList();
-    private ObservableList<UserProfile> theListOfUsers;
+    private ObservableList<UserProfile> theListOfUsers = listOfUsers.getTestUsers();
    
     
     
     
-    /**
-     *
-     * @param event
-     * @throws java.io.IOException
-     */
+    
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
         
         String username = usernameField.getText();
         String password = passwordField.getText();
-        if(listOfUsers.Authenticate(username, password)){
+        System.out.println(theListOfUsers.size());
+        if(listOfUsers.Authenticate(username, password, theListOfUsers)){
         Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
         Scene search_view_scene = new Scene(search_view_parent, 600, 600);
         Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -82,18 +79,15 @@ public class LoginViewController implements Initializable {
         String address = addressField.getText();
         String careerChoice = careerChoiceField.getText();
         
+        
                 
         if(newPassword.equals(reEnteredPassword)){
-            listOfUsers.addUserData(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+            UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+            theListOfUsers.add(newUser);
             System.out.println(listOfUsers.size());
-            returnToLogin(event);
+            returnToLogin(event, theListOfUsers);
         }
         
-    }
-    
-    public boolean getSwitchPanels()
-    {
-        return switchPanels;
     }
 
     @Override
@@ -102,7 +96,8 @@ public class LoginViewController implements Initializable {
     
    
     
-    private void returnToLogin(ActionEvent event) throws IOException{
+    private void returnToLogin(ActionEvent event, ObservableList<UserProfile> theListOfUsers) throws IOException{
+        this.theListOfUsers = theListOfUsers;
         Parent loginParent = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
         Scene loginScene = new Scene(loginParent, 600, 600);
         Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
