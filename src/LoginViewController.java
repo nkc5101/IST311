@@ -31,8 +31,7 @@ public class LoginViewController implements Initializable {
     @FXML private TextField phoneNumberField;
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
-    private UserList listOfUsers = new UserList();
-    private ObservableList<UserProfile> theListOfUsers = listOfUsers.getTestUsers();
+    private ObservableList<UserProfile> theListOfUsers;
    
     
     

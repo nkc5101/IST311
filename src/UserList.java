@@ -33,10 +33,8 @@ public class UserList {
         return listOfUsers;
     }
     
-    public void addUserData(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice){
-        UserProfile test = new UserProfile(username, password, email, phoneNumber, address, name, careerChoice);
-        System.out.println(test);
-        listOfUsers.add(test);
+    public void addUserData(UserProfile user){
+        listOfUsers.add(user);
     }
     
     public int size(){
