@@ -23,6 +23,7 @@ public class UserProfile extends Profile implements Editable {
     private String email;
     private String careerChoice;
     private String careerProfile;
+    private String personality;
 
     UserProfile(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice) {
         super(username, password, phoneNumber, address);
@@ -104,6 +105,14 @@ public class UserProfile extends Profile implements Editable {
     
     public String getCareerProfile(){
         return careerProfile;
+    }
+    
+    public void setPersonality(String personality){
+        this.personality = personality;
+    }
+    
+    public String getPersonality(){
+        return personality;
     }
 
     @Override

@@ -39,4 +39,8 @@ public class PersistentDataCollection {
         theUserList.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
     
+    public void addPersonality(String personality){
+        theUserList.addPersonality(personality);
+    }
+    
 }

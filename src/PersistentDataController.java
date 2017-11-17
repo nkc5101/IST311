@@ -46,5 +46,9 @@ public class PersistentDataController {
         thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
     
+    public void addPersonality(String personality){
+        thePersistentDataCollection.addPersonality(personality);
+    }
+    
     
 }

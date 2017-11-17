@@ -75,4 +75,8 @@ public class UserList {
         loginUser.setEmail(email);
     }
     
+    public void addPersonality(String personality){
+        loginUser.setPersonality(personality);
+    }
+    
 }

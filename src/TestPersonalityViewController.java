@@ -87,7 +87,9 @@ public class TestPersonalityViewController implements Initializable {
         int w = workHard.getValue();
         int l = loveAction.getValue();
 
-        testPersonality(c, m, w, l);
+        String personality = testPersonality(c, m, w, l);
+        
+        PersistentDataController.getPersistentDataCntl().addPersonality(personality);
 
     }
 
