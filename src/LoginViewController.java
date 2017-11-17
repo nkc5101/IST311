@@ -41,8 +41,7 @@ public class LoginViewController implements Initializable {
         
         String username = usernameField.getText();
         String password = passwordField.getText();
-        System.out.println(theListOfUsers.size());
-        if(listOfUsers.Authenticate(username, password, theListOfUsers)){
+        if(PersistentDataController.getPersistentDataCntl().authenticate(username, password)){
             Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
             Scene search_view_scene = new Scene(search_view_parent, 600, 600);
             Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -82,9 +81,8 @@ public class LoginViewController implements Initializable {
                 
         if(newPassword.equals(reEnteredPassword)){
             UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
-            theListOfUsers.add(newUser);
-            System.out.println(listOfUsers.size());
-            returnToLogin(event, theListOfUsers);
+            PersistentDataController.getPersistentDataCntl().addPersistentData(newUser);
+            returnToLogin(event);
         }
         
     }
@@ -95,8 +93,8 @@ public class LoginViewController implements Initializable {
     
    
     
-    private void returnToLogin(ActionEvent event, ObservableList<UserProfile> theListOfUsers) throws IOException{
-        this.theListOfUsers = theListOfUsers;
+    private void returnToLogin(ActionEvent event) throws IOException{
+        
         Parent loginParent = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
         Scene loginScene = new Scene(loginParent, 600, 600);
         Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

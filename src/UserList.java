@@ -41,9 +41,10 @@ public class UserList {
         return listOfUsers.size();
     }
     
-    public boolean Authenticate(String username, String password, ObservableList<UserProfile> listOfUsers){
+    public boolean Authenticate(String username, String password){
+        
         boolean authenticated = false;
-        this.listOfUsers = listOfUsers;
+        
         for(int i = 0; i<this.listOfUsers.size(); i++){
             String testUsername = this.listOfUsers.get(i).getUsername();
             String testPassword = this.listOfUsers.get(i).getPassword();

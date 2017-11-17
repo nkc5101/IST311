@@ -26,6 +26,9 @@ public class PersistentDataCollection {
     public void addUserList(UserProfile user){
         theUserList.addUserData(user);
     }
-
+    
+    public boolean authenticate(String username, String password){
+         return theUserList.Authenticate(username, password);
+    }
     
 }

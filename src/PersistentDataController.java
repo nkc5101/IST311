@@ -34,5 +34,9 @@ public class PersistentDataController {
         thePersistentDataCollection.addUserList(user);
     }
     
+    public boolean authenticate(String username, String password){
+        return thePersistentDataCollection.authenticate(username, password);
+    }
+    
     
 }
