@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 public class UserList {
     
     private ObservableList<UserProfile> listOfUsers;
+    private UserProfile loginUser;
     
     
     public UserList(){
@@ -53,10 +54,24 @@ public class UserList {
             System.out.println(size());
              if(username.equals(testUsername) && password.equals(testPassword)){
             authenticated = true;
+            loginUser = listOfUsers.get(i);
             
             } 
          }
         return authenticated;
+    }
+    
+    public UserProfile getLoginUser(){
+        return loginUser;
+    }
+    
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
+        loginUser.setUsername(username);
+        loginUser.setPassword(password);
+        loginUser.setAddress(address);
+        loginUser.setPhoneNumber(phoneNumber);
+        loginUser.setName(name);
+        loginUser.setComments(description);
     }
     
 }

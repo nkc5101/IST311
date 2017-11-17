@@ -31,4 +31,12 @@ public class PersistentDataCollection {
          return theUserList.Authenticate(username, password);
     }
     
+    public UserProfile getLoginUser(){
+        return theUserList.getLoginUser();
+    }
+    
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
+        theUserList.updateUser(username, password, address, phoneNumber, name, description);
+    }
+    
 }

@@ -38,5 +38,13 @@ public class PersistentDataController {
         return thePersistentDataCollection.authenticate(username, password);
     }
     
+    public UserProfile getUser(){
+        return thePersistentDataCollection.getLoginUser();
+    }
+    
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
+        thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, description);
+    }
+    
     
 }
