@@ -14,9 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javax.swing.JSlider;
 
 /**
  * FXML Controller class
@@ -25,14 +25,10 @@ import javax.swing.JSlider;
  */
 public class TestPersonalityViewController implements Initializable {
 
-    @FXML
-    JSlider charge;
-    @FXML
-    JSlider makeFriends;
-    @FXML
-    JSlider workHard;
-    @FXML
-    JSlider loveAction;
+    @FXML Slider sliderOne;
+    @FXML Slider sliderTwo;
+    @FXML Slider sliderThree;
+    @FXML Slider sliderFour;
 
     /**
      * Initializes the controller class.
@@ -82,10 +78,10 @@ public class TestPersonalityViewController implements Initializable {
 
     @FXML
     private void handleSubmitButtonAction(ActionEvent event) throws IOException {
-        int c = charge.getValue();
-        int m = makeFriends.getValue();
-        int w = workHard.getValue();
-        int l = loveAction.getValue();
+        int c = (int) sliderOne.getValue();
+        int m = (int) sliderTwo.getValue();
+        int w = (int) sliderThree.getValue();
+        int l = (int) sliderFour.getValue();
 
         String personality = testPersonality(c, m, w, l);
         
