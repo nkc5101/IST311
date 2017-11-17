@@ -16,11 +16,11 @@
       <Label layoutX="116.0" layoutY="131.0" text="Label" />
       <Label layoutX="116.0" layoutY="173.0" text="Label" />
       <Label layoutX="116.0" layoutY="213.0" text="Label" />
-      <Button layoutX="73.0" layoutY="299.0" mnemonicParsing="false" text="Home" />
-      <Button layoutX="164.0" layoutY="299.0" mnemonicParsing="false" text="Search" />
-      <Button layoutX="258.0" layoutY="299.0" mnemonicParsing="false" text="Profile" />
-      <Button layoutX="345.0" layoutY="299.0" mnemonicParsing="false" text="Test Personality" />
-      <Button layoutX="492.0" layoutY="299.0" mnemonicParsing="false" text="Log Off" />
-      <Button layoutX="437.0" layoutY="168.0" mnemonicParsing="false" text="Submit Test" />
+      <Button layoutX="73.0" layoutY="299.0" mnemonicParsing="false" text="Home" onAction="#handleHomeButtonAction"/>
+      <Button layoutX="164.0" layoutY="299.0" mnemonicParsing="false" text="Search" onAction="#handleSearchButtonAction" />
+      <Button layoutX="258.0" layoutY="299.0" mnemonicParsing="false" text="Profile" onAction="#handleProfileButtonAction"/>
+      <Button layoutX="345.0" layoutY="299.0" mnemonicParsing="false" text="Test Personality"/>
+      <Button layoutX="492.0" layoutY="299.0" mnemonicParsing="false" text="Log Off" onAction="#handleLogOffButtonAction"/>
+      <Button layoutX="437.0" layoutY="168.0" mnemonicParsing="false" text="Submit Test" onAction="#handleSubmitButtonAction"/>
    </children>
 </AnchorPane>
