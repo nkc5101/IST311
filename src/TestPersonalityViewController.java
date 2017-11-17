@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class TestPersonalityViewController implements Initializable {
     @FXML Slider sliderTwo;
     @FXML Slider sliderThree;
     @FXML Slider sliderFour;
+    @FXML Label resultLabel;
 
     /**
      * Initializes the controller class.
@@ -86,6 +88,8 @@ public class TestPersonalityViewController implements Initializable {
         String personality = testPersonality(c, m, w, l);
         
         PersistentDataController.getPersistentDataCntl().addPersonality(personality);
+        
+        resultLabel.setText("Your result is: " + personality);
 
     }
 
@@ -109,6 +113,10 @@ public class TestPersonalityViewController implements Initializable {
             result = "good teammates";
             System.out.println(result);
 
+        }else
+        {
+            result = "not available";
+            System.out.println(c + " " + m + " " + w + " " + l);
         }
         return result;
     }
