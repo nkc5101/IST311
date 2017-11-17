@@ -5,55 +5,28 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane fx:controller="ProfileViewController" 
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
- 
-    <Label text="Username"
-           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
- 
-    <TextField fx:id="newUsernameField"
-               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
- 
-    <Label text="Password:"
-           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
- 
-    <PasswordField fx:id="newPasswordField" 
-                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <Label text="Address:"
-           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-
-    <PasswordField fx:id="addressField"
-                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-
-    <Label text="Phone:"
-           GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-
-    <TextField fx:id="phoneField"
-               GridPane.columnIndex="1" GridPane.rowIndex="4"/> 
-
-    <Label text="Name:"
-           GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-
-    <TextField fx:id="nameField"
-               GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-
-    <Label text="Description:"
-           GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-
-    <TextField fx:id="descriptionField"
-               GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-
-
-
-
-    <HBox spacing="10" alignment="bottom_right" 
-          GridPane.columnIndex="1" GridPane.rowIndex="10">
-        <Button text="Update Profile" onAction="#handleUpdateProfileButtonAction"    
-        />
-        
-    </HBox>
-
-
-
-</GridPane>
+<AnchorPane prefHeight="430.9609375" prefWidth="525.5078125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ProfileViewController">
+  <Label layoutX="120.0" layoutY="40.0" text="Username" />
+  <TextField fx:id="newUsernameField" layoutX="189.0" layoutY="34.0" />
+  <Label layoutX="121.0" layoutY="67.0" text="Password:" />
+  <PasswordField fx:id="newPasswordField" layoutX="189.0" layoutY="61.0" />
+  <Label layoutX="143.0" layoutY="119.0" text="Email:" />
+  <TextField fx:id="emailField" layoutX="189.0" layoutY="119.0" />
+  <Label layoutX="139.0" layoutY="151.0" text="Name:" />
+  <TextField fx:id="nameField" layoutX="189.0" layoutY="151.0" />
+  <Label layoutX="90.0" layoutY="188.0" text="Phone Number:" />
+  <TextField fx:id="phoneField" layoutX="189.0" layoutY="185.0" />
+  <Label layoutX="97.0" layoutY="215.0" text="Career Choice:" />
+  <TextField fx:id="careerChoiceField" layoutX="189.0" layoutY="215.0" />
+  <Label layoutX="128.0" layoutY="244.0" text="Address:" />
+  <TextField fx:id="addressField" layoutX="189.0" layoutY="249.0" />
+  <Button layoutX="394.0" layoutY="245.0" onAction="#handleUpdateProfileButtonAction" text="Update Profile" />
+  <Button layoutX="19.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
+  <Button layoutX="110.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
+  <Button layoutX="204.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+  <Button layoutX="291.0" layoutY="358.0" mnemonicParsing="false" text="Test Personality" onAction="#handleTestPersonalityButtonAction"/>
+  <Button layoutX="438.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
+  <TextField layoutX="190.0" layoutY="87.0" prefWidth="145.0" />
+  <Label layoutX="99.0" layoutY="93.0" text="Career Profile:" />
+</AnchorPane>
