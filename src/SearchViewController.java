@@ -43,7 +43,7 @@ public class SearchViewController implements Initializable {
     } 
     
     @FXML protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException{
-        Parent testPersonalityViewParent = FXMLLoader.load(getClass().getResource("TestPersonality.fxml"));
+        Parent testPersonalityViewParent = FXMLLoader.load(getClass().getResource("TestPersonalityView.fxml"));
         Scene testPersonalityViewScene = new Scene(testPersonalityViewParent, 600, 600);
         Stage testPersonalityStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         testPersonalityStage.setScene(testPersonalityViewScene);
