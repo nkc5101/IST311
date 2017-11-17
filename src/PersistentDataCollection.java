@@ -35,8 +35,8 @@ public class PersistentDataCollection {
         return theUserList.getLoginUser();
     }
     
-    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
-        theUserList.updateUser(username, password, address, phoneNumber, name, description);
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email){
+        theUserList.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
     
 }

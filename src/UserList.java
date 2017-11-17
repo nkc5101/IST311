@@ -65,13 +65,14 @@ public class UserList {
         return loginUser;
     }
     
-    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email){
         loginUser.setUsername(username);
         loginUser.setPassword(password);
         loginUser.setAddress(address);
         loginUser.setPhoneNumber(phoneNumber);
         loginUser.setName(name);
-        loginUser.setComments(description);
+        loginUser.setCareerProfile(careerProfile);
+        loginUser.setEmail(email);
     }
     
 }

@@ -29,16 +29,20 @@ public class ProfileViewController implements Initializable {
     @FXML TextField nameField;
     @FXML TextField addressField;
     @FXML TextField phoneField;
-    @FXML TextField descriptionField;
+    @FXML TextField careerProfileField;
+    @FXML TextField emailField;
+    @FXML TextField careerChoiceField;
     UserProfile user = PersistentDataController.getPersistentDataCntl().getUser();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /*newUsernameField.setText(user.getUsername());
+        newUsernameField.setText(user.getUsername());
         newPasswordField.setText(user.getPassword());
         nameField.setText(user.getName());
         addressField.setText(user.getAddress());
         phoneField.setText(user.getPhonNumber());
-        descriptionField.setText(user.getComments());*/
+        careerProfileField.setText(user.getCareerProfile());
+        emailField.setText(user.getEmail());
+        careerChoiceField.setText(user.getCareerChoice());
         
     }  
     
@@ -48,9 +52,10 @@ public class ProfileViewController implements Initializable {
         String name = nameField.getText();
         String address = addressField.getText();
         String phoneNumber = phoneField.getText();
-        String description = descriptionField.getText();
+        String careerProfile = careerProfileField.getText();
+        String email = emailField.getText();
         
-        PersistentDataController.getPersistentDataCntl().updateUser(username, password, address, phoneNumber, name, description);
+        PersistentDataController.getPersistentDataCntl().updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
     
         @FXML private void handleHomeButtonAction(ActionEvent event) throws IOException{

@@ -42,8 +42,8 @@ public class PersistentDataController {
         return thePersistentDataCollection.getLoginUser();
     }
     
-    public void updateUser(String username, String password, String address, String phoneNumber, String name, String description){
-        thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, description);
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email){
+        thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
     
     

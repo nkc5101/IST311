@@ -22,6 +22,7 @@ public class UserProfile extends Profile implements Editable {
     private ArrayList files = new ArrayList();
     private String email;
     private String careerChoice;
+    private String careerProfile;
 
     UserProfile(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice) {
         super(username, password, phoneNumber, address);
@@ -95,6 +96,14 @@ public class UserProfile extends Profile implements Editable {
 
     public void addFile(File file) {
         files.add(file);
+    }
+    
+    public void setCareerProfile(String careerProfile){
+        this.careerProfile = careerProfile;
+    }
+    
+    public String getCareerProfile(){
+        return careerProfile;
     }
 
     @Override
