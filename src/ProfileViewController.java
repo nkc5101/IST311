@@ -26,7 +26,7 @@ public class ProfileViewController implements Initializable {
     }  
     
     @FXML private void handleUpdateProfileButtonAction(ActionEvent event){
-        
+        System.out.println("It works");
     }
     
 }

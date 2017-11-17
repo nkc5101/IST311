@@ -26,7 +26,7 @@ public class TestPersonalityViewController implements Initializable {
     }   
     
     @FXML private void handleTestButtonAction(ActionEvent event){
-        
+        System.out.println("It works");
     }
     
 }
