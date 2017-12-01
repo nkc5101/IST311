@@ -6,24 +6,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="430.9609375" prefWidth="525.5078125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="LoginViewController">
-  <Label layoutX="120.0" layoutY="40.0" text="Username" />
-  <TextField fx:id="newUsernameField" layoutX="189.0" layoutY="34.0" />
-  <Label layoutX="121.0" layoutY="67.0" text="Password:" />
-  <PasswordField fx:id="newPasswordField" layoutX="189.0" layoutY="61.0" />
-  <Label layoutX="72.0" layoutY="94.0" text="Re-enter Password:" />
-  <PasswordField fx:id="reEnterPasswordField" layoutX="189.0" layoutY="88.0" />
-  <Label layoutX="143.0" layoutY="119.0" text="Email:" />
-  <TextField fx:id="emailField" layoutX="189.0" layoutY="119.0" />
-  <Label layoutX="139.0" layoutY="151.0" text="Name:" />
-  <TextField fx:id="nameField" layoutX="189.0" layoutY="151.0" />
-  <Label layoutX="90.0" layoutY="188.0" text="Phone Number:" />
-  <TextField fx:id="phoneNumberField" layoutX="189.0" layoutY="185.0" />
-  <Label layoutX="97.0" layoutY="215.0" text="Career Choice:" />
-  <TextField fx:id="careerChoiceField" layoutX="189.0" layoutY="215.0" />
-  <Label layoutX="128.0" layoutY="244.0" text="Address:" />
-  <TextField fx:id="addressField" layoutX="189.0" layoutY="249.0" />
-  <Button layoutX="242.0" layoutY="346.0" onAction="#handleProfileCreation" text="Create Profile" />
-  <TextField layoutX="189.0" layoutY="285.0" prefWidth="145.0" />
-  <Label layoutX="101.0" layoutY="285.0" text="Career Profile:" />
+<AnchorPane prefHeight="465.9609375" prefWidth="525.5078125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="LoginViewController">
+  <Label layoutX="176.0" layoutY="109.0" text="Username" />
+  <TextField fx:id="newUsernameField" layoutX="245.0" layoutY="103.0" />
+  <Label layoutX="177.0" layoutY="136.0" text="Password:" />
+  <PasswordField fx:id="newPasswordField" layoutX="245.0" layoutY="130.0" />
+  <Label layoutX="128.0" layoutY="163.0" text="Re-enter Password:" />
+  <PasswordField fx:id="reEnterPasswordField" layoutX="245.0" layoutY="157.0" />
+  <Label layoutX="199.0" layoutY="188.0" text="Email:" />
+  <TextField fx:id="emailField" layoutX="245.0" layoutY="188.0" />
+  <Label fx:id="nameLabel" layoutX="195.0" layoutY="220.0" text="Name:" />
+  <TextField fx:id="nameField" layoutX="245.0" layoutY="220.0" />
+  <Label layoutX="146.0" layoutY="257.0" text="Phone Number:" />
+  <TextField fx:id="phoneNumberField" layoutX="245.0" layoutY="254.0" />
+  <Label fx:id="careerChoiceLabel" layoutX="153.0" layoutY="284.0" text="Career Choice:" />
+  <TextField fx:id="careerChoiceField" layoutX="245.0" layoutY="284.0" />
+  <Label layoutX="184.0" layoutY="313.0" text="Address:" />
+  <TextField fx:id="addressField" layoutX="245.0" layoutY="318.0" />
+  <Button layoutX="298.0" layoutY="415.0" onAction="#handleProfileCreation" text="Create Profile" />
+  <TextField fx:id="careerProfileTextField" layoutX="245.0" layoutY="354.0" prefWidth="145.0" />
+  <Label fx:id="careerProfileLabel" layoutX="157.0" layoutY="354.0" text="Career Profile:" />
+  <RadioButton fx:id="userCreation" layoutX="152.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleUserProfileCreation" selected="true" text="Job Seeker">
+    <toggleGroup>
+      <ToggleGroup fx:id="profileCreation" />
+    </toggleGroup>
+  </RadioButton>
+  <RadioButton fx:id="employerCreation" layoutX="355.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleEmployerProfileCreation" text="Employer" toggleGroup="$profileCreation" />
 </AnchorPane>

@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -32,10 +33,39 @@ public class LoginViewController implements Initializable {
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
     Stage theStage;
+        @FXML private RadioButton userCreation;
+    @FXML private RadioButton employerCreation;
+    @FXML private Label careerChoiceLabel;
+    @FXML private Label careerProfileLabel;
+    @FXML private Label nameLabel;
+    @FXML private TextField careerProfileTextField;
+    
+    public boolean profileType = true;
     
    
     
+        @FXML public void handleUserProfileCreation(ActionEvent event) throws IOException
+    {
+        Parent createProfileParent = FXMLLoader.load(getClass().getResource("CreateProfile.fxml"));
+        Scene createProfileScene = new Scene(createProfileParent, 600, 600);
+        Stage createProfileStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        createProfileStage.setScene(createProfileScene);
+        createProfileStage.show();
+        
+        profileType = true;
+    }
     
+    @FXML public void handleEmployerProfileCreation(ActionEvent event)
+    {
+        careerChoiceLabel.setText("Location:");
+        nameLabel.setText("Company Name:");
+        nameLabel.setLayoutX(140);
+        careerChoiceLabel.setLayoutX(180);
+        careerProfileLabel.setVisible(false);
+        careerProfileTextField.setVisible(false);
+        
+        profileType = false;
+    }
     
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
@@ -73,24 +103,34 @@ public class LoginViewController implements Initializable {
     
     @FXML public void handleProfileCreation(ActionEvent event) throws IOException{
         
-        String newUsername = newUsernameField.getText();
-        String newPassword = newPasswordField.getText();
-        String reEnteredPassword = reEnterPasswordField.getText();
-        String email = emailField.getText();
-        String name = nameField.getText();
-        String phoneNumber = phoneNumberField.getText();
-        String address = addressField.getText();
-        String careerChoice = careerChoiceField.getText();
-        
-        
-                
-        if(newPassword.equals(reEnteredPassword)){
-            UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
-            PersistentDataController.getPersistentDataCntl().addPersistentData(newUser);
-            returnToLogin(event);
+        if(profileType == true)
+        {
+            String newUsername = newUsernameField.getText();
+            String newPassword = newPasswordField.getText();
+            String reEnteredPassword = reEnterPasswordField.getText();
+            String email = emailField.getText();
+            String name = nameField.getText();
+            String phoneNumber = phoneNumberField.getText();
+            String address = addressField.getText();
+            String careerChoice = careerChoiceField.getText();
+
+
+
+            if(newPassword.equals(reEnteredPassword)){
+                UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+                PersistentDataController.getPersistentDataCntl().addPersistentData(newUser);
+                returnToLogin(event);
+            }
+        }
+        if(profileType == false)
+        {
+            System.out.println("employee created");
         }
         
+        
+        
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

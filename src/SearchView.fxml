@@ -11,8 +11,8 @@
   <children>
     <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" />
     <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" />
-    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" onAction="#handleProfileButtonAction" />
-    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" text="Test Personality" onAction="#handleTestPersonalityButtonAction" />
+    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
     <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" text="Logoff" />
     <TextField layoutX="77.0" layoutY="45.0" prefWidth="200.0" />
     <Label layoutX="28.0" layoutY="48.0" text="Search:" />
@@ -21,9 +21,8 @@
     <TableView layoutX="77.0" layoutY="91.0" prefHeight="200.0" prefWidth="430.0">
       <columns>
         <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="219.0" text="Job Name" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="210.0" text="Link" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="210.0" text="Link" fx:id="searchTable" />
       </columns>
     </TableView>
-    <ScrollBar layoutX="507.0" layoutY="91.0" orientation="VERTICAL" prefHeight="200.0" />
   </children>
 </AnchorPane>
