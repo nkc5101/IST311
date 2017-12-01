@@ -16,7 +16,7 @@ import javafx.collections.ObservableList;
  */
 public class UserList implements Serializable {
     
-    private ArrayList<UserProfile> listOfUsers;
+    private ArrayList<UserProfile> listOfUsers = new ArrayList<>();
     private UserProfile loginUser;
     
     
