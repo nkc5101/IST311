@@ -19,16 +19,19 @@ public class PersistentDataController {
     private static PersistentDataController thePersistentDataCntl;
     private PersistentDataCollection thePersistentDataCollection;
     private final String savedDataPath = "";
-    private final String fileName = "jobData.ser";
+    private final String fileName = "profileData.ser";
+        private final String jobFileName = "jobData.ser";
+
 
     private PersistentDataController() {
         readSerializedData();
         if (thePersistentDataCollection == null) 
         {
             thePersistentDataCollection = new PersistentDataCollection();
-        }
-        writeSerializedData();
+            writeSerializedData();
         readSerializedData();
+        }
+        
 
     }
 

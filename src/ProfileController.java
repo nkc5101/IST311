@@ -24,6 +24,7 @@ class ProfileController {
     private ProfileController(Stage theStage){
         stage = theStage;
         this.setUpProfileScene();
+        stage.show();
     }
 
     public static ProfileController getProfileController(Stage theExistingStage) {

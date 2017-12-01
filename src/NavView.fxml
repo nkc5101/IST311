@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="NavViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NavViewController">
   <Label layoutX="150.0" layoutY="58.0" text="Welcome To Spark!">
     <font>
       <Font size="35.0" />
     </font>
   </Label>
   <Label layoutX="181.0" layoutY="145.0" text="Please select one of the following to proceed" />
-    <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home"/>
-    <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" onAction = "#handleSearchButtonAction" fx:id = "actionTarget"/>
-    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" onAction = "#handleProfileButtonAction" />
+    <Button fx:id="actionTarget" layoutX="158.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
+    <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" />
+    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+   <Button layoutX="319.0" layoutY="331.0" mnemonicParsing="false" text="Test Personality" onAction="#handleTestPersonalityButtonAction"/>
+   <Button layoutX="473.0" layoutY="331.0" mnemonicParsing="false" text="Log Off" onAction="#handleLogOffButtonAction"/>
 
 </AnchorPane>

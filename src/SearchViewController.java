@@ -29,6 +29,7 @@ public class SearchViewController implements Initializable {
     
     private ArrayList<Job> jobList;
     @FXML private TableView searchTable;
+    @FXML Stage theStage;
 
     
     @Override
@@ -44,19 +45,15 @@ public class SearchViewController implements Initializable {
      * @throws IOException
      */
     @FXML protected void handleProfileButtonAction(ActionEvent event) throws IOException{
-        Parent profileViewParent = FXMLLoader.load(getClass().getResource("ProfileView.fxml"));
-        Scene profileViewScene = new Scene(profileViewParent, 600, 600);
-        Stage profileStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        profileStage.setScene(profileViewScene);
-        profileStage.show();
+        theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+        ProfileController.getProfileController(theStage);
     } 
     
     @FXML protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException{
-        Parent testPersonalityViewParent = FXMLLoader.load(getClass().getResource("TestPersonalityView.fxml"));
-        Scene testPersonalityViewScene = new Scene(testPersonalityViewParent, 600, 600);
-        Stage testPersonalityStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        testPersonalityStage.setScene(testPersonalityViewScene);
-        testPersonalityStage.show();
+        theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+        TestPersonalityController.getTestPersonalityController(theStage);
     } 
     
 }
