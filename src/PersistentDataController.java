@@ -23,7 +23,8 @@ public class PersistentDataController {
 
     private PersistentDataController() {
         readSerializedData();
-        if (thePersistentDataCollection == null) {
+        if (thePersistentDataCollection == null) 
+        {
             thePersistentDataCollection = new PersistentDataCollection();
         }
         writeSerializedData();
