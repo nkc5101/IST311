@@ -1,5 +1,6 @@
 
 import java.io.File;
+import java.io.Serializable;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +12,7 @@ import java.io.File;
  *
  * @author Nate Cox
  */
-public class EmployerProfile extends Profile implements Editable {
+public class EmployerProfile extends Profile implements Editable, Serializable {
     
     private String companyName;
     private String location;

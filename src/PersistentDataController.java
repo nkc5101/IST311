@@ -76,7 +76,7 @@ public class PersistentDataController {
     }
 
     public void addPersistentData(UserProfile user) {
-        thePersistentDataCollection.addUserList(user);
+        thePersistentDataCollection.addUserData(user);
     }
 
     public boolean authenticate(String username, String password) {

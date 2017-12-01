@@ -1,3 +1,6 @@
+
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +11,7 @@
  *
  * @author Nate Cox
  */
-public class PersistentDataCollection {
+public class PersistentDataCollection implements Serializable {
     
     private UserList theUserList;
     // All other persistent data will go below here
@@ -23,7 +26,7 @@ public class PersistentDataCollection {
         return theUserList;
     }
     
-    public void addUserList(UserProfile user){
+    public void addUserData(UserProfile user){
         theUserList.addUserData(user);
     }
     

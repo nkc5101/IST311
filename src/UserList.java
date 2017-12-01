@@ -1,4 +1,6 @@
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,30 +14,33 @@ import javafx.collections.ObservableList;
  *
  * @author Nate Cox
  */
-public class UserList {
+public class UserList implements Serializable {
     
-    private ObservableList<UserProfile> listOfUsers;
+    private ArrayList<UserProfile> listOfUsers;
     private UserProfile loginUser;
     
     
     public UserList(){
-        listOfUsers = FXCollections.observableArrayList();
-        listOfUsers = getTestUsers();
+
         UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer");
         listOfUsers.add(test);
+        if(listOfUsers != null){
+            System.out.println("Why?");
+        }
     }
     
-    public ObservableList<UserProfile> getUserData(){
+    public ArrayList<UserProfile> getUserData(){
         return listOfUsers;
     }
     
-    public ObservableList<UserProfile> getTestUsers(){
+    public ArrayList<UserProfile> getTestUsers(){
         
         return listOfUsers;
     }
     
     public void addUserData(UserProfile user){
         listOfUsers.add(user);
+        PersistentDataController.getPersistentDataCntl().addPersistentData(user);
     }
     
     public int size(){

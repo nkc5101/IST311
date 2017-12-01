@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import java.util.Arrays;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,29 +21,54 @@ import javafx.stage.Stage;
  *
  * @author Nate Cox
  */
-public class NavController extends Application {
-    SearchViewController search = new SearchViewController();
-    LoginViewController login = new LoginViewController();
-    NavViewController navigation;
+public class NavController{
     
+    @FXML private Stage theStage;
+    private static NavController theNavController;
     
-    public UserProfile testUser = new UserProfile("username", "password", null, null, null, null, null);
-     Parent root;
-     Scene scene;
-     Stage stage;
+    private NavController(Stage theExistingStage){
+        theStage = theExistingStage;
+        this.setUpNavScene();
+        theStage.show();
+    }
     
-    
+    /**
+     *
+     * @param stage
+     */
+    public static NavController getNavController(Stage stage){
+        if(theNavController != null){
+            return theNavController;
+        } else{
+            theNavController = new NavController(stage);
+        }
+        return theNavController;
+    }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-       this.stage = stage;
-       root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
-       scene = new Scene(root, 600, 600);
-       this.stage.setTitle("Job Search");
-       this.stage.setScene(scene);
-       this.stage.show();
-       //switchToSearch();
+    private void setUpNavScene() {
+       Parent root;
+       Scene scene;
+       
+       try{
+           root = FXMLLoader.load(getClass().getResource("NavView.fxml"));
+            scene = new Scene(root);
+            theStage.setTitle("Navigation");
+            theStage.setScene(scene);
+            theStage.show();
+       } catch(Exception e){
+           e.printStackTrace();
+       }
+    }
+    
+    public void getProfileController(Stage theExistingStage){
+        ProfileController.getProfileController(theExistingStage);
         
     }
-      
+    
+    public void getSearchController(Stage theExistingStage){
+        SearchController.getSearchController(theExistingStage);
+    }
+    
+
+          
 }

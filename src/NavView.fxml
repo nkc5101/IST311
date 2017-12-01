@@ -14,9 +14,9 @@
     </font>
   </Label>
   <Label layoutX="181.0" layoutY="145.0" text="Please select one of the following to proceed" />
-    <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" />
-    <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" />
-    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" />
-    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" text="Test Personality" />
-    <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" text="Logoff" />
+    <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home"/>
+    <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" onAction = "#handleSearchButtonAction" fx:id = "actionTarget"/>
+    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" text="Profile" onAction = "#handleProfileButtonAction" />
+    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" text="Test Personality" onAction = "#handlePersonalityButtonAction" />
+    <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" text="Logoff" onAction = "#handleLogoffButtonAction" />
 </AnchorPane>

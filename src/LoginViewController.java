@@ -31,6 +31,8 @@ public class LoginViewController implements Initializable {
     @FXML private TextField phoneNumberField;
     @FXML private TextField addressField;
     @FXML private TextField careerChoiceField;
+    Stage theStage;
+    
    
     
     
@@ -38,14 +40,18 @@ public class LoginViewController implements Initializable {
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event)  throws IOException  {
         
+        
         String username = usernameField.getText();
         String password = passwordField.getText();
+        theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        
+
+
+        
         if(PersistentDataController.getPersistentDataCntl().authenticate(username, password)){
-            Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-            Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-            Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            login_stage.setScene(search_view_scene);
-            login_stage.show();
+           theStage.hide();
+           NavController.getNavController(theStage);
         } else{
            passwordField.clear();
            invalidResponse.setText("Incorrect Username or Password");
@@ -88,6 +94,7 @@ public class LoginViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+      
     }
     
    
