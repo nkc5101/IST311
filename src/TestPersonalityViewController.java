@@ -44,12 +44,9 @@ public class TestPersonalityViewController implements Initializable {
 
     @FXML
     private void handleHomeButtonAction(ActionEvent event) throws IOException {
-        System.out.println("It works");
-        Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-        Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-        Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        login_stage.setScene(search_view_scene);
-        login_stage.show();
+         theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+        NavController.getNavController(theStage);
     }
 
     @FXML

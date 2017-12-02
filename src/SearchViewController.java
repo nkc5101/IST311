@@ -58,6 +58,11 @@ public class SearchViewController implements Initializable {
      * @param event
      * @throws IOException
      */
+     @FXML private void handleHomeButtonAction(ActionEvent event) throws IOException{
+       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+        NavController.getNavController(theStage);
+    }
     @FXML protected void handleProfileButtonAction(ActionEvent event) throws IOException{
         theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
                 
@@ -69,5 +74,12 @@ public class SearchViewController implements Initializable {
                 
         TestPersonalityController.getTestPersonalityController(theStage);
     } 
+    @FXML
+    private void handleLogOffButtonAction(ActionEvent event) throws IOException {
+       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+                LoginController.getLoginController(theStage);
+
+    }
     
 }

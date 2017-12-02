@@ -43,5 +43,9 @@ public class NavViewController implements Initializable {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
         LoginController.getLoginController(theStage);
     }
+    @FXML private void handleHomeButtonAction(){
+        Stage theStage = (Stage) actionTarget.getScene().getWindow();
+        NavController.getNavController(theStage);
+    }
     
 }
