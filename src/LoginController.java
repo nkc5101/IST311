@@ -27,6 +27,7 @@ public class LoginController {
     
     public static LoginController getLoginController(Stage theStage){
         if(loginController != null){
+            loginController.setUpLoginControllerScene();
             return loginController;
         } else{
             loginController = new LoginController(theStage);
@@ -40,7 +41,7 @@ public class LoginController {
        
        try{
            root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
-            scene = new Scene(root);
+            scene = new Scene(root, 600, 600);
             stage.setTitle("Log in");
             stage.setScene(scene);
             stage.show();

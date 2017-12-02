@@ -28,6 +28,7 @@ public class TestPersonalityController {
 
     public static TestPersonalityController getTestPersonalityController(Stage theExistingStage) {
          if(testPersonalityController != null){
+            testPersonalityController.setUpPersonalityControllerScene();
             return testPersonalityController;
         } else{
             testPersonalityController = new TestPersonalityController(theExistingStage);
@@ -41,7 +42,7 @@ public class TestPersonalityController {
        
        try{
            root = FXMLLoader.load(getClass().getResource("TestPersonalityView.fxml"));
-            scene = new Scene(root);
+            scene = new Scene(root, 600, 600);
             stage.setTitle("Test Personality");
             stage.setScene(scene);
             stage.show();

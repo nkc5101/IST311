@@ -11,7 +11,7 @@
 public class PartTimeJob extends Job {
     private String shift;
     private int hours;
-    public PartTimeJob(String jobTitle,String jobDescription,String company,String datePosted,int[] salary,String link,String shift,int hours){
+    public PartTimeJob(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link,String shift,int hours){
         super(jobTitle,jobDescription,company,datePosted,salary,link);
         this.shift=shift;
         this.hours=hours;

@@ -29,6 +29,8 @@ class ProfileController {
 
     public static ProfileController getProfileController(Stage theExistingStage) {
          if(profileController != null){
+            
+            profileController.setUpProfileScene(); 
             return profileController;
         } else{
             profileController = new ProfileController(theExistingStage);
@@ -42,7 +44,7 @@ class ProfileController {
        
        try{
            root = FXMLLoader.load(getClass().getResource("ProfileView.fxml"));
-            scene = new Scene(root);
+            scene = new Scene(root, 600, 600);
             stage.setTitle("Profile");
             stage.setScene(scene);
             stage.show();

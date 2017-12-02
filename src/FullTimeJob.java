@@ -12,7 +12,7 @@ public class FullTimeJob extends Job{
     private String semester;
     private String desiredGPA;
     private String desiredExperience;
-    public FullTimeJob(String jobTitle,String jobDescription,String company,String datePosted,int[] salary,String link,String semester,String desiredGPA,String desiredExperience){
+    public FullTimeJob(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link,String semester,String desiredGPA,String desiredExperience){
         super(jobTitle,jobDescription,company,datePosted,salary,link);
         this.semester=semester;
         this.desiredGPA=desiredGPA;

@@ -27,6 +27,7 @@ class SearchController {
     
     public static SearchController getSearchController(Stage theStage){
         if(searchController != null){
+            searchController.setUpSearchScene();
             return searchController;
         } else{
             searchController = new SearchController(theStage);
@@ -40,7 +41,7 @@ class SearchController {
        
        try{
            root = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-            scene = new Scene(root);
+            scene = new Scene(root, 600, 600);
             stage.setTitle("Search");
             stage.setScene(scene);
             stage.show();

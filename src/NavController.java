@@ -38,6 +38,7 @@ public class NavController{
      */
     public static NavController getNavController(Stage stage){
         if(theNavController != null){
+            theNavController.setUpNavScene();
             return theNavController;
         } else{
             theNavController = new NavController(stage);
@@ -51,7 +52,7 @@ public class NavController{
        
        try{
            root = FXMLLoader.load(getClass().getResource("NavView.fxml"));
-            scene = new Scene(root);
+            scene = new Scene(root, 600, 600);
             theStage.setTitle("Navigation");
             theStage.setScene(scene);
             theStage.show();
