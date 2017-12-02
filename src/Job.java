@@ -14,10 +14,10 @@ public class Job {
     private String jobDescription = new String();
     private String company = new String();
     private String datePosted = new String();
-    private int[] salary;
+    private int salary;
     private String link = new String();
 
-    public Job(String jobTitle,String jobDescription,String company,String datePosted,int[] salary,String link) {
+    public Job(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link) {
         this.salary = salary;
         this.company=company;
         this.datePosted=datePosted;
@@ -26,6 +26,8 @@ public class Job {
         this.link=link;
 
     }
+
+    
     public String getJobTitle() {
         return jobTitle;
     }
@@ -58,11 +60,11 @@ public class Job {
         this.datePosted = datePosted;
     }
 
-    public int[] getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(int[] salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 

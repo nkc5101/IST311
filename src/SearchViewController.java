@@ -17,7 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -27,16 +29,28 @@ import javafx.stage.Stage;
  */
 public class SearchViewController implements Initializable {
     
-    private ArrayList<Job> jobList;
-    @FXML private TableView searchTable;
+    private ArrayList<Job> jobList = new ArrayList<>();
     @FXML Stage theStage;
+    
+    @FXML
+    private TableView<Job> jobTable = new TableView<Job>();
+    
+     @FXML
+    private TableColumn<Job, String> jobName = new TableColumn("Job Name");
+    @FXML
+    private TableColumn<Job, String> jobLink  = new TableColumn("Link");
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        jobList.add(new Job("k","k","l","k",1,"k"));
+        //jobTable.setItems((ObservableList) jobList);
         
-        searchTable.setItems((ObservableList) jobList);
+        jobName.setCellValueFactory(new PropertyValueFactory<Job,String>("jobTitle"));
+        jobLink.setCellValueFactory(new PropertyValueFactory<Job,String>("link"));
+        
+        //jobTable.setItems(getJobList());
     }    
     
     /**
