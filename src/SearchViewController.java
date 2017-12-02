@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,8 +19,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -28,58 +30,91 @@ import javafx.stage.Stage;
  * @author Nate Cox
  */
 public class SearchViewController implements Initializable {
-    
+
     private ArrayList<Job> jobList = new ArrayList<>();
-    @FXML Stage theStage;
-    
+    @FXML
+    Stage theStage;
+    @FXML
+    TextField searchField;
+
     @FXML
     private TableView<Job> jobTable = new TableView<Job>();
-    
-     @FXML
+
+    @FXML
     private TableColumn<Job, String> jobName = new TableColumn("Job Name");
     @FXML
-    private TableColumn<Job, String> jobLink  = new TableColumn("Link");
+    private TableColumn<Job, String> jobLink = new TableColumn("Link");
 
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        jobList.add(new Job("k","k","l","k",1,"k"));
+        jobList.add(new Job("k", "k", "l", "k", 1, "k"));
         //jobTable.setItems((ObservableList) jobList);
-        
-        jobName.setCellValueFactory(new PropertyValueFactory<Job,String>("jobTitle"));
-        jobLink.setCellValueFactory(new PropertyValueFactory<Job,String>("link"));
-        
+
+        jobName.setCellValueFactory(new PropertyValueFactory<Job, String>("jobTitle"));
+        jobLink.setCellValueFactory(new PropertyValueFactory<Job, String>("link"));
+
         //jobTable.setItems(getJobList());
-    }    
-    
+    }
+
     /**
      *
      * @param event
      * @throws IOException
      */
-     @FXML private void handleHomeButtonAction(ActionEvent event) throws IOException{
-       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+    @FXML
+    private void handleSearchFunctionAction() throws IOException {
+        // TODO add your handling code here:
+        System.out.println("work");
+
+        String name = searchField.getText();
+        boolean flag = false;
+        for (int i = 0; i < jobList.size(); i++) {
+
+            if (name.equals(jobList.get(i).getJobTitle())) {
+                flag = true;
+               jobName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
+               jobLink.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLink()));
+
+            }
+
+        }
+        if (!flag) {
+            
+                          jobLink.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
+                          jobName.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
+
+
+        }
+    }
+
+    @FXML
+    private void handleHomeButtonAction(ActionEvent event) throws IOException {
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         NavController.getNavController(theStage);
     }
-    @FXML protected void handleProfileButtonAction(ActionEvent event) throws IOException{
-        theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+
+    @FXML
+    protected void handleProfileButtonAction(ActionEvent event) throws IOException {
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         ProfileController.getProfileController(theStage);
-    } 
-    
-    @FXML protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException{
-        theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+    }
+
+    @FXML
+    protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         TestPersonalityController.getTestPersonalityController(theStage);
-    } 
+    }
+
     @FXML
     private void handleLogOffButtonAction(ActionEvent event) throws IOException {
-       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
-                LoginController.getLoginController(theStage);
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        LoginController.getLoginController(theStage);
 
     }
-    
+
 }
