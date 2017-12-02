@@ -6,44 +6,76 @@ import java.io.Serializable;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 public class PersistentDataCollection implements Serializable {
-    
+
     private UserList theUserList;
+    private JobList theJobList;
+    private EmployerList theEmployerList;
     // All other persistent data will go below here
-    
-    public PersistentDataCollection(){
-        if(theUserList == null){
+
+    public PersistentDataCollection() {
+        if (theUserList == null) {
             theUserList = new UserList();
         }
+        if (theJobList == null) {
+            theJobList = new JobList();
+        }
+
+        if (theEmployerList == null) {
+            theEmployerList = new EmployerList();
+        }
     }
-    
-    public UserList getuserList(){
+
+    public UserList getuserList() {
         return theUserList;
     }
-    
-    public void addUserData(UserProfile user){
+
+    public void addUserData(UserProfile user) {
         theUserList.addUserData(user);
     }
-    
-    public boolean authenticate(String username, String password){
-         return theUserList.Authenticate(username, password);
+
+    public boolean authenticate(String username, String password) {
+        boolean authenticate = false;
+        if(theUserList.Authenticate(username,password)){
+           authenticate = true;
+        }
+        if(theEmployerList.Authenticate(username, password)){
+            authenticate = true;
+        }
+        
+        return authenticate;
     }
-    
-    public UserProfile getLoginUser(){
+
+    public UserProfile getLoginUser() {
         return theUserList.getLoginUser();
     }
-    
-    public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email){
+
+    public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email) {
         theUserList.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
     }
-    
-    public void addPersonality(String personality){
+
+    public void addPersonality(String personality) {
         theUserList.addPersonality(personality);
     }
-    
+
+    public JobList getJobList() {
+        return theJobList;
+    }
+
+    public void addJob(Job newJob) {
+        theJobList.addJob(newJob);
+    }
+
+    public void updateJob(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link) {
+        theJobList.updateJob(jobTitle, jobDescription, company, datePosted, salary, link);
+    }
+
+    public void addEmployer(EmployerProfile newEmployer){
+        theEmployerList.addEmployer(newEmployer);
+
+    }
 }

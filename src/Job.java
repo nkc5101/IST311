@@ -1,3 +1,6 @@
+
+import java.io.Serializable;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +11,7 @@
  *
  * @author hanson
  */
-public class Job {
+public class Job implements Serializable{
 
     private String jobTitle = new String();
     private String jobDescription = new String();

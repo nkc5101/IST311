@@ -124,7 +124,22 @@ public class LoginViewController implements Initializable {
         }
         if(profileType == false)
         {
-            System.out.println("employee created");
+            String newUsername = newUsernameField.getText();
+            String newPassword = newPasswordField.getText();
+            String reEnteredPassword = reEnterPasswordField.getText();
+            String email = emailField.getText();
+            String name = nameField.getText();
+            String phoneNumber = phoneNumberField.getText();
+            String address = addressField.getText();
+            String location = careerChoiceField.getText();
+
+
+
+            if(newPassword.equals(reEnteredPassword)){
+                EmployerProfile newUser = new EmployerProfile(newUsername, newPassword, phoneNumber, address, name, location);
+                PersistentDataController.getPersistentDataCntl().addPersistentEmployerData(newUser);
+                returnToLogin(event);
+            }
         }
         
         

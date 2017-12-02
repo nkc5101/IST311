@@ -33,14 +33,11 @@ public class UserList implements Serializable {
         return listOfUsers;
     }
     
-    public ArrayList<UserProfile> getTestUsers(){
-        
-        return listOfUsers;
-    }
+    
     
     public void addUserData(UserProfile user){
         listOfUsers.add(user);
-        PersistentDataController.getPersistentDataCntl().addPersistentData(user);
+        
     }
     
     public int size(){

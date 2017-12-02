@@ -19,8 +19,9 @@ public class PersistentDataController {
     private static PersistentDataController thePersistentDataCntl;
     private PersistentDataCollection thePersistentDataCollection;
     private final String savedDataPath = "";
-    private final String fileName = "profileData.ser";
-        private final String jobFileName = "jobData.ser";
+    private final String fileName = "jobData.ser";
+   
+    
 
 
     private PersistentDataController() {
@@ -29,7 +30,7 @@ public class PersistentDataController {
         {
             thePersistentDataCollection = new PersistentDataCollection();
             writeSerializedData();
-        readSerializedData();
+            readSerializedData();
         }
         
 
@@ -96,6 +97,14 @@ public class PersistentDataController {
 
     public void addPersonality(String personality) {
         thePersistentDataCollection.addPersonality(personality);
+    }
+
+    void setSelectedJob(Job tempJob) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void addPersistentEmployerData(EmployerProfile newEmployer){
+        thePersistentDataCollection.addEmployer(newEmployer);
     }
 
 }

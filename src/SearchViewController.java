@@ -87,6 +87,14 @@ public class SearchViewController implements Initializable {
 
         }
     }
+    
+    @FXML
+    public void getSelectedRow(){
+        Job tempJob = jobTable.getSelectionModel().getSelectedItem();
+        System.out.println(tempJob.getJobTitle());
+        
+        PersistentDataController.getPersistentDataCntl().setSelectedJob(tempJob);
+    }
 
     @FXML
     private void handleHomeButtonAction(ActionEvent event) throws IOException {
