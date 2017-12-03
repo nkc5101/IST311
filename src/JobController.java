@@ -10,46 +10,46 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 class JobController {
-     @FXML private Stage stage;
+
+    @FXML
+    private Stage stage;
     private static JobController jobController;
-    
-    
-    private JobController(Stage theStage){
+
+    private JobController(Stage theStage) {
         stage = theStage;
         this.setUpJobScene();
         stage.show();
     }
 
     public static JobController getJobController(Stage theExistingStage) {
-         if(jobController != null){
-            
-            jobController.setUpJobScene(); 
+        if (jobController != null) {
+
+            jobController.setUpJobScene();
             return jobController;
-        } else{
+        } else {
             jobController = new JobController(theExistingStage);
         }
         return jobController;
     }
-    
-    private void setUpJobScene(){
-       Parent root;
-       Scene scene;
-       
-       try{
-           root = FXMLLoader.load(getClass().getResource("JobView.fxml"));
+
+    private void setUpJobScene() {
+        Parent root;
+        Scene scene;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("JobView.fxml"));
             scene = new Scene(root, 600, 600);
             stage.setTitle("Profile");
             stage.setScene(scene);
             stage.show();
-       } catch(Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
+
 }

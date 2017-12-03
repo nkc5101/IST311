@@ -9,7 +9,7 @@
  * @author Nate Cox
  */
 public interface Applyable {
-    
+
     public void ApplyJob();
-    
+
 }

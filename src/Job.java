@@ -6,12 +6,11 @@ import java.io.Serializable;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author hanson
  */
-public class Job implements Serializable{
+public class Job implements Serializable {
 
     private String jobTitle = new String();
     private String jobDescription = new String();
@@ -20,17 +19,16 @@ public class Job implements Serializable{
     private int salary;
     private String link = new String();
 
-    public Job(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link) {
+    public Job(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link) {
         this.salary = salary;
-        this.company=company;
-        this.datePosted=datePosted;
-        this.jobDescription=jobDescription;
-        this.jobTitle=jobTitle;
-        this.link=link;
+        this.company = company;
+        this.datePosted = datePosted;
+        this.jobDescription = jobDescription;
+        this.jobTitle = jobTitle;
+        this.link = link;
 
     }
 
-    
     public String getJobTitle() {
         return jobTitle;
     }
@@ -79,5 +77,4 @@ public class Job implements Serializable{
         this.link = link;
     }
 
-    
 }

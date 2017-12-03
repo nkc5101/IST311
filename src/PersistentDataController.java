@@ -22,19 +22,14 @@ public class PersistentDataController {
     private PersistentDataCollection thePersistentDataCollection;
     private final String savedDataPath = "";
     private final String fileName = "data.ser";
-   
-    
-
 
     private PersistentDataController() {
         readSerializedData();
-        if (thePersistentDataCollection == null) 
-        {
+        if (thePersistentDataCollection == null) {
             thePersistentDataCollection = new PersistentDataCollection();
             writeSerializedData();
             readSerializedData();
         }
-        
 
     }
 
@@ -68,8 +63,6 @@ public class PersistentDataController {
         }
     }
 
-    
-
     public static PersistentDataController getPersistentDataCntl() {
         if (thePersistentDataCntl == null) {
             thePersistentDataCntl = new PersistentDataController();
@@ -92,8 +85,8 @@ public class PersistentDataController {
     public UserProfile getUser() {
         return thePersistentDataCollection.getLoginUser();
     }
-    
-    public EmployerProfile getEmployer(){
+
+    public EmployerProfile getEmployer() {
         return thePersistentDataCollection.getLoginEmployer();
     }
 
@@ -108,26 +101,24 @@ public class PersistentDataController {
     void setSelectedJob(Job tempJob) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void addPersistentEmployerData(EmployerProfile newEmployer){
+
+    public void addPersistentEmployerData(EmployerProfile newEmployer) {
         thePersistentDataCollection.addEmployer(newEmployer);
     }
-    
-    public boolean getIsEmployer(){
+
+    public boolean getIsEmployer() {
         return thePersistentDataCollection.getIsEmployer();
     }
-    
-    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
+
+    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location) {
         thePersistentDataCollection.updateEmployer(username, password, phoneNumber, address, companyName, location);
     }
-    
-    public void addJob(String title, String description, int salary, String link){
+
+    public void addJob(String title, String description, int salary, String link) {
         String company = thePersistentDataCollection.getLoginEmployer().getCompanyName();
         String datePosted = new SimpleDateFormat("dd.MM.YYYY").format(new Date());
         Job newJob = new Job(title, description, company, datePosted, salary, link);
         thePersistentDataCollection.addJob(newJob);
     }
-    
-    
 
 }

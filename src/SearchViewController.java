@@ -33,7 +33,7 @@ import javax.swing.JOptionPane;
 public class SearchViewController implements Initializable {
 
     private ArrayList<Job> jobList = new ArrayList<>();
-    
+
     @FXML
     Button testPersonalityButton;
     @FXML
@@ -51,8 +51,8 @@ public class SearchViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-         if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
         }
         // TODO
@@ -120,7 +120,7 @@ public class SearchViewController implements Initializable {
     @FXML
     protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        
+
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             JobController.getJobController(theStage);
         } else {

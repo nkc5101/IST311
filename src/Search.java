@@ -9,36 +9,37 @@
  * @author Nate Cox
  */
 public class Search {
+
     private String searchTerms;
     private Filter filter;
-    
-    
-    Search(String searchTerms, String filterCompanyName, int filterDistance, String filterZipCode){
+
+    Search(String searchTerms, String filterCompanyName, int filterDistance, String filterZipCode) {
         this.searchTerms = searchTerms;
         filter = new Filter(filterCompanyName, filterDistance, filterZipCode);
     }
-    
-    public String getSearchTerms(){
+
+    public String getSearchTerms() {
         return searchTerms;
     }
-    
-    public void setSearchTerms(String searchTerms){
+
+    public void setSearchTerms(String searchTerms) {
         this.searchTerms = searchTerms;
     }
-    
-    public String getCompanyNameFilter(){
+
+    public String getCompanyNameFilter() {
         return filter.getCompanyName();
     }
-    
-    public int getDistanceFilter(){
+
+    public int getDistanceFilter() {
         return filter.getDistance();
     }
-    
-    public String getZipCodeFilter(){
+
+    public String getZipCodeFilter() {
         return filter.getZipCode();
     }
-    public void findKeyWord(){
+
+    public void findKeyWord() {
         System.out.println();
-                
+
     }
 }

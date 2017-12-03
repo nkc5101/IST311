@@ -9,36 +9,38 @@
  * @author Nate Cox
  */
 public class Filter {
+
     String companyName;
     int distance;
     String zipCode;
-    
-    Filter(String companyName, int distance, String zipCode){
+
+    Filter(String companyName, int distance, String zipCode) {
         this.companyName = companyName;
         this.distance = distance;
         this.zipCode = zipCode;
     }
-    public String getCompanyName(){
+
+    public String getCompanyName() {
         return companyName;
     }
-    
-    public void setCompanyName(String companyName){
+
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-    
-    public int getDistance(){
+
+    public int getDistance() {
         return distance;
     }
-    
-    public void setDistance(int distance){
+
+    public void setDistance(int distance) {
         this.distance = distance;
     }
-    
-    public String getZipCode(){
+
+    public String getZipCode() {
         return zipCode;
     }
-    
-    public void setZipCode(String zipCode){
+
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 }

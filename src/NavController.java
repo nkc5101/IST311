@@ -16,52 +16,49 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
-public class NavController{
-    
-    @FXML private Stage theStage;
+public class NavController {
+
+    @FXML
+    private Stage theStage;
     private static NavController theNavController;
-    
-    private NavController(Stage theExistingStage){
+
+    private NavController(Stage theExistingStage) {
         theStage = theExistingStage;
         this.setUpNavScene();
         theStage.show();
     }
-    
+
     /**
      *
      * @param stage
      */
-    public static NavController getNavController(Stage stage){
-        if(theNavController != null){
+    public static NavController getNavController(Stage stage) {
+        if (theNavController != null) {
             theNavController.setUpNavScene();
             return theNavController;
-        } else{
+        } else {
             theNavController = new NavController(stage);
         }
         return theNavController;
     }
 
     private void setUpNavScene() {
-       Parent root;
-       Scene scene;
-       
-       try{
-           root = FXMLLoader.load(getClass().getResource("NavView.fxml"));
+        Parent root;
+        Scene scene;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("NavView.fxml"));
             scene = new Scene(root, 600, 600);
             theStage.setTitle("Navigation");
             theStage.setScene(scene);
             theStage.show();
-       } catch(Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
-       
 
-          
 }

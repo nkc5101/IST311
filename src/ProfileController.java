@@ -10,47 +10,46 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 class ProfileController {
-    
-    @FXML private Stage stage;
+
+    @FXML
+    private Stage stage;
     private static ProfileController profileController;
-    
-    
-    private ProfileController(Stage theStage){
+
+    private ProfileController(Stage theStage) {
         stage = theStage;
         this.setUpProfileScene();
         stage.show();
     }
 
     public static ProfileController getProfileController(Stage theExistingStage) {
-         if(profileController != null){
-            
-            profileController.setUpProfileScene(); 
+        if (profileController != null) {
+
+            profileController.setUpProfileScene();
             return profileController;
-        } else{
+        } else {
             profileController = new ProfileController(theExistingStage);
         }
         return profileController;
     }
-    
-    private void setUpProfileScene(){
-       Parent root;
-       Scene scene;
-       
-       try{
-           root = FXMLLoader.load(getClass().getResource("ProfileView.fxml"));
+
+    private void setUpProfileScene() {
+        Parent root;
+        Scene scene;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("ProfileView.fxml"));
             scene = new Scene(root, 600, 600);
             stage.setTitle("Profile");
             stage.setScene(scene);
             stage.show();
-       } catch(Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
+
 }

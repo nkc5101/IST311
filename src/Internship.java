@@ -8,14 +8,15 @@
  *
  * @author hanson
  */
-public class Internship extends Job{
+public class Internship extends Job {
 
     private int length;
     private double desiredGPA;
-    public Internship(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link,int length,double desiredGPA){
-        super(jobTitle,jobDescription,company,datePosted,salary,link);
-        this.desiredGPA=desiredGPA;
-        this.length=length;
+
+    public Internship(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, int length, double desiredGPA) {
+        super(jobTitle, jobDescription, company, datePosted, salary, link);
+        this.desiredGPA = desiredGPA;
+        this.length = length;
     }
 
     public int getLength() {

@@ -8,15 +8,17 @@
  *
  * @author hanson
  */
-public class CoOp extends Job{
-       private String semester;
+public class CoOp extends Job {
+
+    private String semester;
     private String desiredGPA;
     private String desiredExperience;
-    public CoOp(String jobTitle,String jobDescription,String company,String datePosted,int salary,String link,String semester,String desiredGPA,String desiredExperience){
-        super(jobTitle,jobDescription,company,datePosted,salary,link);
-        this.semester=semester;
-        this.desiredGPA=desiredGPA;
-        this.desiredExperience=desiredExperience;
+
+    public CoOp(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, String semester, String desiredGPA, String desiredExperience) {
+        super(jobTitle, jobDescription, company, datePosted, salary, link);
+        this.semester = semester;
+        this.desiredGPA = desiredGPA;
+        this.desiredExperience = desiredExperience;
     }
 
     public String getSemester() {
@@ -43,4 +45,3 @@ public class CoOp extends Job{
         this.desiredExperience = desiredExperience;
     }
 }
-

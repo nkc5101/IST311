@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  * @author Nate Cox
  */
 public class ProfileViewController implements Initializable {
-    
+
     @FXML
     Button testPersonalityButton;
     @FXML
@@ -53,8 +53,8 @@ public class ProfileViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-         if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
         }
 
@@ -139,7 +139,7 @@ public class ProfileViewController implements Initializable {
     @FXML
     private void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        
+
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             JobController.getJobController(theStage);
         } else {

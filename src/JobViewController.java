@@ -20,12 +20,16 @@ import javafx.stage.Stage;
  * @author Nate Cox
  */
 public class JobViewController implements Initializable {
-    
+
     private Stage theStage;
-    @FXML private TextField jobTitleField;
-    @FXML private TextField jobDescriptionField;
-    @FXML private TextField salaryField;
-    @FXML private TextField linkField;
+    @FXML
+    private TextField jobTitleField;
+    @FXML
+    private TextField jobDescriptionField;
+    @FXML
+    private TextField salaryField;
+    @FXML
+    private TextField linkField;
 
     /**
      * Initializes the controller class.
@@ -35,7 +39,7 @@ public class JobViewController implements Initializable {
         // TODO
     }
 
-   @FXML
+    @FXML
     private void handleHomeButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -66,21 +70,21 @@ public class JobViewController implements Initializable {
     @FXML
     private void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        
+
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             JobController.getJobController(theStage);
         } else {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
-    
+
     @FXML
-    private void handleCreateJobButtonAction(){
+    private void handleCreateJobButtonAction() {
         String title = jobTitleField.getText();
         String description = jobDescriptionField.getText();
         int salary = Integer.parseInt(salaryField.getText());
         String link = linkField.getText();
-        
+
         PersistentDataController.getPersistentDataCntl().addJob(title, description, salary, link);
     }
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author Nate Cox
  */
 public class PersistentDataCollection implements Serializable {
-    
+
     private static final long serialVersionUID = 652968509;
 
     private UserList theUserList;
@@ -45,28 +45,28 @@ public class PersistentDataCollection implements Serializable {
 
     public boolean authenticate(String username, String password) {
         boolean authenticate = false;
-        if(theUserList.Authenticate(username,password)){
-           authenticate = true; 
-           loginUser = theUserList.getLoginUser();
+        if (theUserList.Authenticate(username, password)) {
+            authenticate = true;
+            loginUser = theUserList.getLoginUser();
         }
-        if(theEmployerList.Authenticate(username, password)){
+        if (theEmployerList.Authenticate(username, password)) {
             authenticate = true;
             employerLogin = true;
             loginEmployer = theEmployerList.getLoginEmployer();
         }
-        
+
         return authenticate;
     }
 
     public UserProfile getLoginUser() {
         return loginUser;
     }
-    
-    public EmployerProfile getLoginEmployer(){
+
+    public EmployerProfile getLoginEmployer() {
         return loginEmployer;
     }
-    
-    public boolean getIsEmployer(){
+
+    public boolean getIsEmployer() {
         return employerLogin;
     }
 
@@ -90,11 +90,12 @@ public class PersistentDataCollection implements Serializable {
         theJobList.updateJob(jobTitle, jobDescription, company, datePosted, salary, link);
     }
 
-    public void addEmployer(EmployerProfile newEmployer){
+    public void addEmployer(EmployerProfile newEmployer) {
         theEmployerList.addEmployer(newEmployer);
 
-    }    
-    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
+    }
+
+    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location) {
         theEmployerList.updateEmployer(username, password, phoneNumber, address, companyName, location);
     }
 }

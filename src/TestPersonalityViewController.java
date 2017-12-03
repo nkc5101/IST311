@@ -26,12 +26,18 @@ import javafx.stage.Stage;
  */
 public class TestPersonalityViewController implements Initializable {
 
-    @FXML Slider sliderOne;
-    @FXML Slider sliderTwo;
-    @FXML Slider sliderThree;
-    @FXML Slider sliderFour;
-    @FXML Label resultLabel;
-    @FXML Stage theStage;
+    @FXML
+    Slider sliderOne;
+    @FXML
+    Slider sliderTwo;
+    @FXML
+    Slider sliderThree;
+    @FXML
+    Slider sliderFour;
+    @FXML
+    Label resultLabel;
+    @FXML
+    Stage theStage;
 
     /**
      * Initializes the controller class.
@@ -44,30 +50,30 @@ public class TestPersonalityViewController implements Initializable {
 
     @FXML
     private void handleHomeButtonAction(ActionEvent event) throws IOException {
-         theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         NavController.getNavController(theStage);
     }
 
     @FXML
     private void handleSearchButtonAction(ActionEvent event) throws IOException {
-       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         SearchController.getSearchController(theStage);
     }
 
     @FXML
     private void handleProfileButtonAction(ActionEvent event) throws IOException {
-       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         ProfileController.getProfileController(theStage);
     }
 
     @FXML
     private void handleLogOffButtonAction(ActionEvent event) throws IOException {
-       theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
-                LoginController.getLoginController(theStage);
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        LoginController.getLoginController(theStage);
 
     }
 
@@ -79,17 +85,17 @@ public class TestPersonalityViewController implements Initializable {
         int l = (int) sliderFour.getValue();
 
         String personality = testPersonality(c, m, w, l);
-        
+
         PersistentDataController.getPersistentDataCntl().addPersonality(personality);
-        
+
         resultLabel.setText("Your result is: " + personality);
 
     }
 
     @FXML
     private void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
-theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
         TestPersonalityController.getTestPersonalityController(theStage);
     }
 
@@ -108,8 +114,7 @@ theStage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
             result = "good teammates";
             System.out.println(result);
 
-        }else
-        {
+        } else {
             result = "not available";
             System.out.println(c + " " + m + " " + w + " " + l);
         }

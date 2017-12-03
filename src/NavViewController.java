@@ -17,42 +17,51 @@ import javafx.stage.Stage;
  * @author Nate Cox
  */
 public class NavViewController implements Initializable {
-    
-    @FXML Button actionTarget;
-    @FXML Button testPersonalityButton;
 
-    
+    @FXML
+    Button actionTarget;
+    @FXML
+    Button testPersonalityButton;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
         }
-    }  
-    
-    @FXML private void handleSearchButtonAction(){
+    }
+
+    @FXML
+    private void handleSearchButtonAction() {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
         SearchController.getSearchController(theStage);
     }
-    
-    @FXML private void handleProfileButtonAction(){
+
+    @FXML
+    private void handleProfileButtonAction() {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
         ProfileController.getProfileController(theStage);
     }
-    @FXML private void handleTestPersonalityButtonAction(){
+
+    @FXML
+    private void handleTestPersonalityButtonAction() {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
-        if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             JobController.getJobController(theStage);
-        } else{
+        } else {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
-    @FXML private void handleLogOffButtonAction(){
+
+    @FXML
+    private void handleLogOffButtonAction() {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
         LoginController.getLoginController(theStage);
     }
-    @FXML private void handleHomeButtonAction(){
+
+    @FXML
+    private void handleHomeButtonAction() {
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
         NavController.getNavController(theStage);
     }
-    
+
 }

@@ -10,43 +10,44 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author hanson
  */
 public class LoginController {
-     @FXML Stage stage;
+
+    @FXML
+    Stage stage;
     private static LoginController loginController;
-    
-    private LoginController(Stage theStage){
+
+    private LoginController(Stage theStage) {
         stage = theStage;
         this.setUpLoginControllerScene();
         stage.show();
     }
-    
-    public static LoginController getLoginController(Stage theStage){
-        if(loginController != null){
+
+    public static LoginController getLoginController(Stage theStage) {
+        if (loginController != null) {
             loginController.setUpLoginControllerScene();
             return loginController;
-        } else{
+        } else {
             loginController = new LoginController(theStage);
         }
         return loginController;
     }
 
     private void setUpLoginControllerScene() {
-       Parent root;
-       Scene scene;
-       
-       try{
-           root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
+        Parent root;
+        Scene scene;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
             scene = new Scene(root, 600, 600);
             stage.setTitle("Log in");
             stage.setScene(scene);
             stage.show();
-       } catch(Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -10,43 +10,44 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 class SearchController {
-    @FXML Stage stage;
+
+    @FXML
+    Stage stage;
     private static SearchController searchController;
-    
-    private SearchController(Stage theStage){
+
+    private SearchController(Stage theStage) {
         stage = theStage;
         this.setUpSearchScene();
         stage.show();
     }
-    
-    public static SearchController getSearchController(Stage theStage){
-        if(searchController != null){
+
+    public static SearchController getSearchController(Stage theStage) {
+        if (searchController != null) {
             searchController.setUpSearchScene();
             return searchController;
-        } else{
+        } else {
             searchController = new SearchController(theStage);
         }
         return searchController;
     }
 
     private void setUpSearchScene() {
-       Parent root;
-       Scene scene;
-       
-       try{
-           root = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
+        Parent root;
+        Scene scene;
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
             scene = new Scene(root, 600, 600);
             stage.setTitle("Search");
             stage.setScene(scene);
             stage.show();
-       } catch(Exception e){
-           e.printStackTrace();
-       }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
