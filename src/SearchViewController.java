@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -32,6 +33,9 @@ import javax.swing.JOptionPane;
 public class SearchViewController implements Initializable {
 
     private ArrayList<Job> jobList = new ArrayList<>();
+    
+    @FXML
+    Button testPersonalityButton;
     @FXML
     Stage theStage;
     @FXML
@@ -47,6 +51,10 @@ public class SearchViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+         if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+            testPersonalityButton.setText("Job");
+        }
         // TODO
         jobList.add(new Job("k", "k", "l", "k", 1, "k"));
         //jobTable.setItems((ObservableList) jobList);
@@ -73,26 +81,25 @@ public class SearchViewController implements Initializable {
 
             if (name.equals(jobList.get(i).getJobTitle())) {
                 flag = true;
-               jobName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
-               jobLink.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLink()));
+                jobName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
+                jobLink.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLink()));
 
             }
 
         }
         if (!flag) {
-            
-                          jobLink.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
-                          jobName.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
 
+            jobLink.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
+            jobName.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
 
         }
     }
-    
+
     @FXML
-    public void getSelectedRow(){
+    public void getSelectedRow() {
         Job tempJob = jobTable.getSelectionModel().getSelectedItem();
         System.out.println(tempJob.getJobTitle());
-        
+
         PersistentDataController.getPersistentDataCntl().setSelectedJob(tempJob);
     }
 
@@ -113,8 +120,12 @@ public class SearchViewController implements Initializable {
     @FXML
     protected void handleTestPersonalityButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        TestPersonalityController.getTestPersonalityController(theStage);
+        
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
+            JobController.getJobController(theStage);
+        } else {
+            TestPersonalityController.getTestPersonalityController(theStage);
+        }
     }
 
     @FXML

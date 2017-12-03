@@ -13,11 +13,11 @@
   <PasswordField fx:id="newPasswordField" layoutX="189.0" layoutY="61.0" />
   <Label layoutX="143.0" layoutY="141.0" text="Email:" />
   <TextField fx:id="emailField" layoutX="189.0" layoutY="136.0" />
-  <Label layoutX="141.0" layoutY="178.0" text="Name:" />
+  <Label layoutX="141.0" layoutY="178.0" text="Name:" fx:id = "nameLabel" />
   <TextField fx:id="nameField" layoutX="189.0" layoutY="173.0" />
   <Label layoutX="80.0" layoutY="214.0" text="Phone Number:" />
   <TextField fx:id="phoneField" layoutX="190.0" layoutY="209.0" />
-  <Label layoutX="91.0" layoutY="257.0" text="Career Choice:" />
+  <Label layoutX="91.0" layoutY="257.0" text="Career Choice:"  fx:id = "careerChoiceLabel" />
   <TextField fx:id="careerChoiceField" layoutX="189.0" layoutY="252.0" />
   <Label layoutX="115.0" layoutY="299.0" text="Address:" />
   <TextField fx:id="addressField" layoutX="190.0" layoutY="294.0" />
@@ -25,8 +25,8 @@
   <Button layoutX="19.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
   <Button layoutX="110.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
   <Button layoutX="204.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-  <Button layoutX="291.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+  <Button layoutX="291.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" fx:id= "testPersonalityButton" />
   <Button layoutX="438.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
   <TextField layoutX="190.0" layoutY="99.0" prefHeight="31.0" prefWidth="187.0" fx:id = "careerProfileField" />
-  <Label layoutX="95.0" layoutY="104.0" text="Career Profile:" />
+  <Label layoutX="95.0" layoutY="104.0" text="Career Profile:" fx:id="careerProfileLabel"/>
 </AnchorPane>

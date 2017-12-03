@@ -139,6 +139,7 @@ public class LoginViewController implements Initializable {
                 EmployerProfile newUser = new EmployerProfile(newUsername, newPassword, phoneNumber, address, name, location);
                 PersistentDataController.getPersistentDataCntl().addPersistentEmployerData(newUser);
                 returnToLogin(event);
+                
             }
         }
         
@@ -163,40 +164,7 @@ public class LoginViewController implements Initializable {
         loginStage.show();
     }
     
-        @FXML private void handleHomeButtonAction(ActionEvent event) throws IOException{
-        System.out.println("It works");
-            Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-            Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-            Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            login_stage.setScene(search_view_scene);
-            login_stage.show();
-    }
+  
     
-    @FXML private void handleSearchButtonAction(ActionEvent event) throws IOException
-    {
-        Parent search_view_parent = FXMLLoader.load(getClass().getResource("SearchView.fxml"));
-            Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-            Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            login_stage.setScene(search_view_scene);
-            login_stage.show();
-    }
-    
-    @FXML private void handleProfileButtonAction(ActionEvent event) throws IOException
-    {
-        Parent search_view_parent = FXMLLoader.load(getClass().getResource("ProfileView.fxml"));
-            Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-            Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            login_stage.setScene(search_view_scene);
-            login_stage.show();
-    }
-    
-    @FXML private void handleLogOffButtonAction(ActionEvent event) throws IOException
-    {
-        Parent search_view_parent = FXMLLoader.load(getClass().getResource("LoginView.fxml"));
-            Scene search_view_scene = new Scene(search_view_parent, 600, 600);
-            Stage login_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            login_stage.setScene(search_view_scene);
-            login_stage.show();
-    }
-
+  
 }

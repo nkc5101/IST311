@@ -12,7 +12,7 @@
     <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" onAction="#handleHomeButtonAction"/>
     <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search"/>
     <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+    <Button layoutX="324.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" fx:id="testPersonalityButton" />
     <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" text="Logoff" onAction="#handleLogOffButtonAction" />
     <TextField layoutX="77.0" layoutY="45.0" prefWidth="200.0" fx:id = "searchField" />
     <Label layoutX="28.0" layoutY="48.0" text="Search:" />

@@ -90,6 +90,10 @@ public class PersistentDataController {
     public UserProfile getUser() {
         return thePersistentDataCollection.getLoginUser();
     }
+    
+    public EmployerProfile getEmployer(){
+        return thePersistentDataCollection.getLoginEmployer();
+    }
 
     public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email) {
         thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
@@ -106,5 +110,15 @@ public class PersistentDataController {
     public void addPersistentEmployerData(EmployerProfile newEmployer){
         thePersistentDataCollection.addEmployer(newEmployer);
     }
+    
+    public boolean getIsEmployer(){
+        return thePersistentDataCollection.getIsEmployer();
+    }
+    
+    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
+        thePersistentDataCollection.updateEmployer(username, password, phoneNumber, address, companyName, location);
+    }
+    
+    
 
 }

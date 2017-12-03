@@ -15,7 +15,7 @@
     <Button fx:id="actionTarget" layoutX="158.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
     <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" text="Home" onAction="#handleHomeButtonAction"/>
     <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-   <Button layoutX="319.0" layoutY="331.0" mnemonicParsing="false" text="Test Personality" onAction="#handleTestPersonalityButtonAction"/>
+   <Button layoutX="319.0" layoutY="331.0" mnemonicParsing="false" text="Test Personality" onAction="#handleTestPersonalityButtonAction" fx:id = "testPersonalityButton"/>
    <Button layoutX="473.0" layoutY="331.0" mnemonicParsing="false" text="Log Off" onAction="#handleLogOffButtonAction"/>
 
 </AnchorPane>

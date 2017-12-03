@@ -19,11 +19,14 @@ import javafx.stage.Stage;
 public class NavViewController implements Initializable {
     
     @FXML Button actionTarget;
+    @FXML Button testPersonalityButton;
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+            testPersonalityButton.setText("Job");
+        }
     }  
     
     @FXML private void handleSearchButtonAction(){
@@ -37,7 +40,11 @@ public class NavViewController implements Initializable {
     }
     @FXML private void handleTestPersonalityButtonAction(){
         Stage theStage = (Stage) actionTarget.getScene().getWindow();
-        TestPersonalityController.getTestPersonalityController(theStage);
+        if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+            JobController.getJobController(theStage);
+        } else{
+            TestPersonalityController.getTestPersonalityController(theStage);
+        }
     }
     @FXML private void handleLogOffButtonAction(){
         Stage theStage = (Stage) actionTarget.getScene().getWindow();

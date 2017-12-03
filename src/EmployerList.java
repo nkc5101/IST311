@@ -50,4 +50,13 @@ class EmployerList implements Serializable{
     public EmployerProfile getLoginEmployer(){
         return loginEmployer;
     }
+    
+    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
+        loginEmployer.setUsername(username);
+        loginEmployer.setPassword(password);
+        loginEmployer.setPhoneNumber(phoneNumber);
+        loginEmployer.setAddress(address);
+        loginEmployer.setCompanyName(companyName);
+        loginEmployer.setLocation(location);
+    }
 }

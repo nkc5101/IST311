@@ -61,15 +61,7 @@ public class NavController{
        }
     }
     
-    public void getProfileController(Stage theExistingStage){
-        ProfileController.getProfileController(theExistingStage);
-        
-    }
-    
-    public void getSearchController(Stage theExistingStage){
-        SearchController.getSearchController(theExistingStage);
-    }
-    
+       
 
           
 }

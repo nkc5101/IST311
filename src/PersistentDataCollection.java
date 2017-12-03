@@ -11,10 +11,15 @@ import java.io.Serializable;
  * @author Nate Cox
  */
 public class PersistentDataCollection implements Serializable {
+    
+    private static final long serialVersionUID = 652968509;
 
     private UserList theUserList;
     private JobList theJobList;
     private EmployerList theEmployerList;
+    private UserProfile loginUser;
+    private EmployerProfile loginEmployer;
+    private boolean employerLogin = false;
     // All other persistent data will go below here
 
     public PersistentDataCollection() {
@@ -41,17 +46,28 @@ public class PersistentDataCollection implements Serializable {
     public boolean authenticate(String username, String password) {
         boolean authenticate = false;
         if(theUserList.Authenticate(username,password)){
-           authenticate = true;
+           authenticate = true; 
+           loginUser = theUserList.getLoginUser();
         }
         if(theEmployerList.Authenticate(username, password)){
             authenticate = true;
+            employerLogin = true;
+            loginEmployer = theEmployerList.getLoginEmployer();
         }
         
         return authenticate;
     }
 
     public UserProfile getLoginUser() {
-        return theUserList.getLoginUser();
+        return loginUser;
+    }
+    
+    public EmployerProfile getLoginEmployer(){
+        return loginEmployer;
+    }
+    
+    public boolean getIsEmployer(){
+        return employerLogin;
     }
 
     public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email) {
@@ -77,5 +93,8 @@ public class PersistentDataCollection implements Serializable {
     public void addEmployer(EmployerProfile newEmployer){
         theEmployerList.addEmployer(newEmployer);
 
+    }    
+    public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
+        theEmployerList.updateEmployer(username, password, phoneNumber, address, companyName, location);
     }
 }
