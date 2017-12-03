@@ -24,9 +24,7 @@ public class UserList implements Serializable {
 
         UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer");
         listOfUsers.add(test);
-        if(listOfUsers != null){
-            System.out.println("Why?");
-        }
+        
     }
     
     public ArrayList<UserProfile> getUserData(){

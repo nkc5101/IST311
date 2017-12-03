@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -117,6 +119,13 @@ public class PersistentDataController {
     
     public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location){
         thePersistentDataCollection.updateEmployer(username, password, phoneNumber, address, companyName, location);
+    }
+    
+    public void addJob(String title, String description, int salary, String link){
+        String company = thePersistentDataCollection.getLoginEmployer().getCompanyName();
+        String datePosted = new SimpleDateFormat("dd.MM.YYYY").format(new Date());
+        Job newJob = new Job(title, description, company, datePosted, salary, link);
+        thePersistentDataCollection.addJob(newJob);
     }
     
     

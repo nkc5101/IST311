@@ -16,10 +16,11 @@ import javafx.collections.ObservableList;
  */
 public class JobList implements Serializable {
 
-    private ArrayList<Job> theListOfJob;
+    private ArrayList<Job> theListOfJob = new ArrayList<>();
 
     public JobList() {
-        this.theListOfJob = theListOfJob;
+       Job newJob = new Job("Security", "Protect Information", "PSU", "12/3/2017", 120000, "http://psu.edu");
+       theListOfJob.add(newJob);
     }
 
     public ArrayList<Job> getTheListOfJob() {
