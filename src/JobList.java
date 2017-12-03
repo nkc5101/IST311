@@ -19,7 +19,7 @@ public class JobList implements Serializable {
     private ArrayList<Job> theListOfJob = new ArrayList<>();
 
     public JobList() {
-       Job newJob = new Job("Security", "Protect Information", "PSU", "12/3/2017", 120000, "http://psu.edu");
+       Job newJob = new Job("Info Security", "Protect Information", "PSU", "12/3/2017", 120000, "http://psu.edu");
        theListOfJob.add(newJob);
     }
 

@@ -21,7 +21,7 @@ public class PersistentDataController {
     private static PersistentDataController thePersistentDataCntl;
     private PersistentDataCollection thePersistentDataCollection;
     private final String savedDataPath = "";
-    private final String fileName = "jobData.ser";
+    private final String fileName = "data.ser";
    
     
 
