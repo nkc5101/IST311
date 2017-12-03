@@ -1,5 +1,6 @@
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +21,7 @@ public class PersistentDataCollection implements Serializable {
     private UserProfile loginUser;
     private EmployerProfile loginEmployer;
     private boolean employerLogin = false;
+    private boolean hasResults;
     // All other persistent data will go below here
 
     public PersistentDataCollection() {
@@ -97,5 +99,20 @@ public class PersistentDataCollection implements Serializable {
 
     public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location) {
         theEmployerList.updateEmployer(username, password, phoneNumber, address, companyName, location);
+    }
+    
+    public boolean hasResults(){
+        return hasResults;
+    }
+    
+    public ArrayList<Job> searchJobs(String searchTerms){
+        ArrayList<Job> results = new ArrayList<>();
+        results = theJobList.search(searchTerms);
+        if(results != null){
+            hasResults = true;
+        } else{
+            hasResults = false;
+        }
+        return results;
     }
 }

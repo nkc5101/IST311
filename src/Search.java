@@ -13,9 +13,9 @@ public class Search {
     private String searchTerms;
     private Filter filter;
 
-    Search(String searchTerms, String filterCompanyName, int filterDistance, String filterZipCode) {
+    Search(String searchTerms) {
         this.searchTerms = searchTerms;
-        filter = new Filter(filterCompanyName, filterDistance, filterZipCode);
+        //filter = new Filter(filterCompanyName, filterDistance, filterZipCode);
     }
 
     public String getSearchTerms() {

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /*
@@ -119,6 +120,14 @@ public class PersistentDataController {
         String datePosted = new SimpleDateFormat("dd.MM.YYYY").format(new Date());
         Job newJob = new Job(title, description, company, datePosted, salary, link);
         thePersistentDataCollection.addJob(newJob);
+    }
+    
+    public boolean hasResults(){
+        return thePersistentDataCollection.hasResults();
+    }
+    
+    public ArrayList<Job> searchJobs(String searchTerms){
+        return thePersistentDataCollection.searchJobs(searchTerms);
     }
 
 }

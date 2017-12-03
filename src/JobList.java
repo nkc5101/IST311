@@ -31,7 +31,7 @@ public class JobList implements Serializable {
         this.theListOfJob = theListOfJob;
     }
 
-    public ObservableList<Job> getUserData() {
+    public ObservableList<Job> getJobData() {
         ObservableList<Job> theListOfUsers;
         List<Job> userList = (List<Job>) theListOfJob;
         theListOfUsers = FXCollections.observableList(userList);
@@ -46,5 +46,24 @@ public class JobList implements Serializable {
         Job test = new Job(jobTitle, jobDescription, company, datePosted, salary, link);
         int i = 0;
         theListOfJob.set(i, test);
+    }
+    
+    public ArrayList<Job> search(String searchTerms){
+        
+        ArrayList<Job> results = new ArrayList<>();
+        
+        for(int i = 0; i<theListOfJob.size(); i++){
+            if(theListOfJob.get(i).getJobTitle().equals(searchTerms)){
+                results.add(theListOfJob.get(i));
+            }
+            if(theListOfJob.get(i).getJobDescription().equals(searchTerms)){
+                results.add(theListOfJob.get(i));
+            }
+            if(theListOfJob.get(i).getCompany().equals(searchTerms)){
+                results.add(theListOfJob.get(i));
+            }
+
+        }
+        return results;
     }
 }

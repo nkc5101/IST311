@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,14 +56,11 @@ public class SearchViewController implements Initializable {
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
         }
-        // TODO
-        jobList.add(new Job("k", "k", "l", "k", 1, "k"));
-        //jobTable.setItems((ObservableList) jobList);
 
-        jobName.setCellValueFactory(new PropertyValueFactory<Job, String>("jobTitle"));
-        jobLink.setCellValueFactory(new PropertyValueFactory<Job, String>("link"));
+        jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
+        jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
+        jobTable.setItems(PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData());
 
-        //jobTable.setItems(getJobList());
     }
 
     /**
@@ -73,26 +71,24 @@ public class SearchViewController implements Initializable {
     @FXML
     private void handleSearchFunctionAction() throws IOException {
         // TODO add your handling code here:
-        System.out.println("work");
 
-        String name = searchField.getText();
-        boolean flag = false;
-        for (int i = 0; i < jobList.size(); i++) {
+        String searchTerms = searchField.getText();
+        ArrayList<Job> results = PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms);
 
-            if (name.equals(jobList.get(i).getJobTitle())) {
-                flag = true;
-                jobName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getJobTitle()));
-                jobLink.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getLink()));
-
+        if (PersistentDataController.getPersistentDataCntl().hasResults()) {
+            for (int i = 0; i < PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
+               
+                ObservableList<Job> theResults =  FXCollections.observableList(results);;
+                jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
+                jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
+                jobTable.setItems(theResults);
             }
-
-        }
-        if (!flag) {
-
+        } else {
             jobLink.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
             jobName.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
-
+            
         }
+
     }
 
     @FXML
