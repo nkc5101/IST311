@@ -128,6 +128,7 @@ public class LoginViewController implements Initializable {
             if (newPassword.equals(reEnteredPassword)) {
                 UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
                 PersistentDataController.getPersistentDataCntl().addPersistentData(newUser);
+                PersistentDataController.getPersistentDataCntl().writeSerializedData();
                 returnToLogin(event);
             }
         }
@@ -144,6 +145,7 @@ public class LoginViewController implements Initializable {
             if (newPassword.equals(reEnteredPassword)) {
                 EmployerProfile newUser = new EmployerProfile(newUsername, newPassword, phoneNumber, address, name, location);
                 PersistentDataController.getPersistentDataCntl().addPersistentEmployerData(newUser);
+                PersistentDataController.getPersistentDataCntl().writeSerializedData();
                 returnToLogin(event);
 
             }

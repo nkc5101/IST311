@@ -86,5 +86,6 @@ public class JobViewController implements Initializable {
         String link = linkField.getText();
 
         PersistentDataController.getPersistentDataCntl().addJob(title, description, salary, link);
+        PersistentDataController.getPersistentDataCntl().writeSerializedData();
     }
 }
