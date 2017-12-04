@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -74,19 +75,21 @@ public class SearchViewController implements Initializable {
 
         String searchTerms = searchField.getText();
         ArrayList<Job> results = PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms);
+        
 
-        if (PersistentDataController.getPersistentDataCntl().hasResults()) {
+        if (!PersistentDataController.getPersistentDataCntl().hasResults()) {
             for (int i = 0; i < PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
-               
-                ObservableList<Job> theResults =  FXCollections.observableList(results);;
+
+                ObservableList<Job> theResults = FXCollections.observableList(results);;
                 jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
                 jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
                 jobTable.setItems(theResults);
             }
-        } else {
-            jobLink.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
-            jobName.setCellValueFactory(cellData -> new SimpleStringProperty("Not found"));
-            
+        } 
+        if(PersistentDataController.getPersistentDataCntl().hasResults()){
+           jobTable.setItems(null);
+           jobTable.setPlaceholder(new Label("No Results Found"));
+        
         }
 
     }

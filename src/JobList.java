@@ -56,7 +56,7 @@ public class JobList implements Serializable {
             if(theListOfJob.get(i).getJobTitle().equals(searchTerms)){
                 results.add(theListOfJob.get(i));
             }
-            if(theListOfJob.get(i).getJobDescription().equals(searchTerms)){
+            if(theListOfJob.get(i).getJobDescription().contains(searchTerms)){
                 results.add(theListOfJob.get(i));
             }
             if(theListOfJob.get(i).getCompany().equals(searchTerms)){

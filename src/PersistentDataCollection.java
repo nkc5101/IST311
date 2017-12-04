@@ -21,7 +21,7 @@ public class PersistentDataCollection implements Serializable {
     private UserProfile loginUser;
     private EmployerProfile loginEmployer;
     private boolean employerLogin = false;
-    private boolean hasResults;
+    private boolean hasResults = false;
     // All other persistent data will go below here
 
     public PersistentDataCollection() {
@@ -102,17 +102,14 @@ public class PersistentDataCollection implements Serializable {
     }
     
     public boolean hasResults(){
+        
         return hasResults;
     }
     
     public ArrayList<Job> searchJobs(String searchTerms){
         ArrayList<Job> results = new ArrayList<>();
         results = theJobList.search(searchTerms);
-        if(results != null){
-            hasResults = true;
-        } else{
-            hasResults = false;
-        }
+        hasResults = results.isEmpty();
         return results;
     }
 }
