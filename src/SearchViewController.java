@@ -101,20 +101,18 @@ public class SearchViewController implements Initializable {
         System.out.println(tempJob.getJobTitle());
 
         //PersistentDataController.getPersistentDataCntl().setSelectedJob(tempJob);
-        
         return tempJob;
     }
-    
+
     @FXML
-    public void handleJobSelection(ActionEvent event)
-    {
+    public void handleJobSelection(ActionEvent event) {
         Job someJob = getSelectedRow();
         System.out.println(someJob.getJobTitle());
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Job Info");
         alert.setHeaderText(someJob.getJobTitle());
-        alert.setContentText("Description: " +  someJob.getJobDescription() + "\nCompany: " + someJob.getCompany()
-                                + "\nDate Posted: " + someJob.getDatePosted());
+        alert.setContentText("Description: " + someJob.getJobDescription() + "\nCompany: " + someJob.getCompany()
+                + "\nDate Posted: " + someJob.getDatePosted());
         alert.showAndWait();
     }
 

@@ -60,7 +60,8 @@ public class ProfileViewController implements Initializable {
 
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             EmployerProfile user = PersistentDataController.getPersistentDataCntl().getEmployer();
-            careerProfileLabel.setText("Location");
+            careerProfileLabel.setText("Location:");
+            careerProfileLabel.setLayoutX(125);
             newUsernameField.setText(user.getUsername());
             newPasswordField.setText(user.getPassword());
             nameField.setText(user.getCompanyName());

@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="430.9609375" prefWidth="525.5078125" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfileViewController">
-  <Label layoutX="112.0" layoutY="30.0" text="Username" />
+<AnchorPane prefHeight="430.9609375" prefWidth="525.5078125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ProfileViewController">
+  <Label layoutX="118.0" layoutY="28.0" text="Username:" />
   <TextField fx:id="newUsernameField" layoutX="189.0" layoutY="25.0" />
-  <Label layoutX="121.0" layoutY="67.0" text="Password:" />
+  <Label layoutX="121.0" layoutY="64.0" text="Password:" />
   <PasswordField fx:id="newPasswordField" layoutX="189.0" layoutY="61.0" />
-  <Label layoutX="143.0" layoutY="141.0" text="Email:" />
+  <Label layoutX="143.0" layoutY="139.0" text="Email:" />
   <TextField fx:id="emailField" layoutX="189.0" layoutY="136.0" />
-  <Label layoutX="141.0" layoutY="178.0" text="Name:" fx:id = "nameLabel" />
+  <Label fx:id="nameLabel" layoutX="139.0" layoutY="176.0" text="Name:" />
   <TextField fx:id="nameField" layoutX="189.0" layoutY="173.0" />
-  <Label layoutX="80.0" layoutY="214.0" text="Phone Number:" />
+  <Label layoutX="90.0" layoutY="212.0" text="Phone Number:" />
   <TextField fx:id="phoneField" layoutX="190.0" layoutY="209.0" />
-  <Label layoutX="91.0" layoutY="257.0" text="Career Choice:"  fx:id = "careerChoiceLabel" />
+  <Label fx:id="careerChoiceLabel" layoutX="97.0" layoutY="253.0" text="Career Choice:" />
   <TextField fx:id="careerChoiceField" layoutX="189.0" layoutY="252.0" />
-  <Label layoutX="115.0" layoutY="299.0" text="Address:" />
+  <Label layoutX="128.0" layoutY="296.0" text="Address:" />
   <TextField fx:id="addressField" layoutX="190.0" layoutY="294.0" />
   <Button layoutX="394.0" layoutY="245.0" onAction="#handleUpdateProfileButtonAction" text="Update Profile" />
   <Button layoutX="19.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
   <Button layoutX="110.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
   <Button layoutX="204.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-  <Button layoutX="291.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" fx:id= "testPersonalityButton" />
+  <Button fx:id="testPersonalityButton" layoutX="291.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
   <Button layoutX="438.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
-  <TextField layoutX="190.0" layoutY="99.0" prefHeight="31.0" prefWidth="187.0" fx:id = "careerProfileField" />
-  <Label layoutX="95.0" layoutY="104.0" text="Career Profile:" fx:id="careerProfileLabel"/>
+  <TextField fx:id="careerProfileField" layoutX="190.0" layoutY="99.0" prefHeight="31.0" prefWidth="187.0" />
+  <Label fx:id="careerProfileLabel" layoutX="99.0" layoutY="107.0" text="Career Profile:" />
 </AnchorPane>
