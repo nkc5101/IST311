@@ -18,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -108,6 +110,12 @@ public class SearchViewController implements Initializable {
     {
         Job someJob = getSelectedRow();
         System.out.println(someJob.getJobTitle());
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Job Info");
+        alert.setHeaderText(someJob.getJobTitle());
+        alert.setContentText("Description: " +  someJob.getJobDescription() + "\nCompany: " + someJob.getCompany()
+                                + "\nDate Posted: " + someJob.getDatePosted());
+        alert.showAndWait();
     }
 
     @FXML

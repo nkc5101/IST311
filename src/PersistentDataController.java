@@ -118,7 +118,7 @@ public class PersistentDataController {
 
     public void addJob(String title, String description, int salary, String link) {
         String company = thePersistentDataCollection.getLoginEmployer().getCompanyName();
-        String datePosted = new SimpleDateFormat("dd.MM.YYYY").format(new Date());
+        String datePosted = new SimpleDateFormat("MM.dd.YYYY").format(new Date());
         Job newJob = new Job(title, description, company, datePosted, salary, link);
         thePersistentDataCollection.addJob(newJob);
     }
