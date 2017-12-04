@@ -1,4 +1,4 @@
- 
+
 import java.awt.Image;
 import java.io.File;
 import java.io.Serializable;
@@ -49,16 +49,14 @@ public class UserProfile extends Profile implements Editable, Serializable {
     public void setCareerChoice(String careerChoice) {
         this.careerChoice = careerChoice;
     }
-    
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    
-    
 
     public Image getImage() {
         return profilePicture;
@@ -99,20 +97,20 @@ public class UserProfile extends Profile implements Editable, Serializable {
     public void addFile(File file) {
         files.add(file);
     }
-    
-    public void setCareerProfile(String careerProfile){
+
+    public void setCareerProfile(String careerProfile) {
         this.careerProfile = careerProfile;
     }
-    
-    public String getCareerProfile(){
+
+    public String getCareerProfile() {
         return careerProfile;
     }
-    
-    public void setPersonality(String personality){
+
+    public void setPersonality(String personality) {
         this.personality = personality;
     }
-    
-    public String getPersonality(){
+
+    public String getPersonality() {
         return personality;
     }
 

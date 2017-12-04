@@ -75,7 +75,6 @@ public class SearchViewController implements Initializable {
 
         String searchTerms = searchField.getText();
         ArrayList<Job> results = PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms);
-        
 
         if (!PersistentDataController.getPersistentDataCntl().hasResults()) {
             for (int i = 0; i < PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
@@ -85,11 +84,11 @@ public class SearchViewController implements Initializable {
                 jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
                 jobTable.setItems(theResults);
             }
-        } 
-        if(PersistentDataController.getPersistentDataCntl().hasResults()){
-           jobTable.setItems(null);
-           jobTable.setPlaceholder(new Label("No Results Found"));
-        
+        }
+        if (PersistentDataController.getPersistentDataCntl().hasResults()) {
+            jobTable.setItems(null);
+            jobTable.setPlaceholder(new Label("No Results Found"));
+
         }
 
     }

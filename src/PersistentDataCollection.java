@@ -101,13 +101,13 @@ public class PersistentDataCollection implements Serializable {
     public void updateEmployer(String username, String password, String phoneNumber, String address, String companyName, String location) {
         theEmployerList.updateEmployer(username, password, phoneNumber, address, companyName, location);
     }
-    
-    public boolean hasResults(){
-        
+
+    public boolean hasResults() {
+
         return hasResults;
     }
-    
-    public ArrayList<Job> searchJobs(String searchTerms){
+
+    public ArrayList<Job> searchJobs(String searchTerms) {
         ArrayList<Job> results = new ArrayList<>();
         results = theJobList.search(searchTerms);
         hasResults = results.isEmpty();

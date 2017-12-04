@@ -47,19 +47,19 @@ public class JobList implements Serializable {
         int i = 0;
         theListOfJob.set(i, test);
     }
-    
-    public ArrayList<Job> search(String searchTerms){
-        
+
+    public ArrayList<Job> search(String searchTerms) {
+
         ArrayList<Job> results = new ArrayList<>();
-        
-        for(int i = 0; i<theListOfJob.size(); i++){
-            if(theListOfJob.get(i).getJobTitle().equals(searchTerms)){
+
+        for (int i = 0; i < theListOfJob.size(); i++) {
+            if (theListOfJob.get(i).getJobTitle().equals(searchTerms)) {
                 results.add(theListOfJob.get(i));
             }
-            if(theListOfJob.get(i).getJobDescription().contains(searchTerms)){
+            if (theListOfJob.get(i).getJobDescription().contains(searchTerms)) {
                 results.add(theListOfJob.get(i));
             }
-            if(theListOfJob.get(i).getCompany().equals(searchTerms)){
+            if (theListOfJob.get(i).getCompany().equals(searchTerms)) {
                 results.add(theListOfJob.get(i));
             }
 

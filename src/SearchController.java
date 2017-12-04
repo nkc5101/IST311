@@ -19,7 +19,6 @@ class SearchController {
     @FXML
     Stage stage;
     private static SearchController searchController;
-    
 
     private SearchController(Stage theStage) {
         stage = theStage;
@@ -51,6 +50,5 @@ class SearchController {
             e.printStackTrace();
         }
     }
-    
-    
+
 }

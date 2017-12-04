@@ -121,12 +121,12 @@ public class PersistentDataController {
         Job newJob = new Job(title, description, company, datePosted, salary, link);
         thePersistentDataCollection.addJob(newJob);
     }
-    
-    public boolean hasResults(){
+
+    public boolean hasResults() {
         return thePersistentDataCollection.hasResults();
     }
-    
-    public ArrayList<Job> searchJobs(String searchTerms){
+
+    public ArrayList<Job> searchJobs(String searchTerms) {
         return thePersistentDataCollection.searchJobs(searchTerms);
     }
 
