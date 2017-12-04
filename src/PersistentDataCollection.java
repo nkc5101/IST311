@@ -49,6 +49,7 @@ public class PersistentDataCollection implements Serializable {
         boolean authenticate = false;
         if (theUserList.Authenticate(username, password)) {
             authenticate = true;
+            employerLogin = false;
             loginUser = theUserList.getLoginUser();
         }
         if (theEmployerList.Authenticate(username, password)) {
