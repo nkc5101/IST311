@@ -77,6 +77,7 @@ public class PersistentDataController {
 
     public void addPersistentData(UserProfile user) {
         thePersistentDataCollection.addUserData(user);
+        writeSerializedData();
     }
 
     public boolean authenticate(String username, String password) {
@@ -89,14 +90,17 @@ public class PersistentDataController {
 
     public EmployerProfile getEmployer() {
         return thePersistentDataCollection.getLoginEmployer();
+        
     }
 
     public void updateUser(String username, String password, String address, String phoneNumber, String name, String careerProfile, String email) {
         thePersistentDataCollection.updateUser(username, password, address, phoneNumber, name, careerProfile, email);
+        writeSerializedData();
     }
 
     public void addPersonality(String personality) {
         thePersistentDataCollection.addPersonality(personality);
+        writeSerializedData();
     }
 
     void setSelectedJob(Job tempJob) {
@@ -106,6 +110,7 @@ public class PersistentDataController {
 
     public void addPersistentEmployerData(EmployerProfile newEmployer) {
         thePersistentDataCollection.addEmployer(newEmployer);
+        writeSerializedData();
     }
 
     public boolean getIsEmployer() {
@@ -121,6 +126,7 @@ public class PersistentDataController {
         String datePosted = new SimpleDateFormat("MM.dd.YYYY").format(new Date());
         Job newJob = new Job(title, description, company, datePosted, salary, link);
         thePersistentDataCollection.addJob(newJob);
+        writeSerializedData();
     }
 
     public boolean hasResults() {

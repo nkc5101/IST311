@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.151" fx:controller="CreateCareerProfileController">
+   <children>
+      <Button fx:id="homeButton" layoutX="29.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home"  />
+      <Button fx:id="searchButton" layoutX="115.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
+      <Button fx:id="profileButton" layoutX="203.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+      <Button fx:id="testPersonalityButton" layoutX="290.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+      <Button fx:id="logOffButton" layoutX="510.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
+      <Button fx:id="careerButton" layoutX="430.0" layoutY="323.0" mnemonicParsing="false" text="Career" />
+      <Button fx:id="createCareerButton" layoutX="455.0" layoutY="166.0" mnemonicParsing="false" onAction="#createCareerButtonAction" text="Create Career" />
+      <Label layoutX="125.0" layoutY="98.0" text="Career Name:" />
+      <Label layoutX="90.0" layoutY="143.0" text="Career Description:" />
+      <Label layoutX="116.0" layoutY="247.0" text="Required Skills:" />
+      <TextField layoutX="227.0" layoutY="93.0" />
+      <TextField layoutX="227.0" layoutY="143.0" prefHeight="76.0" prefWidth="187.0" />
+      <TextField layoutX="227.0" layoutY="242.0" />
+   </children>
+</AnchorPane>

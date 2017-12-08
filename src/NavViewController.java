@@ -51,6 +51,12 @@ public class NavViewController implements Initializable {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
+    
+    @FXML
+    private void handleCareerProfileButtonAction(){
+        Stage theStage = (Stage) actionTarget.getScene().getWindow();
+        CareerProfileController.getCareerProfileController(theStage);
+    }
 
     @FXML
     private void handleLogOffButtonAction() {
