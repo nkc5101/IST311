@@ -106,7 +106,7 @@ public class TestPersonalityViewController implements Initializable {
     private String testPersonality(int c, int m, int w, int l, int t) {
         String result ;
         if (c>=4 && m<=3 && w>4 && l>3 && t<3) {
-            result = "coummicator";
+            result = "communicator";
             System.out.println(result);
         } else if (c>=2 && m>4 && w<=3 && l<3&&t<3) {
             result = "hard working";

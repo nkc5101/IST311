@@ -55,7 +55,7 @@ public class SearchViewController implements Initializable {
     @FXML
     private TableColumn<Job, String> jobLink = new TableColumn("Link");
     @FXML
-    private TableColumn<Job, String> jobSuit = new TableColumn("jobSuit");
+    private TableColumn<PersistentDataController, String> jobSuit = new TableColumn("jobSuit");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -80,8 +80,6 @@ public class SearchViewController implements Initializable {
     private void handleSearchFunctionAction() throws IOException {
         // TODO add your handling code here:
         
-       
-
         String searchTerms = searchField.getText();
         ArrayList<Job> results = PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms);
 
@@ -91,7 +89,7 @@ public class SearchViewController implements Initializable {
                 ObservableList<Job> theResults = FXCollections.observableList(results);;
                 jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
                 jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
-                jobSuit.setCellValueFactory(new PropertyValueFactory<>("jobSuit"));
+                jobSuit.setCellValueFactory(new PropertyValueFactory<>(""));
                 jobTable.setItems(theResults);
             }
         }
@@ -120,7 +118,7 @@ public class SearchViewController implements Initializable {
         alert.setTitle("Job Info");
         alert.setHeaderText(someJob.getJobTitle());
         alert.setContentText("Description: " + someJob.getJobDescription() + "\nCompany: " + someJob.getCompany()
-                + "\nDate Posted: " + someJob.getDatePosted());
+                + "\nDate Posted: " + someJob.getDatePosted() + "\nTest: "  + someJob.getJobPersonality());
         alert.showAndWait();
     }
 

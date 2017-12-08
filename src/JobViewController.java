@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -30,17 +31,18 @@ public class JobViewController implements Initializable {
     private TextField salaryField;
     @FXML
     private TextField linkField;
+    @FXML
+    private ComboBox personalityDrop;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
-            JobController.getJobController(theStage);
-        } else {
-            TestPersonalityController.getTestPersonalityController(theStage);
-        }
+
+        
+        personalityDrop.getItems().removeAll(personalityDrop.getItems());
+        personalityDrop.getItems().addAll("communicator", "hard working", "team leader","good teammates","Invidual worker", "Learner");
     }
 
     @FXML
@@ -88,7 +90,7 @@ public class JobViewController implements Initializable {
         String description = jobDescriptionField.getText();
         int salary = Integer.parseInt(salaryField.getText());
         String link = linkField.getText();
-        String jobPersonality = null;
+        String jobPersonality = personalityDrop.getSelectionModel().getSelectedItem().toString();
 
         PersistentDataController.getPersistentDataCntl().addJob(title, description, salary, link, jobPersonality);
         PersistentDataController.getPersistentDataCntl().writeSerializedData();
