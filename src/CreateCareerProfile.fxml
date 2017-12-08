@@ -11,7 +11,7 @@
       <Button fx:id="homeButton" layoutX="29.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home"  />
       <Button fx:id="searchButton" layoutX="115.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
       <Button fx:id="profileButton" layoutX="203.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-      <Button fx:id="testPersonalityButton" layoutX="290.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+      <Button fx:id="jobButton" layoutX="290.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleJobButtonAction" text="Job" />
       <Button fx:id="logOffButton" layoutX="510.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
       <Button fx:id="careerButton" layoutX="430.0" layoutY="323.0" mnemonicParsing="false" text="Career" />
       <Button fx:id="createCareerButton" layoutX="455.0" layoutY="166.0" mnemonicParsing="false" onAction="#createCareerButtonAction" text="Create Career" />

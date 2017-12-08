@@ -46,8 +46,8 @@ public class SearchCareerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
                 
-        careerName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
-        careerDescription.setCellValueFactory(new PropertyValueFactory<>("link"));
+        careerName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        careerDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         careerTable.setItems(PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getCareerList().getCareerProfileData());
         
     } 
@@ -65,8 +65,8 @@ public class SearchCareerController implements Initializable {
             for (int i = 0; i < PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
 
                 ObservableList<CareerProfile> theResults = FXCollections.observableList(results);;
-                careerName.setCellValueFactory(new PropertyValueFactory<>("careerName"));
-                careerDescription.setCellValueFactory(new PropertyValueFactory<>("careerDescription"));
+                careerName.setCellValueFactory(new PropertyValueFactory<>("name"));
+                careerDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
                 careerTable.setItems(theResults);
             }
         }

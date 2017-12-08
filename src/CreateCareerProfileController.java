@@ -22,26 +22,24 @@ import javafx.stage.Stage;
  * @author Nate Cox
  */
 public class CreateCareerProfileController implements Initializable {
-    
+
     private Stage theStage;
-    @FXML private TextField nameField;
-    @FXML private TextField descriptionField;
-    @FXML private TextField requiredSkillsField;
+    @FXML
+    private TextField nameField;
+    @FXML
+    private TextField descriptionField;
+    @FXML
+    private TextField requiredSkillsField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
-            JobController.getJobController(theStage);
-        } else {
-            TestPersonalityController.getTestPersonalityController(theStage);
-        }
+
         // TODO
-    }  
-    
+    }
+
     @FXML
     private void handleSearchButtonAction(ActionEvent event) {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -55,13 +53,10 @@ public class CreateCareerProfileController implements Initializable {
     }
 
     @FXML
-    private void handleTestPersonalityButtonAction(ActionEvent event) {
+    private void handleJobButtonAction(ActionEvent event) {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
-            JobController.getJobController(theStage);
-        } else {
-            TestPersonalityController.getTestPersonalityController(theStage);
-        }
+
+        JobController.getJobController(theStage);
     }
 
     @FXML
@@ -75,17 +70,17 @@ public class CreateCareerProfileController implements Initializable {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         NavController.getNavController(theStage);
     }
-    
+
     @FXML
-    private void createCareerButtonAction(){
-       String name = nameField.getText();
-       String description = descriptionField.getText();
-       String contents = requiredSkillsField.getText();
+    private void createCareerButtonAction() {
+        String name = nameField.getText();
+        String description = descriptionField.getText();
+        String contents = requiredSkillsField.getText();
         String[] items = contents.split(",");
-       ArrayList<String> requiredSkills = new ArrayList<String>(Arrays.asList(items));
-       
-       PersistentDataController.getPersistentDataCntl().addCareerProfile(name, description, requiredSkills);
-       
+        ArrayList<String> requiredSkills = new ArrayList<String>(Arrays.asList(items));
+
+        PersistentDataController.getPersistentDataCntl().addCareerProfile(name, description, requiredSkills);
+
     }
-    
+
 }

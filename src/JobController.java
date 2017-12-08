@@ -44,7 +44,7 @@ class JobController {
         try {
             root = FXMLLoader.load(getClass().getResource("JobView.fxml"));
             scene = new Scene(root, 600, 600);
-            stage.setTitle("Profile");
+            stage.setTitle("Job");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
