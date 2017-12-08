@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Nate Cox
  */
-public class CareerProfile {
+public class CareerProfile implements Serializable{
     
     private String name;
     private String description;

@@ -18,8 +18,8 @@
       <Label layoutX="125.0" layoutY="98.0" text="Career Name:" />
       <Label layoutX="90.0" layoutY="143.0" text="Career Description:" />
       <Label layoutX="116.0" layoutY="247.0" text="Required Skills:" />
-      <TextField layoutX="227.0" layoutY="93.0" />
-      <TextField layoutX="227.0" layoutY="143.0" prefHeight="76.0" prefWidth="187.0" />
-      <TextField layoutX="227.0" layoutY="242.0" />
+      <TextField layoutX="227.0" layoutY="93.0" fx:id = "nameField" />
+      <TextField layoutX="227.0" layoutY="143.0" prefHeight="76.0" prefWidth="187.0" fx:id = "descriptionField"/>
+      <TextField layoutX="227.0" layoutY="242.0" fx:id= "requiredSkillsField"/>
    </children>
 </AnchorPane>

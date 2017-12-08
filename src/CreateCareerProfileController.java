@@ -5,11 +5,15 @@
  */
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -20,12 +24,21 @@ import javafx.stage.Stage;
 public class CreateCareerProfileController implements Initializable {
     
     private Stage theStage;
+    @FXML private TextField nameField;
+    @FXML private TextField descriptionField;
+    @FXML private TextField requiredSkillsField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
+            JobController.getJobController(theStage);
+        } else {
+            TestPersonalityController.getTestPersonalityController(theStage);
+        }
         // TODO
     }  
     
@@ -65,7 +78,14 @@ public class CreateCareerProfileController implements Initializable {
     
     @FXML
     private void createCareerButtonAction(){
-        
+       String name = nameField.getText();
+       String description = descriptionField.getText();
+       String contents = requiredSkillsField.getText();
+        String[] items = contents.split(",");
+       ArrayList<String> requiredSkills = new ArrayList<String>(Arrays.asList(items));
+       
+       PersistentDataController.getPersistentDataCntl().addCareerProfile(name, description, requiredSkills);
+       
     }
     
 }

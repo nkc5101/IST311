@@ -22,6 +22,8 @@ public class PersistentDataCollection implements Serializable {
     private EmployerProfile loginEmployer;
     private boolean employerLogin = false;
     private boolean hasResults = false;
+    private CareerProfileList theCareerList;
+    private boolean hasCareerResults = false;
     // All other persistent data will go below here
 
     public PersistentDataCollection() {
@@ -34,6 +36,10 @@ public class PersistentDataCollection implements Serializable {
 
         if (theEmployerList == null) {
             theEmployerList = new EmployerList();
+        }
+        
+        if(theCareerList == null){
+            theCareerList = new CareerProfileList();
         }
     }
 
@@ -110,7 +116,26 @@ public class PersistentDataCollection implements Serializable {
     public ArrayList<Job> searchJobs(String searchTerms) {
         ArrayList<Job> results = new ArrayList<>();
         results = theJobList.search(searchTerms);
+        hasCareerResults = results.isEmpty();
+        return results;
+    }
+    
+    public CareerProfileList getCareerList(){
+        return theCareerList;
+    }
+    
+    public void addCareer(CareerProfile newCareer){
+        theCareerList.addCareer(newCareer);
+    }
+    
+    public ArrayList<CareerProfile> searchCareers(String searchTerms){
+         ArrayList<CareerProfile> results = new ArrayList<>();
+        results = theCareerList.search(searchTerms);
         hasResults = results.isEmpty();
         return results;
+    }
+    
+    public boolean hasCareerResults(){
+        return hasCareerResults;
     }
 }

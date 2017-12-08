@@ -36,7 +36,11 @@ public class JobViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
+            JobController.getJobController(theStage);
+        } else {
+            TestPersonalityController.getTestPersonalityController(theStage);
+        }
     }
 
     @FXML

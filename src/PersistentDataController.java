@@ -136,5 +136,24 @@ public class PersistentDataController {
     public ArrayList<Job> searchJobs(String searchTerms) {
         return thePersistentDataCollection.searchJobs(searchTerms);
     }
+    
+    public boolean hasCareerResults(){
+        return thePersistentDataCollection.hasCareerResults();
+    }
+    
+    public ArrayList<CareerProfile> searchCareers(String searchTerms){
+       return thePersistentDataCollection.searchCareers(searchTerms);
+    }
+    
+    public CareerProfileList getCareerList(){
+        return thePersistentDataCollection.getCareerList();
+    }
+    
+    public void addCareerProfile(String name, String description, ArrayList<String> requiredSkills){
+        CareerProfile newCareer = new CareerProfile(name, description, requiredSkills);
+        thePersistentDataCollection.addCareer(newCareer);
+    }
+    
+    
 
 }
