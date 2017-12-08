@@ -18,15 +18,25 @@ public class Job implements Serializable {
     private String datePosted = new String();
     private int salary;
     private String link = new String();
+    private String jobPersonality;
 
-    public Job(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link) {
+    public Job(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, String jobPersonality) {
         this.salary = salary;
         this.company = company;
         this.datePosted = datePosted;
         this.jobDescription = jobDescription;
         this.jobTitle = jobTitle;
         this.link = link;
+        this.jobPersonality = jobPersonality;
 
+    }
+    
+    public String getJobPersonality() {
+        return jobPersonality;
+    }
+    
+    public void setJobPersonality(String jobPersonality) {
+        this.jobPersonality = jobPersonality;
     }
 
     public String getJobTitle() {

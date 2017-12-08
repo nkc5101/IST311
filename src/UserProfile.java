@@ -26,11 +26,12 @@ public class UserProfile extends Profile implements Editable, Serializable {
     private String careerProfile;
     private String personality;
 
-    UserProfile(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice) {
+    UserProfile(String username, String password, String email, String phoneNumber, String address, String name, String careerChoice, String personality) {
         super(username, password, phoneNumber, address);
         this.name = name;
         this.careerChoice = careerChoice;
         this.email = email;
+        this.personality = personality;
 
     }
 

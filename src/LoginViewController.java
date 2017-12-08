@@ -124,9 +124,10 @@ public class LoginViewController implements Initializable {
             String phoneNumber = phoneNumberField.getText();
             String address = addressField.getText();
             String careerChoice = careerChoiceField.getText();
+            String personality = null;
 
             if (newPassword.equals(reEnteredPassword)) {
-                UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice);
+                UserProfile newUser = new UserProfile(newUsername, newPassword, email, phoneNumber, address, name, careerChoice, personality);
                 PersistentDataController.getPersistentDataCntl().addPersistentData(newUser);
                 PersistentDataController.getPersistentDataCntl().writeSerializedData();
                 returnToLogin(event);

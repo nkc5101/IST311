@@ -20,7 +20,7 @@ public class UserList implements Serializable {
 
     public UserList() {
 
-        UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer");
+        UserProfile test = new UserProfile("username", "password", "username@gmail.com", "123-456-7890", "123 Road Way", "Username", "App Developer", "team leader");
         listOfUsers.add(test);
 
     }

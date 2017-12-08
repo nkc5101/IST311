@@ -19,13 +19,20 @@ public class JobList implements Serializable {
     private ArrayList<Job> theListOfJob = new ArrayList<>();
 
     public JobList() {
-        Job newJob = new Job("Info Security", "Protect Information", "PSU", "12/3/2017", 120000, "http://psu.edu");
+        Job newJob = new Job("Info Security", "Protect Information", "PSU", "12/3/2017", 120000, "http://psu.edu", "team leader");
         theListOfJob.add(newJob);
     }
 
     public ArrayList<Job> getTheListOfJob() {
         return theListOfJob;
     }
+    
+    public boolean getJobSuit() {
+        
+        
+        return false;
+    }
+            
 
     public void setTheListOfJob(ArrayList<Job> theListOfJob) {
         this.theListOfJob = theListOfJob;
@@ -42,8 +49,8 @@ public class JobList implements Serializable {
         theListOfJob.add(newJob);
     }
 
-    public void updateJob(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link) {
-        Job test = new Job(jobTitle, jobDescription, company, datePosted, salary, link);
+    public void updateJob(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, String jobPersonality) {
+        Job test = new Job(jobTitle, jobDescription, company, datePosted, salary, link, jobPersonality);
         int i = 0;
         theListOfJob.set(i, test);
     }

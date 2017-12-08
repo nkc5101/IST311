@@ -89,8 +89,8 @@ public class PersistentDataCollection implements Serializable {
         theJobList.addJob(newJob);
     }
 
-    public void updateJob(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link) {
-        theJobList.updateJob(jobTitle, jobDescription, company, datePosted, salary, link);
+    public void updateJob(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, String jobPersonality) {
+        theJobList.updateJob(jobTitle, jobDescription, company, datePosted, salary, link, jobPersonality);
     }
 
     public void addEmployer(EmployerProfile newEmployer) {

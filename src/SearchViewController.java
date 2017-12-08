@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -44,6 +45,7 @@ public class SearchViewController implements Initializable {
     Stage theStage;
     @FXML
     TextField searchField;
+    
 
     @FXML
     private TableView<Job> jobTable = new TableView<Job>();
@@ -52,6 +54,8 @@ public class SearchViewController implements Initializable {
     private TableColumn<Job, String> jobName = new TableColumn("Job Name");
     @FXML
     private TableColumn<Job, String> jobLink = new TableColumn("Link");
+    @FXML
+    private TableColumn<Job, String> jobSuit = new TableColumn("jobSuit");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,6 +66,7 @@ public class SearchViewController implements Initializable {
 
         jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
         jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
+        jobSuit.setCellValueFactory(new PropertyValueFactory<>("jobSuit"));
         jobTable.setItems(PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData());
 
     }
@@ -74,6 +79,8 @@ public class SearchViewController implements Initializable {
     @FXML
     private void handleSearchFunctionAction() throws IOException {
         // TODO add your handling code here:
+        
+       
 
         String searchTerms = searchField.getText();
         ArrayList<Job> results = PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms);
@@ -84,6 +91,7 @@ public class SearchViewController implements Initializable {
                 ObservableList<Job> theResults = FXCollections.observableList(results);;
                 jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
                 jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
+                jobSuit.setCellValueFactory(new PropertyValueFactory<>("jobSuit"));
                 jobTable.setItems(theResults);
             }
         }

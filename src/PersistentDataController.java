@@ -121,10 +121,10 @@ public class PersistentDataController {
         thePersistentDataCollection.updateEmployer(username, password, phoneNumber, address, companyName, location);
     }
 
-    public void addJob(String title, String description, int salary, String link) {
+    public void addJob(String title, String description, int salary, String link, String jobPersonality) {
         String company = thePersistentDataCollection.getLoginEmployer().getCompanyName();
         String datePosted = new SimpleDateFormat("MM.dd.YYYY").format(new Date());
-        Job newJob = new Job(title, description, company, datePosted, salary, link);
+        Job newJob = new Job(title, description, company, datePosted, salary, link, jobPersonality);
         thePersistentDataCollection.addJob(newJob);
         writeSerializedData();
     }
