@@ -152,6 +152,7 @@ public class PersistentDataController {
     public void addCareerProfile(String name, String description, ArrayList<String> requiredSkills){
         CareerProfile newCareer = new CareerProfile(name, description, requiredSkills);
         thePersistentDataCollection.addCareer(newCareer);
+        writeSerializedData();
     }
     
     

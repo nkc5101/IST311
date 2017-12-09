@@ -54,10 +54,7 @@ public class SearchCareerController implements Initializable {
     
      @FXML
     private void handleSearchFunctionAction() throws IOException {
-        // TODO add your handling code here:
-        
        
-
         String searchTerms = searchField.getText();
         ArrayList<CareerProfile> results = PersistentDataController.getPersistentDataCntl().searchCareers(searchTerms);
 
