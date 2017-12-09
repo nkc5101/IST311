@@ -59,7 +59,7 @@ public class SearchCareerController implements Initializable {
         ArrayList<CareerProfile> results = PersistentDataController.getPersistentDataCntl().searchCareers(searchTerms);
 
         if (!PersistentDataController.getPersistentDataCntl().hasCareerResults()) {
-            for (int i = 0; i < PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
+            for (int i = 0; i <=PersistentDataController.getPersistentDataCntl().searchJobs(searchTerms).size(); i++) {
 
                 ObservableList<CareerProfile> theResults = FXCollections.observableList(results);;
                 careerName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -67,7 +67,7 @@ public class SearchCareerController implements Initializable {
                 careerTable.setItems(theResults);
             }
         }
-        if (PersistentDataController.getPersistentDataCntl().hasResults()) {
+        if (PersistentDataController.getPersistentDataCntl().hasCareerResults()) {
             careerTable.setItems(null);
             careerTable.setPlaceholder(new Label("No Results Found"));
 

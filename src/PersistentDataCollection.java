@@ -114,9 +114,10 @@ public class PersistentDataCollection implements Serializable {
     }
 
     public ArrayList<Job> searchJobs(String searchTerms) {
+        hasResults = false;
         ArrayList<Job> results = new ArrayList<>();
         results = theJobList.search(searchTerms);
-        hasCareerResults = results.isEmpty();
+        hasResults = results.isEmpty();
         return results;
     }
     
@@ -129,9 +130,10 @@ public class PersistentDataCollection implements Serializable {
     }
     
     public ArrayList<CareerProfile> searchCareers(String searchTerms){
+        hasCareerResults = false;
          ArrayList<CareerProfile> results = new ArrayList<>();
         results = theCareerList.search(searchTerms);
-        hasResults = results.isEmpty();
+        hasCareerResults = results.isEmpty();
         return results;
     }
     

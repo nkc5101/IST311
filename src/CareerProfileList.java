@@ -53,13 +53,13 @@ public class CareerProfileList implements Serializable{
         ArrayList<CareerProfile> results = new ArrayList<>();
 
         for (int i = 0; i < theListOfCareers.size(); i++) {
-            if (theListOfCareers.get(i).getName().equals(searchTerms)) {
+            if (theListOfCareers.get(i).getName().contains(searchTerms)) {
                 results.add(theListOfCareers.get(i));
             }
             if (theListOfCareers.get(i).getDescription().contains(searchTerms)) {
                 results.add(theListOfCareers.get(i));
             }
-            if (theListOfCareers.get(i).getRequiredSkills().equals(searchTerms)) {
+            if (theListOfCareers.get(i).getRequiredSkills().contains(searchTerms)) {
                 results.add(theListOfCareers.get(i));
             }
 
