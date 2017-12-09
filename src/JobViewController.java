@@ -83,6 +83,13 @@ public class JobViewController implements Initializable {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
+    
+    @FXML 
+    private void handleCareerButtonAction(ActionEvent event) throws IOException{
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        CareerProfileController.getCareerProfileController(theStage);
+    }
 
     @FXML
     private void handleCreateJobButtonAction() {

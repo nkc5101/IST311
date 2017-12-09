@@ -27,6 +27,7 @@ public class NavViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
+            testPersonalityButton.setLayoutX(308);
         }
     }
 

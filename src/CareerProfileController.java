@@ -39,6 +39,7 @@ public class CareerProfileController {
             return careerProfileController;
         } else  if (careerProfileController != null && !PersistentDataController.getPersistentDataCntl().getIsEmployer()){
             careerProfileController.setUpCareerProfileScene();
+            return careerProfileController;
         } else{
             careerProfileController = new CareerProfileController(theExistingStage);
         }

@@ -76,8 +76,8 @@ public class LoginViewController implements Initializable {
     public void handleEmployerProfileCreation(ActionEvent event) {
         careerChoiceLabel.setText("Location:");
         nameLabel.setText("Company Name:");
-        nameLabel.setLayoutX(140);
-        careerChoiceLabel.setLayoutX(180);
+        nameLabel.setLayoutX(105);
+        careerChoiceLabel.setLayoutX(155);
         careerProfileLabel.setVisible(false);
         careerProfileTextField.setVisible(false);
 

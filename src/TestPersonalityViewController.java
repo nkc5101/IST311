@@ -102,6 +102,13 @@ public class TestPersonalityViewController implements Initializable {
 
         TestPersonalityController.getTestPersonalityController(theStage);
     }
+    
+    @FXML 
+    private void handleCareerButtonAction(ActionEvent event) throws IOException{
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        CareerProfileController.getCareerProfileController(theStage);
+    }
 
     private String testPersonality(int c, int m, int w, int l, int t) {
         String result ;

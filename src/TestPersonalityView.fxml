@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TestPersonalityViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TestPersonalityViewController">
   <children>
     <Slider fx:id="sliderOne" blockIncrement="1.0" layoutX="287.0" layoutY="85.0" majorTickUnit="1.0" max="5.0" showTickLabels="true" />
     <Slider fx:id="sliderTwo" blockIncrement="1.0" layoutX="287.0" layoutY="127.0" majorTickUnit="1.0" max="5.0" showTickLabels="true" />
@@ -15,16 +15,17 @@
     <Label layoutX="22.0" layoutY="126.0" text="You feel involved when watching Movies: " />
     <Label layoutX="21.0" layoutY="165.0" text="You like to make joke in your life: " />
     <Label layoutX="21.0" layoutY="200.0" text="You want to motivated others: " />
-    <Button layoutX="73.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
-    <Button layoutX="164.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
-    <Button layoutX="258.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-    <Button layoutX="345.0" layoutY="299.0" mnemonicParsing="false" text="Test Personality" />
-    <Button layoutX="492.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
+    <Button layoutX="22.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
+    <Button layoutX="101.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
+    <Button layoutX="189.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+    <Button layoutX="273.0" layoutY="299.0" mnemonicParsing="false" text="Test Personality" />
+    <Button layoutX="507.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
     <Button layoutX="478.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit Test" />
     <Label fx:id="resultLabel" layoutX="220.0" layoutY="270.0" text="" />
     <Label layoutX="176.0" layoutY="14.0" text="Be aware that value rounds down" />
       <Label layoutX="22.0" layoutY="238.0" text="You want to lead a team: " />
       <Slider fx:id="sliderFive" blockIncrement="1.0" layoutX="287.0" layoutY="238.0" majorTickUnit="1.0" max="5.0" showTickLabels="true" />
       <Label layoutX="242.0" layoutY="57.0" text="0-Strongly disagree 5-Strongly agree" />
+      <Button fx:id="careerButton" layoutX="423.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleCareerButtonAction" text="Career" />
   </children>
 </AnchorPane>

@@ -91,7 +91,7 @@ public class SearchViewController implements Initializable {
                 ObservableList<Job> theResults = FXCollections.observableList(results);;
                 jobName.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
                 jobLink.setCellValueFactory(new PropertyValueFactory<>("link"));
-                jobSuit.setCellValueFactory(new PropertyValueFactory<>(""));
+                jobSuit.setCellValueFactory(new PropertyValueFactory<>("jobSuit"));
                 jobTable.setItems(theResults);
             }
         }

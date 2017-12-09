@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="SearchViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchViewController">
   <children>
-    <Button layoutX="66.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
-    <Button layoutX="130.0" layoutY="331.0" mnemonicParsing="false" text="Search" />
-    <Button layoutX="197.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-    <Button fx:id="testPersonalityButton" layoutX="270.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
-    <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Logoff" />
+    <Button layoutX="22.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
+    <Button layoutX="112.0" layoutY="334.0" mnemonicParsing="false" text="Search" />
+    <Button layoutX="191.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+    <Button fx:id="testPersonalityButton" layoutX="270.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+    <Button layoutX="498.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Logoff" />
     <TextField fx:id="searchField" layoutX="77.0" layoutY="45.0" prefWidth="200.0" />
     <Label layoutX="28.0" layoutY="48.0" text="Search:" />
     <Button layoutX="293.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleSearchFunctionAction" text="Search" />
-    <TableView fx:id="jobTable" layoutX="77.0" layoutY="91.0" prefHeight="200.0" prefWidth="430.0">
+    <TableView fx:id="jobTable" layoutX="55.0" layoutY="92.0" prefHeight="200.0" prefWidth="430.0">
       <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="197.0" text="Job Name" fx:id="jobName" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Link" fx:id="jobLink" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="91.0" text="Job Suitability" fx:id="jobSuit" />
+        <TableColumn fx:id="jobName" maxWidth="5000.0" minWidth="10.0" prefWidth="197.0" text="Job Name" />
+        <TableColumn fx:id="jobLink" maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Link" />
+        <TableColumn fx:id="jobSuit" maxWidth="5000.0" minWidth="10.0" prefWidth="91.0" text="Job Suitability" />
       </columns>
     </TableView>
-    <Button fx:id="jobSelection" layoutX="517.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleJobSelection" text="Select Job" />
-    <Button layoutX="385.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCareerButtonAction" text="Career" />
+    <Button fx:id="jobSelection" layoutX="498.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleJobSelection" text="Select Job" />
+    <Button layoutX="412.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCareerButtonAction" text="Career" />
   </children>
 </AnchorPane>
