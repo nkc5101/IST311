@@ -74,7 +74,16 @@ public class SearchCareerController implements Initializable {
         }
 
     }
-
+@FXML
+    public void handleCareerSelection(ActionEvent event) {
+        CareerProfile career = getSelectedRow();
+        System.out.println(career.getName());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Job Info");
+        alert.setHeaderText(career.getName());
+        alert.setContentText("Description: " + career.getDescription() + "\nRequired skill: " + career.getRequiredSkills());
+        alert.showAndWait();
+    }
     @FXML
     public CareerProfile getSelectedRow() {
         CareerProfile career = careerTable.getSelectionModel().getSelectedItem();

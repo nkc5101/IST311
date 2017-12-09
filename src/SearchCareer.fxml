@@ -7,8 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.151" fx:controller="SearchCareerController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchCareerController">
    <children>
       <Button fx:id="homeButton" layoutX="43.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
       <Button fx:id="searchButton" layoutX="124.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
@@ -16,7 +15,7 @@
       <Button fx:id="testPersonalityButton" layoutX="287.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
       <Button layoutX="427.0" layoutY="325.0" mnemonicParsing="false" text="Career" />
       <Button fx:id="logOffButton" layoutX="508.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Log Off" />
-      <TableView fx:id="careerTable" layoutX="87.0" layoutY="101.0" prefHeight="200.0" prefWidth="430.0">
+      <TableView fx:id="careerTable" layoutX="43.0" layoutY="101.0" prefHeight="200.0" prefWidth="430.0">
          <columns>
             <TableColumn fx:id="careerName" maxWidth="5000.0" minWidth="10.0" prefWidth="219.0" text="Career" />
             <TableColumn fx:id="careerDescription" maxWidth="5000.0" minWidth="10.0" prefWidth="210.0" text="Description" />
@@ -25,5 +24,6 @@
       <Button layoutX="385.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleSearchFunctionAction" text="Search" />
       <Label layoutX="100.0" layoutY="60.0" text="Search:" />
       <TextField fx:id="searchField" layoutX="157.0" layoutY="55.0" prefHeight="31.0" prefWidth="208.0" />
+      <Button layoutX="487.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleCareerSelection" text="Select career" />
    </children>
 </AnchorPane>
