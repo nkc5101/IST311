@@ -19,6 +19,7 @@ public class Job implements Serializable {
     private int salary;
     private String link = new String();
     private String jobPersonality;
+    private String jobSuit;
 
     public Job(String jobTitle, String jobDescription, String company, String datePosted, int salary, String link, String jobPersonality) {
         this.salary = salary;
@@ -37,6 +38,16 @@ public class Job implements Serializable {
     
     public void setJobPersonality(String jobPersonality) {
         this.jobPersonality = jobPersonality;
+    }
+    
+    public void setJobSuit(String suit)
+    {
+        this.jobSuit = suit;
+    }
+    
+    public String getJobSuit()
+    {
+        return jobSuit;
     }
 
     public String getJobTitle() {

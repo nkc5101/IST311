@@ -55,10 +55,12 @@ public class SearchViewController implements Initializable {
     @FXML
     private TableColumn<Job, String> jobLink = new TableColumn("Link");
     @FXML
-    private TableColumn<PersistentDataController, String> jobSuit = new TableColumn("jobSuit");
+    private TableColumn<Job, String> jobSuit = new TableColumn("jobSuit");
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        setJobSuit();
 
         if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             testPersonalityButton.setText("Job");
@@ -109,7 +111,34 @@ public class SearchViewController implements Initializable {
         //PersistentDataController.getPersistentDataCntl().setSelectedJob(tempJob);
         return tempJob;
     }
-
+    
+    public void setJobSuit() {
+        
+        String someJobPersonality = null;
+        String someUserPersonality = null;
+        ArrayList<String> jobPer = new ArrayList<>();
+       
+        for(int i = 0; i<PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData().size(); i++)
+        {
+            someJobPersonality = PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData().get(i).getJobPersonality();
+            someUserPersonality = PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getLoginUser().getPersonality();
+           
+            jobPer.add(someJobPersonality);
+            
+            if(someJobPersonality.equalsIgnoreCase(someUserPersonality))
+            {
+                PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData().get(i).setJobSuit("Suited");
+            }
+            else
+            {
+                PersistentDataController.getPersistentDataCntl().getPeristentDataCollection().getJobList().getJobData().get(i).setJobSuit("Not Suited");
+            }
+            
+            
+        }
+        
+    }
+    
     @FXML
     public void handleJobSelection(ActionEvent event) {
         Job someJob = getSelectedRow();
@@ -118,7 +147,7 @@ public class SearchViewController implements Initializable {
         alert.setTitle("Job Info");
         alert.setHeaderText(someJob.getJobTitle());
         alert.setContentText("Description: " + someJob.getJobDescription() + "\nCompany: " + someJob.getCompany()
-                + "\nDate Posted: " + someJob.getDatePosted() + "\nTest: "  + someJob.getJobPersonality());
+                + "\nDate Posted: " + someJob.getDatePosted() + "\nPersonality: "  + someJob.getJobPersonality());
         alert.showAndWait();
     }
 
