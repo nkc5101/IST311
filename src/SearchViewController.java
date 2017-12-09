@@ -157,6 +157,14 @@ public class SearchViewController implements Initializable {
 
         NavController.getNavController(theStage);
     }
+    
+    @FXML
+    private void handleCareerButtonAction(ActionEvent event)
+    {
+        theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        
+        CareerProfileController.getCareerProfileController(theStage);
+    }
 
     @FXML
     protected void handleProfileButtonAction(ActionEvent event) throws IOException {

@@ -9,10 +9,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="SearchViewController">
   <children>
-    <Button layoutX="77.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
-    <Button layoutX="158.0" layoutY="332.0" mnemonicParsing="false" text="Search" />
-    <Button layoutX="239.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
-    <Button fx:id="testPersonalityButton" layoutX="324.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
+    <Button layoutX="66.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleHomeButtonAction" text="Home" />
+    <Button layoutX="130.0" layoutY="331.0" mnemonicParsing="false" text="Search" />
+    <Button layoutX="197.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleProfileButtonAction" text="Profile" />
+    <Button fx:id="testPersonalityButton" layoutX="270.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleTestPersonalityButtonAction" text="Test Personality" />
     <Button layoutX="452.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleLogOffButtonAction" text="Logoff" />
     <TextField fx:id="searchField" layoutX="77.0" layoutY="45.0" prefWidth="200.0" />
     <Label layoutX="28.0" layoutY="48.0" text="Search:" />
@@ -25,5 +25,6 @@
       </columns>
     </TableView>
     <Button fx:id="jobSelection" layoutX="517.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleJobSelection" text="Select Job" />
+    <Button layoutX="385.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCareerButtonAction" text="Career" />
   </children>
 </AnchorPane>
