@@ -147,5 +147,11 @@ public class ProfileViewController implements Initializable {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
+    @FXML
+    private void handleCareerProfileButtonAction(ActionEvent event)throws IOException{
+         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        CareerProfileController.getCareerProfileController(theStage);
+    }
 
 }
