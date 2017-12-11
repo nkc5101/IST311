@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Nate Cox
  */
-public class UserProfile extends Profile implements  Serializable {
+public class UserProfile extends Profile implements Serializable {
 
     private String name;
     //private String careerChoice;
@@ -114,6 +114,5 @@ public class UserProfile extends Profile implements  Serializable {
     public String getPersonality() {
         return personality;
     }
-
 
 }

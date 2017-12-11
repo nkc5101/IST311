@@ -40,9 +40,8 @@ public class JobViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        
         personalityDrop.getItems().removeAll(personalityDrop.getItems());
-        personalityDrop.getItems().addAll("Communicator", "Hard Working", "Team Leader","Good Teammates","Invidual Worker", "Learner");
+        personalityDrop.getItems().addAll("Communicator", "Hard Working", "Team Leader", "Good Teammates", "Invidual Worker", "Learner");
     }
 
     @FXML
@@ -83,9 +82,9 @@ public class JobViewController implements Initializable {
             TestPersonalityController.getTestPersonalityController(theStage);
         }
     }
-    
-    @FXML 
-    private void handleCareerButtonAction(ActionEvent event) throws IOException{
+
+    @FXML
+    private void handleCareerButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         CareerProfileController.getCareerProfileController(theStage);

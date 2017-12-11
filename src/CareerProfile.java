@@ -7,18 +7,17 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
-public class CareerProfile implements Serializable{
-    
+public class CareerProfile implements Serializable {
+
     private String name;
     private String description;
     private ArrayList<String> requiredSkills = new ArrayList<>();
-    
-    CareerProfile(String name, String description, ArrayList<String> requiredSkills){
+
+    CareerProfile(String name, String description, ArrayList<String> requiredSkills) {
         this.name = name;
         this.description = description;
         this.requiredSkills = requiredSkills;
@@ -39,13 +38,13 @@ public class CareerProfile implements Serializable{
     public void setRequiredSkills(ArrayList<String> requiredSkills) {
         this.requiredSkills = requiredSkills;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    
+
 }

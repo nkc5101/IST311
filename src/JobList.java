@@ -26,13 +26,11 @@ public class JobList implements Serializable {
     public ArrayList<Job> getTheListOfJob() {
         return theListOfJob;
     }
-    
+
     public boolean getJobSuit() {
-        
-        
+
         return false;
     }
-            
 
     public void setTheListOfJob(ArrayList<Job> theListOfJob) {
         this.theListOfJob = theListOfJob;

@@ -37,8 +37,8 @@ public class PersistentDataCollection implements Serializable {
         if (theEmployerList == null) {
             theEmployerList = new EmployerList();
         }
-        
-        if(theCareerList == null){
+
+        if (theCareerList == null) {
             theCareerList = new CareerProfileList();
         }
     }
@@ -120,24 +120,24 @@ public class PersistentDataCollection implements Serializable {
         hasResults = results.isEmpty();
         return results;
     }
-    
-    public CareerProfileList getCareerList(){
+
+    public CareerProfileList getCareerList() {
         return theCareerList;
     }
-    
-    public void addCareer(CareerProfile newCareer){
+
+    public void addCareer(CareerProfile newCareer) {
         theCareerList.addCareer(newCareer);
     }
-    
-    public ArrayList<CareerProfile> searchCareers(String searchTerms){
+
+    public ArrayList<CareerProfile> searchCareers(String searchTerms) {
         hasCareerResults = false;
-         ArrayList<CareerProfile> results = new ArrayList<>();
+        ArrayList<CareerProfile> results = new ArrayList<>();
         results = theCareerList.search(searchTerms);
         hasCareerResults = results.isEmpty();
         return results;
     }
-    
-    public boolean hasCareerResults(){
+
+    public boolean hasCareerResults() {
         return hasCareerResults;
     }
 }

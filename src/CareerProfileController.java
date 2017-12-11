@@ -1,8 +1,6 @@
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,21 +10,21 @@ import javafx.stage.Stage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
 public class CareerProfileController {
-   @FXML
+
+    @FXML
     private Stage stage;
     private static CareerProfileController careerProfileController;
 
     private CareerProfileController(Stage theStage) {
         stage = theStage;
-        if(PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+        if (PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             this.setUpCreateCareerProfileScene();
-        } else{
+        } else {
             this.setUpCareerProfileScene();
         }
         stage.show();
@@ -37,10 +35,10 @@ public class CareerProfileController {
 
             careerProfileController.setUpCreateCareerProfileScene();
             return careerProfileController;
-        } else  if (careerProfileController != null && !PersistentDataController.getPersistentDataCntl().getIsEmployer()){
+        } else if (careerProfileController != null && !PersistentDataController.getPersistentDataCntl().getIsEmployer()) {
             careerProfileController.setUpCareerProfileScene();
             return careerProfileController;
-        } else{
+        } else {
             careerProfileController = new CareerProfileController(theExistingStage);
         }
         return careerProfileController;
@@ -60,20 +58,20 @@ public class CareerProfileController {
             e.printStackTrace();
         }
     }
-    
-    private void setUpCreateCareerProfileScene(){
+
+    private void setUpCreateCareerProfileScene() {
         Parent root;
         Scene scene;
-        
-        try{
+
+        try {
             root = FXMLLoader.load(getClass().getResource("CreateCareerProfile.fxml"));
             scene = new Scene(root, 600, 600);
             stage.setTitle("Career Profile");
             stage.setScene(scene);
             stage.show();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
 }

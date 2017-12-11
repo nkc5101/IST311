@@ -31,22 +31,20 @@ public class Job implements Serializable {
         this.jobPersonality = jobPersonality;
 
     }
-    
+
     public String getJobPersonality() {
         return jobPersonality;
     }
-    
+
     public void setJobPersonality(String jobPersonality) {
         this.jobPersonality = jobPersonality;
     }
-    
-    public void setJobSuit(String suit)
-    {
+
+    public void setJobSuit(String suit) {
         this.jobSuit = suit;
     }
-    
-    public String getJobSuit()
-    {
+
+    public String getJobSuit() {
         return jobSuit;
     }
 

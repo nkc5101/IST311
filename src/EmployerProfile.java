@@ -1,5 +1,4 @@
 
-import java.io.File;
 import java.io.Serializable;
 
 /*
@@ -11,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Nate Cox
  */
-public class EmployerProfile extends Profile implements  Serializable {
+public class EmployerProfile extends Profile implements Serializable {
 
     private String companyName;
     private String location;
@@ -37,6 +36,5 @@ public class EmployerProfile extends Profile implements  Serializable {
     public void setLocation(String location) {
         this.location = location;
     }
-
 
 }

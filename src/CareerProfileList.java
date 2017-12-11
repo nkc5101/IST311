@@ -10,18 +10,18 @@ import javafx.collections.ObservableList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nate Cox
  */
-public class CareerProfileList implements Serializable{
-     private ArrayList<CareerProfile> theListOfCareers = new ArrayList<>();
+public class CareerProfileList implements Serializable {
+
+    private ArrayList<CareerProfile> theListOfCareers = new ArrayList<>();
 
     public CareerProfileList() {
         ArrayList<String> requiredSkills;
-         requiredSkills = new ArrayList<>();
-         requiredSkills.add("Wireshark");
+        requiredSkills = new ArrayList<>();
+        requiredSkills.add("Wireshark");
         CareerProfile newCareer = new CareerProfile("Info", "Protect Information", requiredSkills);
         theListOfCareers.add(newCareer);
     }
@@ -29,7 +29,6 @@ public class CareerProfileList implements Serializable{
     public ArrayList<CareerProfile> getTheListOfCareers() {
         return theListOfCareers;
     }
-          
 
     public void setTheListOfJob(ArrayList<CareerProfile> theListOfCareers) {
         this.theListOfCareers = theListOfCareers;
@@ -45,8 +44,6 @@ public class CareerProfileList implements Serializable{
     public void addCareer(CareerProfile newCareer) {
         theListOfCareers.add(newCareer);
     }
-
-    
 
     public ArrayList<CareerProfile> search(String searchTerms) {
 
