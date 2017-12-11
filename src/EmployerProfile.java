@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author Nate Cox
  */
-public class EmployerProfile extends Profile implements Editable, Serializable {
+public class EmployerProfile extends Profile implements  Serializable {
 
     private String companyName;
     private String location;
@@ -38,19 +38,5 @@ public class EmployerProfile extends Profile implements Editable, Serializable {
         this.location = location;
     }
 
-    @Override
-    public void Edit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void Save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public File Upload() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

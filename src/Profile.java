@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Nate Cox
  */
-public abstract class Profile implements Editable, Serializable {
+public abstract class Profile implements  Serializable {
 
     private String username;
     private String password;

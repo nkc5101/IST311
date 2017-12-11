@@ -1,0 +1,303 @@
+@startuml
+
+abstract class Profile
+annotation java.lang.Override
+annotation javafx.fxml.FXML
+class CareerProfile
+class CareerProfileController
+class CareerProfileList
+class CoOp
+class CreateCareerProfileController
+class EmployerList
+class EmployerProfile
+class Filter
+class FullTimeJob
+class Internship
+class Job
+class JobController
+class JobList
+class JobViewController
+class LoginController
+class LoginViewController
+class Main
+class NavController
+class NavViewController
+class PartTimeJob
+class PersistentDataCollection
+class PersistentDataController
+class ProfileController
+class ProfileViewController
+class Search
+class SearchCareerController
+class SearchController
+class SearchViewController
+class TestPersonalityController
+class TestPersonalityViewController
+class UserList
+class UserProfile
+class java.awt.Component
+class java.awt.Image
+class java.io.File
+class java.io.FileInputStream
+class java.io.FileOutputStream
+class java.io.IOException
+class java.io.ObjectInputStream
+class java.io.ObjectOutputStream
+class java.net.URL
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Arrays
+class java.util.Date
+class java.util.List
+class java.util.ResourceBundle
+class javafx.application.Application
+class javafx.beans.property.SimpleStringProperty
+class javafx.collections.FXCollections
+class javafx.collections.ObservableList
+class javafx.event.ActionEvent
+class javafx.fxml.FXMLLoader
+class javafx.scene.Node
+class javafx.scene.Parent
+class javafx.scene.Scene
+class javafx.scene.control.Alert
+class javafx.scene.control.Alert.AlertType
+class javafx.scene.control.Button
+class javafx.scene.control.CheckBox
+class javafx.scene.control.ComboBox
+class javafx.scene.control.Label
+class javafx.scene.control.PasswordField
+class javafx.scene.control.RadioButton
+class javafx.scene.control.Slider
+class javafx.scene.control.TableColumn
+class javafx.scene.control.TableView
+class javafx.scene.control.TextField
+class javafx.scene.control.cell.PropertyValueFactory
+class javafx.scene.text.Text
+class javafx.stage.Stage
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+interface Applyable
+interface Editable
+interface java.io.Serializable
+interface javafx.fxml.Initializable
+Profile --|> Editable
+Profile --|> java.io.Serializable
+CareerProfile ..> java.util.ArrayList
+CareerProfile --|> java.io.Serializable
+CareerProfileController ..> javafx.fxml.FXML
+CareerProfileController ..> javafx.event.ActionEvent
+CareerProfileController ..> javafx.fxml.FXMLLoader
+CareerProfileController ..> javafx.scene.Node
+CareerProfileController ..> javafx.scene.Parent
+CareerProfileController ..> javafx.scene.Scene
+CareerProfileController ..> javafx.stage.Stage
+CareerProfileList ..> java.util.ArrayList
+CareerProfileList ..> java.util.List
+CareerProfileList ..> javafx.collections.FXCollections
+CareerProfileList ..> javafx.collections.ObservableList
+CareerProfileList --|> java.io.Serializable
+CoOp --|> Job
+CreateCareerProfileController ..> java.lang.Override
+CreateCareerProfileController ..> javafx.fxml.FXML
+CreateCareerProfileController ..> java.net.URL
+CreateCareerProfileController ..> java.util.ArrayList
+CreateCareerProfileController ..> java.util.Arrays
+CreateCareerProfileController ..> java.util.List
+CreateCareerProfileController ..> java.util.ResourceBundle
+CreateCareerProfileController ..> javafx.event.ActionEvent
+CreateCareerProfileController ..> javafx.scene.Node
+CreateCareerProfileController ..> javafx.scene.control.TextField
+CreateCareerProfileController ..> javafx.stage.Stage
+CreateCareerProfileController --|> javafx.fxml.Initializable
+EmployerList ..> java.util.ArrayList
+EmployerList --|> java.io.Serializable
+EmployerProfile --|> Profile
+EmployerProfile ..> java.lang.Override
+EmployerProfile ..> java.io.File
+EmployerProfile --|> Editable
+EmployerProfile --|> java.io.Serializable
+FullTimeJob --|> Job
+Internship --|> Job
+Job --|> java.io.Serializable
+JobController ..> javafx.fxml.FXML
+JobController ..> javafx.fxml.FXMLLoader
+JobController ..> javafx.scene.Parent
+JobController ..> javafx.scene.Scene
+JobController ..> javafx.stage.Stage
+JobList ..> java.util.ArrayList
+JobList ..> java.util.List
+JobList ..> javafx.collections.FXCollections
+JobList ..> javafx.collections.ObservableList
+JobList --|> java.io.Serializable
+JobViewController ..> java.lang.Override
+JobViewController ..> javafx.fxml.FXML
+JobViewController ..> java.io.IOException
+JobViewController ..> java.net.URL
+JobViewController ..> java.util.ResourceBundle
+JobViewController ..> javafx.event.ActionEvent
+JobViewController ..> javafx.scene.Node
+JobViewController ..> javafx.scene.control.ComboBox
+JobViewController ..> javafx.scene.control.TextField
+JobViewController ..> javafx.stage.Stage
+JobViewController --|> javafx.fxml.Initializable
+LoginController ..> javafx.fxml.FXML
+LoginController ..> javafx.fxml.FXMLLoader
+LoginController ..> javafx.scene.Parent
+LoginController ..> javafx.scene.Scene
+LoginController ..> javafx.stage.Stage
+LoginViewController ..> java.lang.Override
+LoginViewController ..> javafx.fxml.FXML
+LoginViewController ..> java.io.IOException
+LoginViewController ..> java.net.URL
+LoginViewController ..> java.util.ArrayList
+LoginViewController ..> java.util.ResourceBundle
+LoginViewController ..> javafx.collections.ObservableList
+LoginViewController ..> javafx.event.ActionEvent
+LoginViewController ..> javafx.fxml.FXMLLoader
+LoginViewController ..> javafx.scene.Node
+LoginViewController ..> javafx.scene.Parent
+LoginViewController ..> javafx.scene.Scene
+LoginViewController ..> javafx.scene.control.Label
+LoginViewController ..> javafx.scene.control.PasswordField
+LoginViewController ..> javafx.scene.control.RadioButton
+LoginViewController ..> javafx.scene.control.TextField
+LoginViewController ..> javafx.scene.text.Text
+LoginViewController ..> javafx.stage.Stage
+LoginViewController --|> javafx.fxml.Initializable
+Main ..> java.lang.Override
+Main --|> javafx.application.Application
+Main ..> javafx.fxml.FXMLLoader
+Main ..> javafx.scene.Parent
+Main ..> javafx.scene.Scene
+Main ..> javafx.stage.Stage
+NavController ..> javafx.fxml.FXML
+NavController ..> java.awt.Component
+NavController ..> java.io.IOException
+NavController ..> java.util.Arrays
+NavController ..> javafx.application.Application
+NavController ..> javafx.event.ActionEvent
+NavController ..> javafx.fxml.FXMLLoader
+NavController ..> javafx.scene.Parent
+NavController ..> javafx.scene.Scene
+NavController ..> javafx.stage.Stage
+NavController ..> javax.swing.JFrame
+NavViewController ..> java.lang.Override
+NavViewController ..> javafx.fxml.FXML
+NavViewController ..> java.net.URL
+NavViewController ..> java.util.ResourceBundle
+NavViewController ..> javafx.scene.control.Button
+NavViewController ..> javafx.stage.Stage
+NavViewController --|> javafx.fxml.Initializable
+PartTimeJob --|> Job
+PersistentDataCollection ..> java.util.ArrayList
+PersistentDataCollection --|> java.io.Serializable
+PersistentDataController ..> java.io.FileInputStream
+PersistentDataController ..> java.io.FileOutputStream
+PersistentDataController ..> java.io.IOException
+PersistentDataController ..> java.io.ObjectInputStream
+PersistentDataController ..> java.io.ObjectOutputStream
+PersistentDataController ..> java.text.SimpleDateFormat
+PersistentDataController ..> java.util.ArrayList
+PersistentDataController ..> java.util.Date
+ProfileController ..> javafx.fxml.FXML
+ProfileController ..> javafx.fxml.FXMLLoader
+ProfileController ..> javafx.scene.Parent
+ProfileController ..> javafx.scene.Scene
+ProfileController ..> javafx.stage.Stage
+ProfileViewController ..> java.lang.Override
+ProfileViewController ..> javafx.fxml.FXML
+ProfileViewController ..> java.io.IOException
+ProfileViewController ..> java.net.URL
+ProfileViewController ..> java.util.ResourceBundle
+ProfileViewController ..> javafx.event.ActionEvent
+ProfileViewController ..> javafx.fxml.FXMLLoader
+ProfileViewController ..> javafx.scene.Node
+ProfileViewController ..> javafx.scene.Parent
+ProfileViewController ..> javafx.scene.Scene
+ProfileViewController ..> javafx.scene.control.Button
+ProfileViewController ..> javafx.scene.control.Label
+ProfileViewController ..> javafx.scene.control.TextField
+ProfileViewController ..> javafx.stage.Stage
+ProfileViewController --|> javafx.fxml.Initializable
+SearchCareerController ..> java.lang.Override
+SearchCareerController ..> javafx.fxml.FXML
+SearchCareerController ..> java.io.IOException
+SearchCareerController ..> java.net.URL
+SearchCareerController ..> java.util.ArrayList
+SearchCareerController ..> java.util.ResourceBundle
+SearchCareerController ..> javafx.collections.FXCollections
+SearchCareerController ..> javafx.collections.ObservableList
+SearchCareerController ..> javafx.event.ActionEvent
+SearchCareerController ..> javafx.scene.Node
+SearchCareerController ..> javafx.scene.control.Alert
+SearchCareerController ..> javafx.scene.control.Label
+SearchCareerController ..> javafx.scene.control.TableColumn
+SearchCareerController ..> javafx.scene.control.TableView
+SearchCareerController ..> javafx.scene.control.TextField
+SearchCareerController ..> javafx.scene.control.cell.PropertyValueFactory
+SearchCareerController ..> javafx.stage.Stage
+SearchCareerController --|> javafx.fxml.Initializable
+SearchController ..> javafx.fxml.FXML
+SearchController ..> javafx.fxml.FXMLLoader
+SearchController ..> javafx.scene.Parent
+SearchController ..> javafx.scene.Scene
+SearchController ..> javafx.stage.Stage
+SearchViewController ..> java.lang.Override
+SearchViewController ..> javafx.fxml.FXML
+SearchViewController ..> java.io.IOException
+SearchViewController ..> java.net.URL
+SearchViewController ..> java.util.ArrayList
+SearchViewController ..> java.util.ResourceBundle
+SearchViewController ..> javafx.beans.property.SimpleStringProperty
+SearchViewController ..> javafx.collections.FXCollections
+SearchViewController ..> javafx.collections.ObservableList
+SearchViewController ..> javafx.event.ActionEvent
+SearchViewController ..> javafx.fxml.FXMLLoader
+SearchViewController ..> javafx.scene.Node
+SearchViewController ..> javafx.scene.Parent
+SearchViewController ..> javafx.scene.Scene
+SearchViewController ..> javafx.scene.control.Alert
+SearchViewController ..> javafx.scene.control.Alert.AlertType
+SearchViewController ..> javafx.scene.control.Button
+SearchViewController ..> javafx.scene.control.CheckBox
+SearchViewController ..> javafx.scene.control.Label
+SearchViewController ..> javafx.scene.control.TableColumn
+SearchViewController ..> javafx.scene.control.TableView
+SearchViewController ..> javafx.scene.control.TextField
+SearchViewController ..> javafx.scene.control.cell.PropertyValueFactory
+SearchViewController ..> javafx.stage.Stage
+SearchViewController ..> javax.swing.JOptionPane
+SearchViewController --|> javafx.fxml.Initializable
+TestPersonalityController ..> javafx.fxml.FXML
+TestPersonalityController ..> javafx.fxml.FXMLLoader
+TestPersonalityController ..> javafx.scene.Parent
+TestPersonalityController ..> javafx.scene.Scene
+TestPersonalityController ..> javafx.stage.Stage
+TestPersonalityViewController ..> java.lang.Override
+TestPersonalityViewController ..> javafx.fxml.FXML
+TestPersonalityViewController ..> java.io.IOException
+TestPersonalityViewController ..> java.net.URL
+TestPersonalityViewController ..> java.util.ResourceBundle
+TestPersonalityViewController ..> javafx.event.ActionEvent
+TestPersonalityViewController ..> javafx.fxml.FXMLLoader
+TestPersonalityViewController ..> javafx.scene.Node
+TestPersonalityViewController ..> javafx.scene.Parent
+TestPersonalityViewController ..> javafx.scene.Scene
+TestPersonalityViewController ..> javafx.scene.control.Label
+TestPersonalityViewController ..> javafx.scene.control.Slider
+TestPersonalityViewController ..> javafx.scene.control.TextField
+TestPersonalityViewController ..> javafx.stage.Stage
+TestPersonalityViewController --|> javafx.fxml.Initializable
+UserList ..> java.util.ArrayList
+UserList ..> javafx.collections.FXCollections
+UserList ..> javafx.collections.ObservableList
+UserList --|> java.io.Serializable
+UserProfile --|> Profile
+UserProfile ..> java.lang.Override
+UserProfile ..> java.awt.Image
+UserProfile ..> java.io.File
+UserProfile ..> java.util.ArrayList
+UserProfile --|> Editable
+UserProfile --|> java.io.Serializable
+Editable ..> java.io.File
+@enduml

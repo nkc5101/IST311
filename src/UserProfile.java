@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Nate Cox
  */
-public class UserProfile extends Profile implements Editable, Serializable {
+public class UserProfile extends Profile implements  Serializable {
 
     private String name;
     //private String careerChoice;
@@ -115,19 +115,5 @@ public class UserProfile extends Profile implements Editable, Serializable {
         return personality;
     }
 
-    @Override
-    public void Edit() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void Save() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public File Upload() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
