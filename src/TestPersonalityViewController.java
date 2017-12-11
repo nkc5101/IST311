@@ -87,8 +87,7 @@ public class TestPersonalityViewController implements Initializable {
         int v = (int) sliderFour.getValue();
         int t = (int) sliderFive.getValue();
 
-
-        String personality = testPersonality(c, m, j, v,t);
+        String personality = testPersonality(c, m, j, v, t);
 
         PersistentDataController.getPersistentDataCntl().addPersonality(personality);
 
@@ -102,36 +101,35 @@ public class TestPersonalityViewController implements Initializable {
 
         TestPersonalityController.getTestPersonalityController(theStage);
     }
-    
-    @FXML 
-    private void handleCareerButtonAction(ActionEvent event) throws IOException{
+
+    @FXML
+    private void handleCareerButtonAction(ActionEvent event) throws IOException {
         theStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         CareerProfileController.getCareerProfileController(theStage);
     }
 
     private String testPersonality(int c, int m, int w, int l, int t) {
-        String result ;
-        if (c>=4 && m<=3 && w>4 && l>3 && t<3) {
-            result = "communicator";
+        String result;
+        if (c >= 3 && m >= 4 && w >= 3 && l == 5 && t > 2) {
+            result = "Communicator";
             System.out.println(result);
-        } else if (c>=2 && m>4 && w<=3 && l<3&&t<3) {
-            result = "hard working";
+        } else if (c >= 0 && m > 0 && w >= 0 && l >= 3 && t >= 2 && t < 5) {
+            result = "Hard Working";
             System.out.println(result);
-        } else if (c>=4.5 && m<3 && w>3 && l>=4&&t>=4) {
-            result = "team leader";
+        } else if (c >= 4 && m > 0 && w == 0 && l >= 4 && t == 5) {
+            result = "Team Leader";
             System.out.println(result);
-        } else if (c>=3 && m>=3 && w<=3.5 && l>=3&&t<=3) {
-            result = "good teammates";
+        } else if (c == 5 && m > 3 && w > 3 && l >= 4 && t >= 2) {
+            result = "Good Teammates";
             System.out.println(result);
-        }
-           else if (c<=3 && m<3&&m>0 && w<3&&w>0 && l<=3&&t<=3) {
-            result = "Invidual worker";
+        } else if (c <= 2 && m >= 0 && w > 0 && l <= 3 && t == 0) {
+            result = "Invidual Worker";
             System.out.println(result);
 
         } else {
             result = "Learner";
-            System.out.println(c + " " + m + " " + w + " " + l+" "+t);
+            System.out.println(c + " " + m + " " + w + " " + l + " " + t);
         }
         return result;
     }

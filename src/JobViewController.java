@@ -42,7 +42,7 @@ public class JobViewController implements Initializable {
 
         
         personalityDrop.getItems().removeAll(personalityDrop.getItems());
-        personalityDrop.getItems().addAll("communicator", "hard working", "team leader","good teammates","Invidual worker", "Learner");
+        personalityDrop.getItems().addAll("Communicator", "Hard Working", "Team Leader","Good Teammates","Invidual Worker", "Learner");
     }
 
     @FXML
